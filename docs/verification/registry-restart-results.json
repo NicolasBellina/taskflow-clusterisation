@@ -1,0 +1,9 @@
+{
+  "downloaded_from_registry": true,
+  "no_build": true,
+  "persistent_task_ids_found": [
+    2,
+    3
+  ],
+  "api_responds": true
+}

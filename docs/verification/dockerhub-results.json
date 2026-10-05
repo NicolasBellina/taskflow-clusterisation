@@ -1,0 +1,24 @@
+{
+  "nicolasbellina/taskflow-api": {
+    "tag": "1.0.0",
+    "anonymous_pull": true,
+    "digest": "sha256:b63fd156d12d1f9fbde18984b7b0972d92b919f2fe838c32cb78deb70e585bff",
+    "platforms": [
+      {
+        "architecture": "arm64",
+        "os": "linux"
+      }
+    ]
+  },
+  "nicolasbellina/taskflow-front": {
+    "tag": "1.0.0",
+    "anonymous_pull": true,
+    "digest": "sha256:f0a575db086353685a95da09ff07345f4c4b534f1d1dfd756eb047e61d113ee6",
+    "platforms": [
+      {
+        "architecture": "arm64",
+        "os": "linux"
+      }
+    ]
+  }
+}

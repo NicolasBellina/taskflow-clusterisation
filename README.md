@@ -6,7 +6,11 @@ Application web de gestion de tâches, utilisée comme projet fil rouge du modul
 
 La séance 1 est implémentée : images API et front, Nginx, Compose, configuration
 externalisée, healthchecks, réseaux et volume PostgreSQL. Les images sont testées
-localement. **La publication Docker Hub reste en attente d'authentification.**
+localement et publiées sur Docker Hub en version `1.0.0` (Linux ARM64) :
+[API](https://hub.docker.com/r/nicolasbellina/taskflow-api) et
+[front](https://hub.docker.com/r/nicolasbellina/taskflow-front).
+L'accès anonyme aux deux images a été vérifié. Sur un hôte Linux AMD64, construire
+les images localement ou publier une version multi-architecture avant le déploiement.
 
 ### Construction locale (disponible immédiatement)
 
@@ -21,10 +25,10 @@ docker compose up -d --no-build --wait
 Ouvrir **http://localhost:8080**. Sur la machine ayant servi à réaliser le TP,
 `.env` est déjà préparé : ne pas l'écraser. Le mot de passe local n'est pas versionné.
 
-### Lancement depuis Docker Hub (après publication)
+### Lancement depuis Docker Hub
 
-Configurer `.env` avec l'identifiant propriétaire des images et un mot de passe
-PostgreSQL local, puis :
+Copier `.env.example` vers `.env` sur une nouvelle machine et y définir un mot de
+passe PostgreSQL local. L'identifiant `nicolasbellina` est déjà renseigné, puis :
 
 ```sh
 docker compose up -d --no-build --wait

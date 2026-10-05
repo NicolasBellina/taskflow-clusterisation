@@ -1,0 +1,30 @@
+ api Pulling
+ front Pulling
+ api Pulled
+ front Pulled
+ Network taskflow_web  Creating
+ Network taskflow_web  Created
+ Network taskflow_database  Creating
+ Network taskflow_database  Created
+ Container taskflow-db-1  Creating
+ Container taskflow-db-1  Created
+ Container taskflow-api-1  Creating
+ Container taskflow-api-1  Created
+ Container taskflow-front-1  Creating
+ Container taskflow-front-1  Created
+ Container taskflow-db-1  Starting
+ Container taskflow-db-1  Started
+ Container taskflow-db-1  Waiting
+ Container taskflow-db-1  Healthy
+ Container taskflow-api-1  Starting
+ Container taskflow-api-1  Started
+ Container taskflow-api-1  Waiting
+ Container taskflow-api-1  Healthy
+ Container taskflow-front-1  Starting
+ Container taskflow-front-1  Started
+ Container taskflow-api-1  Waiting
+ Container taskflow-front-1  Waiting
+ Container taskflow-db-1  Waiting
+ Container taskflow-db-1  Healthy
+ Container taskflow-api-1  Healthy
+ Container taskflow-front-1  Healthy

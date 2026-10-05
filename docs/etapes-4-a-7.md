@@ -76,8 +76,8 @@ Une connexion Docker Hub avec un jeton personnel disposant du droit d'écriture
 est nécessaire. Ne jamais enregistrer le jeton dans le dépôt ou dans `.env`.
 
 ```sh
-docker login -u VOTRE_IDENTIFIANT
-export DOCKERHUB_USERNAME=VOTRE_IDENTIFIANT
+docker login -u nicolasbellina
+export DOCKERHUB_USERNAME=nicolasbellina
 export IMAGE_TAG=1.0.0
 ./scripts/publish-images.sh
 ```
@@ -87,12 +87,12 @@ sont publics. Reporter cet identifiant dans `.env`. L'étiquette `1.0.0` permet
 un repérage explicite, contrairement à `latest` ; éviter de la réutiliser pour
 une nouvelle version. Un digest reste la référence immuable.
 
-### Vérification après publication (à effectuer une fois les images disponibles)
+### Vérification après publication
 
 ```sh
 docker compose down
 # Supprimer seulement les deux étiquettes applicatives de ce projet.
-docker image rm VOTRE_IDENTIFIANT/taskflow-api:1.0.0 VOTRE_IDENTIFIANT/taskflow-front:1.0.0
+docker image rm nicolasbellina/taskflow-api:1.0.0 nicolasbellina/taskflow-front:1.0.0
 docker compose up -d --no-build --wait
 ```
 
@@ -100,9 +100,13 @@ Le journal doit montrer le téléchargement des images depuis Docker Hub.
 Vérifier aussi leur disponibilité sans authentification pour confirmer qu'elles
 sont publiques. Le volume PostgreSQL doit être conservé pendant ce contrôle.
 
-La publication et le test de téléchargement ne sont pas validés tant que la
-connexion au compte Docker Hub n'a pas été fournie. Les images locales sont
-construites avec le préfixe provisoire `taskflow-local`.
+Les deux images `nicolasbellina/taskflow-api:1.0.0` et
+`nicolasbellina/taskflow-front:1.0.0` sont publiées. Leur manifeste a été téléchargé
+sans identifiants Docker Hub : les dépôts sont publics. Les références locales
+publiées ont ensuite été supprimées et Compose les a téléchargées sans construire.
+Les manifests ciblent Linux ARM64 ; AMD64 nécessitera une construction adaptée.
+Les preuves figurent dans `docs/verification/dockerhub-results.json`,
+`publish-images.log` et `pull-and-start.log`.
 
 ## Étape 7 — Envoi du travail
 
@@ -134,5 +138,6 @@ l'enseignant si nécessaire. Aucun secret n'est inclus dans les journaux de test
 - `.env` confirmé ignoré et non suivi par Git ; aucun mot de passe dans les livrables.
 - Images construites et exécutées sur `linux/arm64`. La publication multi-architecture
   constitue une extension facultative ; elle n'est pas revendiquée ici.
-- Publication Docker Hub et lancement depuis des images publiques : en attente
-  de la connexion de l'utilisateur, non validés.
+- Publication Docker Hub : réussie ; accès public vérifié sans authentification.
+- Relancement sans construction après suppression des références locales publiées : réussi.
+- Envoi du code et des comptes rendus sur la branche `main` du dépôt GitHub personnel.
