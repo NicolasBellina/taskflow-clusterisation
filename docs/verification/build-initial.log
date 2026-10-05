@@ -1,0 +1,58 @@
+#0 building with "desktop-linux" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile
+#1 transferring dockerfile: 604B done
+#1 DONE 0.0s
+
+#2 [internal] load metadata for docker.io/library/node:24-bookworm-slim@sha256:0e0ff40c39bc087845bfb27465a0df4ea419520094bc35842ff83dd8cbe6f9b6
+#2 DONE 0.0s
+
+#3 [internal] load .dockerignore
+#3 transferring context: 145B done
+#3 DONE 0.0s
+
+#4 [internal] load build context
+#4 transferring context: 36.84kB done
+#4 DONE 0.0s
+
+#5 [1/5] FROM docker.io/library/node:24-bookworm-slim@sha256:0e0ff40c39bc087845bfb27465a0df4ea419520094bc35842ff83dd8cbe6f9b6
+#5 resolve docker.io/library/node:24-bookworm-slim@sha256:0e0ff40c39bc087845bfb27465a0df4ea419520094bc35842ff83dd8cbe6f9b6 done
+#5 DONE 0.0s
+
+#6 [2/5] WORKDIR /app
+#6 DONE 0.0s
+
+#7 [3/5] COPY package.json package-lock.json ./
+#7 DONE 0.0s
+
+#8 [4/5] RUN npm ci --omit=dev && npm cache clean --force
+#8 5.790
+#8 5.790 added 82 packages, and audited 83 packages in 6s
+#8 5.790
+#8 5.790 28 packages are looking for funding
+#8 5.790   run `npm fund` for details
+#8 5.790
+#8 5.790 found 0 vulnerabilities
+#8 5.791 npm notice
+#8 5.791 npm notice New major version of npm available! 11.19.0 -> 12.2.0
+#8 5.791 npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.2.0
+#8 5.791 npm notice To update run: npm install -g npm@12.2.0
+#8 5.791 npm notice
+#8 5.842 npm warn using --force Recommended protections disabled.
+#8 DONE 5.9s
+
+#9 [5/5] COPY --chown=node:node src/ ./src/
+#9 DONE 0.0s
+
+#10 exporting to image
+#10 exporting layers 0.1s done
+#10 exporting manifest sha256:db078fd207c0fcae7e26248c7e679812d43f6270c8778d0577bfe226dd0f2b3e
+#10 exporting manifest sha256:db078fd207c0fcae7e26248c7e679812d43f6270c8778d0577bfe226dd0f2b3e done
+#10 exporting config sha256:fd8bd735473acae3e68e1201da48646927f2a3406a1ba08cbab11fa780edeab1 done
+#10 exporting attestation manifest sha256:9a235c3bd40609df9edaf4874c941b806503a7a9e3cdc6bd2c4eff6250b85a81 done
+#10 exporting manifest list sha256:366f8f4c2c39ceb353acf2711f197dd7aa030529b66480517130b1798ae0bb9c done
+#10 naming to docker.io/library/taskflow-api:1.0.0 done
+#10 unpacking to docker.io/library/taskflow-api:1.0.0 0.1s done
+#10 DONE 0.2s
+
+View build details: docker-desktop://dashboard/build/desktop-linux/desktop-linux/vd6mwqg402sudeqhi50foitqj

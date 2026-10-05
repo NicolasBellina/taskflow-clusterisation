@@ -1,0 +1,4 @@
+2026-10-05T09:34:03.793Z INFO  [f7554e560912] Démarrage de taskflow-api 1.0.0 (APP_ENV=development)
+2026-10-05T09:34:03.794Z WARN  [f7554e560912] Aucun mot de passe de base de données fourni (DB_PASSWORD ou DB_PASSWORD_FILE)
+2026-10-05T09:34:03.799Z WARN  [f7554e560912] Connexion à localhost:5432 impossible (tentative 1/1) : ECONNREFUSED connect ECONNREFUSED 127.0.0.1:5432
+2026-10-05T09:34:03.799Z ERROR [f7554e560912] Échec du démarrage : Base de données injoignable sur localhost:5432 après 1 tentatives

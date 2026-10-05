@@ -1,0 +1,5 @@
+2026-10-05T09:34:04.141Z INFO  [2fa0f6b3a84f] Démarrage de taskflow-api 1.0.0 (APP_ENV=development)
+2026-10-05T09:34:04.142Z WARN  [2fa0f6b3a84f] Aucun mot de passe de base de données fourni (DB_PASSWORD ou DB_PASSWORD_FILE)
+2026-10-05T09:34:04.146Z WARN  [2fa0f6b3a84f] Connexion à localhost:5432 impossible (tentative 1/101) : ECONNREFUSED connect ECONNREFUSED 127.0.0.1:5432
+2026-10-05T09:34:04.368Z INFO  [2fa0f6b3a84f] Signal SIGTERM reçu : arrêt en cours
+2026-10-05T09:34:04.368Z INFO  [2fa0f6b3a84f] Arrêt terminé

@@ -2,7 +2,23 @@
 
 Application web de gestion de tâches, utilisée comme projet fil rouge du module « Clusterisation de conteneurs ».
 
-Ce dépôt contient uniquement le **code source** de l'application. Il ne contient volontairement ni Dockerfile ni fichier Compose : leur écriture fait partie du travail demandé à partir de la séance 1.
+## État de la livraison — étapes 1 à 3
+
+Le projet contient le code source d'origine et la conteneurisation de l'API.
+Le compte rendu de lecture du code, les choix du Dockerfile et les commandes de
+vérification sont dans [docs/etapes-1-a-3.md](docs/etapes-1-a-3.md).
+
+```sh
+docker build -t taskflow-api:1.0.0 ./api
+```
+
+L'API nécessite PostgreSQL pour démarrer. Son test isolé sans base doit échouer
+avec une erreur de connexion : c'est le résultat attendu à l'étape 3.
+Le Dockerfile du front, Compose et la publication Docker Hub relèvent des étapes suivantes.
+
+Le dépôt est disponible localement ; la création du dépôt GitHub personnel est
+en attente du choix de visibilité. Le lockfile API absent de la source a été
+généré et ajouté. Le lockfile front reste à générer à l'étape 4, avant `npm ci`.
 
 ---
 
