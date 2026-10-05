@@ -1,0 +1,15 @@
+{
+  "checks": [
+    "Accueil et route history /a-propos : HTTP 200, même index.html",
+    "Proxy /api/info et en-tête X-Served-By fonctionnels",
+    "Création, lecture, modification, suppression, erreurs 400/404 et charge CPU validées",
+    "Deux tâches conservées après docker compose down puis up",
+    "Arrêt API avec base active : code 0 en 0.235 seconde(s)"
+  ],
+  "persistent_task_ids": [
+    2,
+    3
+  ],
+  "api_stop_seconds": 0.235,
+  "base_url": "http://localhost:8080"
+}

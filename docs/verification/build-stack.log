@@ -1,0 +1,165 @@
+--progress is a global compose flag, better use `docker compose --progress xx build ...
+#1 [internal] load local bake definitions
+#1 reading from stdin 1.13kB done
+#1 DONE 0.0s
+
+#2 [front internal] load build definition from Dockerfile
+#2 transferring dockerfile: 30B 0.0s
+#2 transferring dockerfile: 580B 0.1s done
+#2 DONE 0.2s
+
+#3 [api internal] load build definition from Dockerfile
+#3 transferring dockerfile: 821B 0.0s done
+#3 DONE 0.1s
+
+#4 [front internal] load metadata for docker.io/library/node:24-bookworm-slim@sha256:0e0ff40c39bc087845bfb27465a0df4ea419520094bc35842ff83dd8cbe6f9b6
+#4 DONE 0.8s
+
+#5 [api internal] load .dockerignore
+#5 transferring context: 145B done
+#5 DONE 0.0s
+
+#6 [api internal] load build context
+#6 transferring context: 322B done
+#6 DONE 0.0s
+
+#7 [api 1/5] FROM docker.io/library/node:24-bookworm-slim@sha256:0e0ff40c39bc087845bfb27465a0df4ea419520094bc35842ff83dd8cbe6f9b6
+#7 resolve docker.io/library/node:24-bookworm-slim@sha256:0e0ff40c39bc087845bfb27465a0df4ea419520094bc35842ff83dd8cbe6f9b6 0.0s done
+#7 DONE 0.0s
+
+#8 [api 3/5] COPY package.json package-lock.json ./
+#8 CACHED
+
+#9 [api 4/5] RUN npm ci --omit=dev && npm cache clean --force
+#9 CACHED
+
+#10 [api 2/5] WORKDIR /app
+#10 CACHED
+
+#11 [api 5/5] COPY --chown=node:node src/ ./src/
+#11 CACHED
+
+#12 [api] exporting to image
+#12 exporting layers done
+#12 exporting manifest sha256:a4904560e38f439208cbd2d8470bf1166c8ffcbc383deb1ea002e231346805c6 done
+#12 exporting config sha256:e3ecc6f670fb14836cca999989059bb8c0d920ab8a5ee73e4ab86973943afb92 done
+#12 exporting attestation manifest sha256:c4020fd8dece03fe713c05a9de3b40727366c7644a195d18d3d764d6843ca788 done
+#12 exporting manifest list sha256:ebb4c88754d6c55864caff86c5ff83b2af2e5b9c19d9c7f0461ea1b57f2e3758
+#12 exporting manifest list sha256:ebb4c88754d6c55864caff86c5ff83b2af2e5b9c19d9c7f0461ea1b57f2e3758 done
+#12 naming to docker.io/taskflow-local/taskflow-api:1.0.0 done
+#12 unpacking to docker.io/taskflow-local/taskflow-api:1.0.0 done
+#12 DONE 0.1s
+
+#13 [api] resolving provenance for metadata file
+#13 DONE 0.0s
+
+#14 [front internal] load metadata for docker.io/library/nginx:stable-alpine@sha256:0985e772fb9f729e6fa0980da05fca5d9c468e870eed43071545afa9d2e27d94
+#14 DONE 1.5s
+
+#15 [front internal] load .dockerignore
+#15 transferring context: 145B done
+#15 DONE 0.0s
+
+#7 [front build 1/6] FROM docker.io/library/node:24-bookworm-slim@sha256:0e0ff40c39bc087845bfb27465a0df4ea419520094bc35842ff83dd8cbe6f9b6
+#7 resolve docker.io/library/node:24-bookworm-slim@sha256:0e0ff40c39bc087845bfb27465a0df4ea419520094bc35842ff83dd8cbe6f9b6 0.0s done
+#7 DONE 0.1s
+
+#16 [front internal] load build context
+#16 transferring context: 46.60kB done
+#16 DONE 0.0s
+
+#10 [front build 2/6] WORKDIR /app
+#10 CACHED
+
+#17 [front build 3/6] COPY package.json package-lock.json ./
+#17 DONE 0.0s
+
+#18 [front stage-1 1/3] FROM docker.io/library/nginx:stable-alpine@sha256:0985e772fb9f729e6fa0980da05fca5d9c468e870eed43071545afa9d2e27d94
+#18 resolve docker.io/library/nginx:stable-alpine@sha256:0985e772fb9f729e6fa0980da05fca5d9c468e870eed43071545afa9d2e27d94 0.0s done
+#18 DONE 0.1s
+
+#19 [front build 4/6] RUN npm ci
+#19 3.317
+#19 3.317 added 37 packages, and audited 38 packages in 3s
+#19 3.317
+#19 3.317 10 packages are looking for funding
+#19 3.317   run `npm fund` for details
+#19 3.317
+#19 3.317 found 0 vulnerabilities
+#19 3.318 npm notice
+#19 3.318 npm notice New major version of npm available! 11.19.0 -> 12.2.0
+#19 3.318 npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.2.0
+#19 3.318 npm notice To update run: npm install -g npm@12.2.0
+#19 3.318 npm notice
+#19 DONE 3.4s
+
+#18 [front stage-1 1/3] FROM docker.io/library/nginx:stable-alpine@sha256:0985e772fb9f729e6fa0980da05fca5d9c468e870eed43071545afa9d2e27d94
+#18 sha256:e5cd9cbe35d334211e0dbba7a16b55a0e0cd9575b5393fdcd5302176a0fec16d 1.40kB / 1.40kB 0.3s done
+#18 sha256:de314aae67cdc0a41219ddace8b5a494f3112e8281a485494f265cf9e67f71b6 10.49MB / 19.87MB 3.3s
+#18 sha256:5ba2889293520adc2c5eec4ddf3c93559a5a800b893407d1f2b7cd351baf70a5 1.21kB / 1.21kB 0.3s done
+#18 sha256:28a16c1011b2ed831d1f9d44e11c5b22e165d09e4719e1b609d875fdb3c91171 402B / 402B 0.3s done
+#18 sha256:5e7de8c59e40521648a206e684d8f7a81bb88132ac05285a9c0ec0d430d40cbf 963B / 963B 0.1s done
+#18 sha256:08c08ab5f9f755ce5a830d30a27f33a9dfdd795223e50b600fd8fe983cf759d8 626B / 626B 0.2s done
+#18 sha256:a8783588284d97127365463f7fa1bf9afddf0ba38cfc8bb0a993643b09b7d493 1.90MB / 1.90MB 1.8s done
+#18 sha256:a9986cd6f37dbddae7862a6d4be71683472e7c2ea708e87db14f8a6393c00f00 4.19MB / 4.19MB 2.4s done
+#18 extracting sha256:a9986cd6f37dbddae7862a6d4be71683472e7c2ea708e87db14f8a6393c00f00 0.0s done
+#18 extracting sha256:a8783588284d97127365463f7fa1bf9afddf0ba38cfc8bb0a993643b09b7d493 0.0s done
+#18 extracting sha256:08c08ab5f9f755ce5a830d30a27f33a9dfdd795223e50b600fd8fe983cf759d8 done
+#18 extracting sha256:5e7de8c59e40521648a206e684d8f7a81bb88132ac05285a9c0ec0d430d40cbf done
+#18 extracting sha256:28a16c1011b2ed831d1f9d44e11c5b22e165d09e4719e1b609d875fdb3c91171 done
+#18 extracting sha256:5ba2889293520adc2c5eec4ddf3c93559a5a800b893407d1f2b7cd351baf70a5 done
+#18 extracting sha256:e5cd9cbe35d334211e0dbba7a16b55a0e0cd9575b5393fdcd5302176a0fec16d done
+#18 ...
+
+#20 [front build 5/6] COPY . .
+#20 DONE 0.0s
+
+#18 [front stage-1 1/3] FROM docker.io/library/nginx:stable-alpine@sha256:0985e772fb9f729e6fa0980da05fca5d9c468e870eed43071545afa9d2e27d94
+#18 sha256:de314aae67cdc0a41219ddace8b5a494f3112e8281a485494f265cf9e67f71b6 12.58MB / 19.87MB 3.5s
+#18 sha256:de314aae67cdc0a41219ddace8b5a494f3112e8281a485494f265cf9e67f71b6 14.68MB / 19.87MB 3.6s
+#18 ...
+
+#21 [front build 6/6] RUN npm run build
+#21 0.169
+#21 0.169 > taskflow-front@1.0.0 build
+#21 0.169 > vite build
+#21 0.169
+#21 0.326 vite v8.3.2 building client environment for production...
+#21 0.331 transforming...
+#21 0.366 ✓ 30 modules transformed.
+#21 0.387 rendering chunks...
+#21 0.404 computing gzip size...
+#21 0.406 dist/index.html                  0.45 kB │ gzip:  0.29 kB
+#21 0.406 dist/assets/index-D3uTQ4FB.css   1.99 kB │ gzip:  0.76 kB
+#21 0.406 dist/assets/index-VqnvRzr0.js   93.14 kB │ gzip: 35.99 kB
+#21 0.406
+#21 0.407 ✓ built in 80ms
+#21 DONE 0.4s
+
+#18 [front stage-1 1/3] FROM docker.io/library/nginx:stable-alpine@sha256:0985e772fb9f729e6fa0980da05fca5d9c468e870eed43071545afa9d2e27d94
+#18 sha256:de314aae67cdc0a41219ddace8b5a494f3112e8281a485494f265cf9e67f71b6 16.78MB / 19.87MB 3.8s
+#18 sha256:de314aae67cdc0a41219ddace8b5a494f3112e8281a485494f265cf9e67f71b6 19.87MB / 19.87MB 3.9s done
+#18 extracting sha256:de314aae67cdc0a41219ddace8b5a494f3112e8281a485494f265cf9e67f71b6
+#18 extracting sha256:de314aae67cdc0a41219ddace8b5a494f3112e8281a485494f265cf9e67f71b6 0.2s done
+#18 DONE 4.1s
+
+#22 [front stage-1 2/3] COPY nginx.conf /etc/nginx/conf.d/default.conf
+#22 DONE 0.1s
+
+#23 [front stage-1 3/3] COPY --from=build /app/dist/ /usr/share/nginx/html/
+#23 DONE 0.0s
+
+#24 [front] exporting to image
+#24 exporting layers 0.0s done
+#24 exporting manifest sha256:c6dae2c6ca35cc247f269f51b73ad458e49bb61a33c25d6819ecfd885a6d9302 done
+#24 exporting config sha256:e4c4e096a0b298e073cd7819bf79c186f5b8c2e7c4c851da67db5ab3f442cfb6 done
+#24 exporting attestation manifest sha256:aa54b3bad7bbe681c74c5585b6f479e2eb1c5ecf0c1d7bb5272f9c65115fe2bb done
+#24 exporting manifest list sha256:ca49b37635cd1a49a615386c48f1c4a6cf24dae12535432d5048396d6bbda974 done
+#24 naming to docker.io/taskflow-local/taskflow-front:1.0.0 done
+#24 unpacking to docker.io/taskflow-local/taskflow-front:1.0.0 0.0s done
+#24 DONE 0.1s
+
+#25 [front] resolving provenance for metadata file
+#25 DONE 0.0s
+ taskflow-local/taskflow-api:1.0.0  Built
+ taskflow-local/taskflow-front:1.0.0  Built

@@ -1,0 +1,67 @@
+name: taskflow
+
+services:
+  db:
+    image: postgres:18-alpine@sha256:77f585114c32fbca283dc835b0596f4e52b51b4c6662d7810b2f4084f60a1873
+    environment:
+      POSTGRES_DB: ${DB_NAME:-taskflow}
+      POSTGRES_USER: ${DB_USER:-taskflow}
+      POSTGRES_PASSWORD: ${DB_PASSWORD:?Définir DB_PASSWORD dans .env}
+    volumes:
+      # PostgreSQL 18 utilise PGDATA=/var/lib/postgresql/18/docker.
+      - postgres_data:/var/lib/postgresql
+    networks:
+      - database
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U \"$$POSTGRES_USER\" -d \"$$POSTGRES_DB\""]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+      start_period: 10s
+    restart: unless-stopped
+
+  api:
+    image: ${DOCKERHUB_USERNAME:?Définir DOCKERHUB_USERNAME dans .env}/taskflow-api:${IMAGE_TAG:-1.0.0}
+    environment:
+      NODE_ENV: production
+      APP_ENV: ${APP_ENV:-production}
+      HOST: 0.0.0.0
+      PORT: "3000"
+      DB_HOST: db
+      DB_PORT: "5432"
+      DB_NAME: ${DB_NAME:-taskflow}
+      DB_USER: ${DB_USER:-taskflow}
+      DB_PASSWORD: ${DB_PASSWORD:?Définir DB_PASSWORD dans .env}
+    depends_on:
+      db:
+        condition: service_healthy
+    networks:
+      - web
+      - database
+    healthcheck:
+      test: ["CMD", "node", "-e", "fetch('http://127.0.0.1:3000/readyz').then(r => process.exit(r.ok ? 0 : 1)).catch(() => process.exit(1))"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+      start_period: 10s
+    stop_grace_period: 10s
+    restart: unless-stopped
+
+  front:
+    image: ${DOCKERHUB_USERNAME:?Définir DOCKERHUB_USERNAME dans .env}/taskflow-front:${IMAGE_TAG:-1.0.0}
+    ports:
+      - "${FRONT_BIND_ADDRESS:-127.0.0.1}:${FRONT_PORT:-8080}:80"
+    depends_on:
+      api:
+        condition: service_healthy
+    networks:
+      - web
+    restart: unless-stopped
+
+volumes:
+  postgres_data:
+
+networks:
+  web:
+  database:
+    internal: true

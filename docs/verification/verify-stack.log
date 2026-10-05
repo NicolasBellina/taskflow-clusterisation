@@ -1,0 +1,73 @@
+ Container taskflow-front-1  Stopping
+ Container taskflow-front-1  Stopped
+ Container taskflow-front-1  Removing
+ Container taskflow-front-1  Removed
+ Container taskflow-api-1  Stopping
+ Container taskflow-api-1  Stopped
+ Container taskflow-api-1  Removing
+ Container taskflow-api-1  Removed
+ Container taskflow-db-1  Stopping
+ Container taskflow-db-1  Stopped
+ Container taskflow-db-1  Removing
+ Container taskflow-db-1  Removed
+ Network taskflow_database  Removing
+ Network taskflow_web  Removing
+ Network taskflow_web  Removed
+ Network taskflow_database  Removed
+ Network taskflow_database  Creating
+ Network taskflow_database  Created
+ Network taskflow_web  Creating
+ Network taskflow_web  Created
+ Container taskflow-db-1  Creating
+ Container taskflow-db-1  Created
+ Container taskflow-api-1  Creating
+ Container taskflow-api-1  Created
+ Container taskflow-front-1  Creating
+ Container taskflow-front-1  Created
+ Container taskflow-db-1  Starting
+ Container taskflow-db-1  Started
+ Container taskflow-db-1  Waiting
+ Container taskflow-db-1  Healthy
+ Container taskflow-api-1  Starting
+ Container taskflow-api-1  Started
+ Container taskflow-api-1  Waiting
+ Container taskflow-api-1  Healthy
+ Container taskflow-front-1  Starting
+ Container taskflow-front-1  Started
+ Container taskflow-api-1  Waiting
+ Container taskflow-front-1  Waiting
+ Container taskflow-db-1  Waiting
+ Container taskflow-api-1  Healthy
+ Container taskflow-db-1  Healthy
+ Container taskflow-front-1  Healthy
+ Container taskflow-api-1  Stopping
+ Container taskflow-api-1  Stopped
+ Container taskflow-db-1  Running
+ Container taskflow-front-1  Running
+ Container taskflow-db-1  Waiting
+ Container taskflow-db-1  Healthy
+ Container taskflow-api-1  Starting
+ Container taskflow-api-1  Started
+ Container taskflow-api-1  Waiting
+ Container taskflow-api-1  Healthy
+ Container taskflow-front-1  Waiting
+ Container taskflow-db-1  Waiting
+ Container taskflow-api-1  Waiting
+ Container taskflow-db-1  Healthy
+ Container taskflow-front-1  Healthy
+ Container taskflow-api-1  Healthy
+{
+  "checks": [
+    "Accueil et route history /a-propos : HTTP 200, même index.html",
+    "Proxy /api/info et en-tête X-Served-By fonctionnels",
+    "Création, lecture, modification, suppression, erreurs 400/404 et charge CPU validées",
+    "Deux tâches conservées après docker compose down puis up",
+    "Arrêt API avec base active : code 0 en 0.235 seconde(s)"
+  ],
+  "persistent_task_ids": [
+    2,
+    3
+  ],
+  "api_stop_seconds": 0.235,
+  "base_url": "http://localhost:8080"
+}

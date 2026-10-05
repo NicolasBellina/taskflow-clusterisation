@@ -2,23 +2,67 @@
 
 Application web de gestion de tâches, utilisée comme projet fil rouge du module « Clusterisation de conteneurs ».
 
-## État de la livraison — étapes 1 à 3
+## Démarrage du projet conteneurisé
 
-Le projet contient le code source d'origine et la conteneurisation de l'API.
-Le compte rendu de lecture du code, les choix du Dockerfile et les commandes de
-vérification sont dans [docs/etapes-1-a-3.md](docs/etapes-1-a-3.md).
+La séance 1 est implémentée : images API et front, Nginx, Compose, configuration
+externalisée, healthchecks, réseaux et volume PostgreSQL. Les images sont testées
+localement. **La publication Docker Hub reste en attente d'authentification.**
+
+### Construction locale (disponible immédiatement)
 
 ```sh
-docker build -t taskflow-api:1.0.0 ./api
+cp .env.example .env
+# Dans .env : renseigner DOCKERHUB_USERNAME (taskflow-local pour un test local)
+# et DB_PASSWORD avec une valeur générée par : openssl rand -hex 24
+docker compose -f compose.yaml -f compose.build.yaml build
+docker compose up -d --no-build --wait
 ```
 
-L'API nécessite PostgreSQL pour démarrer. Son test isolé sans base doit échouer
-avec une erreur de connexion : c'est le résultat attendu à l'étape 3.
-Le Dockerfile du front, Compose et la publication Docker Hub relèvent des étapes suivantes.
+Ouvrir **http://localhost:8080**. Sur la machine ayant servi à réaliser le TP,
+`.env` est déjà préparé : ne pas l'écraser. Le mot de passe local n'est pas versionné.
 
-Le dépôt est disponible localement ; la création du dépôt GitHub personnel est
-en attente du choix de visibilité. Le lockfile API absent de la source a été
-généré et ajouté. Le lockfile front reste à générer à l'étape 4, avant `npm ci`.
+### Lancement depuis Docker Hub (après publication)
+
+Configurer `.env` avec l'identifiant propriétaire des images et un mot de passe
+PostgreSQL local, puis :
+
+```sh
+docker compose up -d --no-build --wait
+```
+
+Le fichier `compose.yaml` principal ne contient aucune directive `build`.
+Pour publier les deux images en version `1.0.0`, voir
+[le compte rendu des étapes 4 à 7](docs/etapes-4-a-7.md).
+
+### Vérification et exploitation
+
+```sh
+docker compose ps
+docker compose config --quiet
+python3 scripts/verify-stack.py http://localhost:8080
+docker compose logs --tail=50
+docker compose down  # conserve les données
+```
+
+Le script de vérification recrée les conteneurs pour vérifier la persistance et
+conserve deux tâches témoins. Ne pas utiliser `down -v` pour un simple arrêt :
+cette option efface le volume et les tâches. Changer le mot de passe dans `.env`
+ne change pas celui d'une base déjà initialisée.
+
+Seul le front est publié sur localhost, port 8080. `FRONT_PORT` peut être changé
+dans `.env` ; adapter alors l'URL passée au script. Les bases sont fixées par digest.
+
+### Livrables
+
+- [Étapes 1 à 3 : lecture du code et image API](docs/etapes-1-a-3.md).
+- [Étapes 4 à 7 : front, Compose, publication et rendu](docs/etapes-4-a-7.md).
+- [Résultats de la vérification de la stack](docs/verification/stack-results.json).
+- `api/Dockerfile`, `front/Dockerfile` et leurs `.dockerignore`.
+- `compose.yaml`, `compose.build.yaml`, `.env.example`.
+
+Dépôt personnel privé : [NicolasBellina/taskflow-clusterisation](https://github.com/NicolasBellina/taskflow-clusterisation).
+Le dépôt d'origine reste accessible avec le remote `upstream`. Les sections
+ci-dessous décrivent les sources initiales de l'application.
 
 ---
 

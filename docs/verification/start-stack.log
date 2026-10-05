@@ -1,0 +1,115 @@
+ db Pulling
+ c9878fa51844 Pulling fs layer
+ f95acc7dd730 Pulling fs layer
+ 894766359b55 Pulling fs layer
+ 042392860621 Pulling fs layer
+ dcef62806108 Pulling fs layer
+ f9425a4aed11 Pulling fs layer
+ 526eff169ec4 Pulling fs layer
+ 393fa0bf03a6 Pulling fs layer
+ 894766359b55 Download complete
+ f95acc7dd730 Download complete
+ dcef62806108 Download complete
+ f9425a4aed11 Download complete
+ 526eff169ec4 Download complete
+ 393fa0bf03a6 Download complete
+ dcef62806108 Pull complete
+ c9878fa51844 Download complete
+ 393fa0bf03a6 Pull complete
+ c9878fa51844 Pull complete
+ 042392860621 Downloading [>                                                  ]  1.049MB/112.8MB
+ 042392860621 Downloading [>                                                  ]  1.049MB/112.8MB
+ 042392860621 Downloading [>                                                  ]  1.049MB/112.8MB
+ 042392860621 Downloading [>                                                  ]  1.049MB/112.8MB
+ 042392860621 Downloading [>                                                  ]  2.097MB/112.8MB
+ 042392860621 Downloading [>                                                  ]  2.097MB/112.8MB
+ 042392860621 Downloading [>                                                  ]  2.097MB/112.8MB
+ 042392860621 Downloading [=>                                                 ]  3.146MB/112.8MB
+ 042392860621 Downloading [=>                                                 ]  3.502MB/112.8MB
+ 042392860621 Downloading [=>                                                 ]  4.194MB/112.8MB
+ 042392860621 Downloading [==>                                                ]  5.243MB/112.8MB
+ 042392860621 Downloading [==>                                                ]  5.243MB/112.8MB
+ 042392860621 Downloading [==>                                                ]  6.291MB/112.8MB
+ 042392860621 Downloading [===>                                               ]   7.34MB/112.8MB
+ 042392860621 Downloading [===>                                               ]  8.389MB/112.8MB
+ 042392860621 Downloading [===>                                               ]  8.389MB/112.8MB
+ 042392860621 Downloading [====>                                              ]  9.437MB/112.8MB
+ 042392860621 Downloading [====>                                              ]  10.49MB/112.8MB
+ 042392860621 Downloading [=====>                                             ]  12.58MB/112.8MB
+ 042392860621 Downloading [======>                                            ]  14.68MB/112.8MB
+ 042392860621 Downloading [=======>                                           ]  16.78MB/112.8MB
+ 042392860621 Downloading [=======>                                           ]  16.78MB/112.8MB
+ 042392860621 Downloading [========>                                          ]  18.87MB/112.8MB
+ 042392860621 Downloading [=========>                                         ]  20.97MB/112.8MB
+ 042392860621 Downloading [==========>                                        ]  24.12MB/112.8MB
+ 042392860621 Downloading [============>                                      ]  27.26MB/112.8MB
+ 042392860621 Downloading [============>                                      ]  28.31MB/112.8MB
+ 042392860621 Downloading [=============>                                     ]   30.9MB/112.8MB
+ 042392860621 Downloading [===============>                                   ]   34.6MB/112.8MB
+ 042392860621 Downloading [================>                                  ]  37.75MB/112.8MB
+ 042392860621 Downloading [==================>                                ]  41.94MB/112.8MB
+ 042392860621 Downloading [===================>                               ]  44.04MB/112.8MB
+ 042392860621 Downloading [====================>                              ]  47.19MB/112.8MB
+ 042392860621 Downloading [======================>                            ]  51.38MB/112.8MB
+ 042392860621 Downloading [========================>                          ]  55.57MB/112.8MB
+ 042392860621 Downloading [==========================>                        ]  58.72MB/112.8MB
+ 042392860621 Downloading [===========================>                       ]  61.87MB/112.8MB
+ 042392860621 Downloading [===========================>                       ]  62.91MB/112.8MB
+ 042392860621 Downloading [==============================>                    ]  68.16MB/112.8MB
+ 042392860621 Downloading [================================>                  ]  72.35MB/112.8MB
+ 042392860621 Downloading [=================================>                 ]  76.55MB/112.8MB
+ 042392860621 Downloading [===================================>               ]  80.74MB/112.8MB
+ 042392860621 Downloading [===================================>               ]  80.74MB/112.8MB
+ 042392860621 Downloading [=====================================>             ]  84.93MB/112.8MB
+ 042392860621 Downloading [=======================================>           ]  89.13MB/112.8MB
+ 042392860621 Downloading [=========================================>         ]  93.32MB/112.8MB
+ 042392860621 Downloading [===========================================>       ]  97.52MB/112.8MB
+ 042392860621 Downloading [===========================================>       ]  98.57MB/112.8MB
+ 042392860621 Downloading [=============================================>     ]  102.8MB/112.8MB
+ 042392860621 Downloading [===============================================>   ]    107MB/112.8MB
+ 042392860621 Downloading [================================================>  ]  110.1MB/112.8MB
+ 042392860621 Download complete
+ 042392860621 Extracting 1 s
+ 042392860621 Extracting 1 s
+ 042392860621 Extracting 1 s
+ 042392860621 Extracting 1 s
+ 042392860621 Extracting 1 s
+ 042392860621 Extracting 1 s
+ 042392860621 Extracting 1 s
+ 042392860621 Extracting 1 s
+ 042392860621 Extracting 1 s
+ 042392860621 Extracting 1 s
+ 894766359b55 Pull complete
+ f95acc7dd730 Pull complete
+ f9425a4aed11 Pull complete
+ 526eff169ec4 Pull complete
+ 042392860621 Pull complete
+ db Pulled
+ Network taskflow_database  Creating
+ Network taskflow_database  Created
+ Network taskflow_web  Creating
+ Network taskflow_web  Created
+ Volume taskflow_postgres_data  Creating
+ Volume taskflow_postgres_data  Created
+ Container taskflow-db-1  Creating
+ Container taskflow-db-1  Created
+ Container taskflow-api-1  Creating
+ Container taskflow-api-1  Created
+ Container taskflow-front-1  Creating
+ Container taskflow-front-1  Created
+ Container taskflow-db-1  Starting
+ Container taskflow-db-1  Started
+ Container taskflow-db-1  Waiting
+ Container taskflow-db-1  Healthy
+ Container taskflow-api-1  Starting
+ Container taskflow-api-1  Started
+ Container taskflow-api-1  Waiting
+ Container taskflow-api-1  Healthy
+ Container taskflow-front-1  Starting
+ Container taskflow-front-1  Started
+ Container taskflow-front-1  Waiting
+ Container taskflow-db-1  Waiting
+ Container taskflow-api-1  Waiting
+ Container taskflow-db-1  Healthy
+ Container taskflow-api-1  Healthy
+ Container taskflow-front-1  Healthy

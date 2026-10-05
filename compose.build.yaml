@@ -1,0 +1,9 @@
+# Surcharge facultative pour construire les images localement.
+# Le compose.yaml principal n'a besoin que des images publiées.
+services:
+  api:
+    build:
+      context: ./api
+  front:
+    build:
+      context: ./front

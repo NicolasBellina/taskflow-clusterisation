@@ -16,3 +16,5 @@ EXPOSE 3000
 STOPSIGNAL SIGTERM
 # Node reçoit directement SIGTERM en tant que PID 1.
 CMD ["node", "src/server.js"]
+HEALTHCHECK --interval=10s --timeout=3s --start-period=10s --retries=3 \
+    CMD node -e "fetch('http://127.0.0.1:' + process.env.PORT + '/healthz').then(r => process.exit(r.ok ? 0 : 1)).catch(() => process.exit(1))"
