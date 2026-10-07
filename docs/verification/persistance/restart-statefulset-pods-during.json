@@ -1,0 +1,835 @@
+[
+  {
+    "seconds": 0.0,
+    "pods": [
+      {
+        "name": "api-6dffc9d4d5-7c86j",
+        "uid": "c1ad14eb-86ce-42d8-947a-3487ae3fb3bc",
+        "component": "api",
+        "ready": true,
+        "restarts": 0
+      },
+      {
+        "name": "api-6dffc9d4d5-wwrhh",
+        "uid": "ef4d1071-1838-4496-98a1-583d2d666b43",
+        "component": "api",
+        "ready": true,
+        "restarts": 0
+      },
+      {
+        "name": "db-0",
+        "uid": "45dd35b9-25b6-44da-9266-8476314b2080",
+        "component": "database",
+        "ready": true,
+        "restarts": 0
+      },
+      {
+        "name": "front-5cd7dcfdfd-j2rhw",
+        "uid": "cedb8026-23bb-427d-aa4b-493016e6f8d2",
+        "component": "front",
+        "ready": true,
+        "restarts": 0
+      },
+      {
+        "name": "front-5cd7dcfdfd-nhc4d",
+        "uid": "0a0c92bd-9b03-477a-9c5a-99f565259965",
+        "component": "front",
+        "ready": true,
+        "restarts": 0
+      }
+    ]
+  },
+  {
+    "seconds": 0.443,
+    "pods": [
+      {
+        "name": "api-6dffc9d4d5-7c86j",
+        "uid": "c1ad14eb-86ce-42d8-947a-3487ae3fb3bc",
+        "component": "api",
+        "ready": true,
+        "restarts": 0
+      },
+      {
+        "name": "api-6dffc9d4d5-wwrhh",
+        "uid": "ef4d1071-1838-4496-98a1-583d2d666b43",
+        "component": "api",
+        "ready": true,
+        "restarts": 0
+      },
+      {
+        "name": "front-5cd7dcfdfd-j2rhw",
+        "uid": "cedb8026-23bb-427d-aa4b-493016e6f8d2",
+        "component": "front",
+        "ready": true,
+        "restarts": 0
+      },
+      {
+        "name": "front-5cd7dcfdfd-nhc4d",
+        "uid": "0a0c92bd-9b03-477a-9c5a-99f565259965",
+        "component": "front",
+        "ready": true,
+        "restarts": 0
+      }
+    ]
+  },
+  {
+    "seconds": 0.908,
+    "pods": [
+      {
+        "name": "api-6dffc9d4d5-7c86j",
+        "uid": "c1ad14eb-86ce-42d8-947a-3487ae3fb3bc",
+        "component": "api",
+        "ready": true,
+        "restarts": 0
+      },
+      {
+        "name": "api-6dffc9d4d5-wwrhh",
+        "uid": "ef4d1071-1838-4496-98a1-583d2d666b43",
+        "component": "api",
+        "ready": true,
+        "restarts": 0
+      },
+      {
+        "name": "db-0",
+        "uid": "a0e4bfe3-2660-46b9-8fc9-a1c9af47d386",
+        "component": "database",
+        "ready": false,
+        "restarts": 0
+      },
+      {
+        "name": "front-5cd7dcfdfd-j2rhw",
+        "uid": "cedb8026-23bb-427d-aa4b-493016e6f8d2",
+        "component": "front",
+        "ready": true,
+        "restarts": 0
+      },
+      {
+        "name": "front-5cd7dcfdfd-nhc4d",
+        "uid": "0a0c92bd-9b03-477a-9c5a-99f565259965",
+        "component": "front",
+        "ready": true,
+        "restarts": 0
+      }
+    ]
+  },
+  {
+    "seconds": 1.373,
+    "pods": [
+      {
+        "name": "api-6dffc9d4d5-7c86j",
+        "uid": "c1ad14eb-86ce-42d8-947a-3487ae3fb3bc",
+        "component": "api",
+        "ready": true,
+        "restarts": 0
+      },
+      {
+        "name": "api-6dffc9d4d5-wwrhh",
+        "uid": "ef4d1071-1838-4496-98a1-583d2d666b43",
+        "component": "api",
+        "ready": true,
+        "restarts": 0
+      },
+      {
+        "name": "db-0",
+        "uid": "a0e4bfe3-2660-46b9-8fc9-a1c9af47d386",
+        "component": "database",
+        "ready": false,
+        "restarts": 0
+      },
+      {
+        "name": "front-5cd7dcfdfd-j2rhw",
+        "uid": "cedb8026-23bb-427d-aa4b-493016e6f8d2",
+        "component": "front",
+        "ready": true,
+        "restarts": 0
+      },
+      {
+        "name": "front-5cd7dcfdfd-nhc4d",
+        "uid": "0a0c92bd-9b03-477a-9c5a-99f565259965",
+        "component": "front",
+        "ready": true,
+        "restarts": 0
+      }
+    ]
+  },
+  {
+    "seconds": 1.84,
+    "pods": [
+      {
+        "name": "api-6dffc9d4d5-7c86j",
+        "uid": "c1ad14eb-86ce-42d8-947a-3487ae3fb3bc",
+        "component": "api",
+        "ready": true,
+        "restarts": 0
+      },
+      {
+        "name": "api-6dffc9d4d5-wwrhh",
+        "uid": "ef4d1071-1838-4496-98a1-583d2d666b43",
+        "component": "api",
+        "ready": true,
+        "restarts": 0
+      },
+      {
+        "name": "db-0",
+        "uid": "a0e4bfe3-2660-46b9-8fc9-a1c9af47d386",
+        "component": "database",
+        "ready": false,
+        "restarts": 0
+      },
+      {
+        "name": "front-5cd7dcfdfd-j2rhw",
+        "uid": "cedb8026-23bb-427d-aa4b-493016e6f8d2",
+        "component": "front",
+        "ready": true,
+        "restarts": 0
+      },
+      {
+        "name": "front-5cd7dcfdfd-nhc4d",
+        "uid": "0a0c92bd-9b03-477a-9c5a-99f565259965",
+        "component": "front",
+        "ready": true,
+        "restarts": 0
+      }
+    ]
+  },
+  {
+    "seconds": 2.311,
+    "pods": [
+      {
+        "name": "api-6dffc9d4d5-7c86j",
+        "uid": "c1ad14eb-86ce-42d8-947a-3487ae3fb3bc",
+        "component": "api",
+        "ready": true,
+        "restarts": 0
+      },
+      {
+        "name": "api-6dffc9d4d5-wwrhh",
+        "uid": "ef4d1071-1838-4496-98a1-583d2d666b43",
+        "component": "api",
+        "ready": true,
+        "restarts": 0
+      },
+      {
+        "name": "db-0",
+        "uid": "a0e4bfe3-2660-46b9-8fc9-a1c9af47d386",
+        "component": "database",
+        "ready": false,
+        "restarts": 0
+      },
+      {
+        "name": "front-5cd7dcfdfd-j2rhw",
+        "uid": "cedb8026-23bb-427d-aa4b-493016e6f8d2",
+        "component": "front",
+        "ready": true,
+        "restarts": 0
+      },
+      {
+        "name": "front-5cd7dcfdfd-nhc4d",
+        "uid": "0a0c92bd-9b03-477a-9c5a-99f565259965",
+        "component": "front",
+        "ready": true,
+        "restarts": 0
+      }
+    ]
+  },
+  {
+    "seconds": 2.781,
+    "pods": [
+      {
+        "name": "api-6dffc9d4d5-7c86j",
+        "uid": "c1ad14eb-86ce-42d8-947a-3487ae3fb3bc",
+        "component": "api",
+        "ready": true,
+        "restarts": 0
+      },
+      {
+        "name": "api-6dffc9d4d5-wwrhh",
+        "uid": "ef4d1071-1838-4496-98a1-583d2d666b43",
+        "component": "api",
+        "ready": true,
+        "restarts": 0
+      },
+      {
+        "name": "db-0",
+        "uid": "a0e4bfe3-2660-46b9-8fc9-a1c9af47d386",
+        "component": "database",
+        "ready": false,
+        "restarts": 0
+      },
+      {
+        "name": "front-5cd7dcfdfd-j2rhw",
+        "uid": "cedb8026-23bb-427d-aa4b-493016e6f8d2",
+        "component": "front",
+        "ready": true,
+        "restarts": 0
+      },
+      {
+        "name": "front-5cd7dcfdfd-nhc4d",
+        "uid": "0a0c92bd-9b03-477a-9c5a-99f565259965",
+        "component": "front",
+        "ready": true,
+        "restarts": 0
+      }
+    ]
+  },
+  {
+    "seconds": 3.263,
+    "pods": [
+      {
+        "name": "api-6dffc9d4d5-7c86j",
+        "uid": "c1ad14eb-86ce-42d8-947a-3487ae3fb3bc",
+        "component": "api",
+        "ready": true,
+        "restarts": 0
+      },
+      {
+        "name": "api-6dffc9d4d5-wwrhh",
+        "uid": "ef4d1071-1838-4496-98a1-583d2d666b43",
+        "component": "api",
+        "ready": true,
+        "restarts": 0
+      },
+      {
+        "name": "db-0",
+        "uid": "a0e4bfe3-2660-46b9-8fc9-a1c9af47d386",
+        "component": "database",
+        "ready": false,
+        "restarts": 0
+      },
+      {
+        "name": "front-5cd7dcfdfd-j2rhw",
+        "uid": "cedb8026-23bb-427d-aa4b-493016e6f8d2",
+        "component": "front",
+        "ready": true,
+        "restarts": 0
+      },
+      {
+        "name": "front-5cd7dcfdfd-nhc4d",
+        "uid": "0a0c92bd-9b03-477a-9c5a-99f565259965",
+        "component": "front",
+        "ready": true,
+        "restarts": 0
+      }
+    ]
+  },
+  {
+    "seconds": 3.736,
+    "pods": [
+      {
+        "name": "api-6dffc9d4d5-7c86j",
+        "uid": "c1ad14eb-86ce-42d8-947a-3487ae3fb3bc",
+        "component": "api",
+        "ready": true,
+        "restarts": 0
+      },
+      {
+        "name": "api-6dffc9d4d5-wwrhh",
+        "uid": "ef4d1071-1838-4496-98a1-583d2d666b43",
+        "component": "api",
+        "ready": true,
+        "restarts": 0
+      },
+      {
+        "name": "db-0",
+        "uid": "a0e4bfe3-2660-46b9-8fc9-a1c9af47d386",
+        "component": "database",
+        "ready": false,
+        "restarts": 0
+      },
+      {
+        "name": "front-5cd7dcfdfd-j2rhw",
+        "uid": "cedb8026-23bb-427d-aa4b-493016e6f8d2",
+        "component": "front",
+        "ready": true,
+        "restarts": 0
+      },
+      {
+        "name": "front-5cd7dcfdfd-nhc4d",
+        "uid": "0a0c92bd-9b03-477a-9c5a-99f565259965",
+        "component": "front",
+        "ready": true,
+        "restarts": 0
+      }
+    ]
+  },
+  {
+    "seconds": 4.219,
+    "pods": [
+      {
+        "name": "api-6dffc9d4d5-7c86j",
+        "uid": "c1ad14eb-86ce-42d8-947a-3487ae3fb3bc",
+        "component": "api",
+        "ready": true,
+        "restarts": 0
+      },
+      {
+        "name": "api-6dffc9d4d5-wwrhh",
+        "uid": "ef4d1071-1838-4496-98a1-583d2d666b43",
+        "component": "api",
+        "ready": true,
+        "restarts": 0
+      },
+      {
+        "name": "db-0",
+        "uid": "a0e4bfe3-2660-46b9-8fc9-a1c9af47d386",
+        "component": "database",
+        "ready": true,
+        "restarts": 0
+      },
+      {
+        "name": "front-5cd7dcfdfd-j2rhw",
+        "uid": "cedb8026-23bb-427d-aa4b-493016e6f8d2",
+        "component": "front",
+        "ready": true,
+        "restarts": 0
+      },
+      {
+        "name": "front-5cd7dcfdfd-nhc4d",
+        "uid": "0a0c92bd-9b03-477a-9c5a-99f565259965",
+        "component": "front",
+        "ready": true,
+        "restarts": 0
+      }
+    ]
+  },
+  {
+    "seconds": 4.689,
+    "pods": [
+      {
+        "name": "api-6dffc9d4d5-7c86j",
+        "uid": "c1ad14eb-86ce-42d8-947a-3487ae3fb3bc",
+        "component": "api",
+        "ready": true,
+        "restarts": 0
+      },
+      {
+        "name": "api-6dffc9d4d5-wwrhh",
+        "uid": "ef4d1071-1838-4496-98a1-583d2d666b43",
+        "component": "api",
+        "ready": true,
+        "restarts": 0
+      },
+      {
+        "name": "db-0",
+        "uid": "a0e4bfe3-2660-46b9-8fc9-a1c9af47d386",
+        "component": "database",
+        "ready": true,
+        "restarts": 0
+      },
+      {
+        "name": "front-5cd7dcfdfd-j2rhw",
+        "uid": "cedb8026-23bb-427d-aa4b-493016e6f8d2",
+        "component": "front",
+        "ready": true,
+        "restarts": 0
+      },
+      {
+        "name": "front-5cd7dcfdfd-nhc4d",
+        "uid": "0a0c92bd-9b03-477a-9c5a-99f565259965",
+        "component": "front",
+        "ready": true,
+        "restarts": 0
+      }
+    ]
+  },
+  {
+    "seconds": 5.17,
+    "pods": [
+      {
+        "name": "api-6dffc9d4d5-7c86j",
+        "uid": "c1ad14eb-86ce-42d8-947a-3487ae3fb3bc",
+        "component": "api",
+        "ready": true,
+        "restarts": 0
+      },
+      {
+        "name": "api-6dffc9d4d5-wwrhh",
+        "uid": "ef4d1071-1838-4496-98a1-583d2d666b43",
+        "component": "api",
+        "ready": true,
+        "restarts": 0
+      },
+      {
+        "name": "db-0",
+        "uid": "a0e4bfe3-2660-46b9-8fc9-a1c9af47d386",
+        "component": "database",
+        "ready": true,
+        "restarts": 0
+      },
+      {
+        "name": "front-5cd7dcfdfd-j2rhw",
+        "uid": "cedb8026-23bb-427d-aa4b-493016e6f8d2",
+        "component": "front",
+        "ready": true,
+        "restarts": 0
+      },
+      {
+        "name": "front-5cd7dcfdfd-nhc4d",
+        "uid": "0a0c92bd-9b03-477a-9c5a-99f565259965",
+        "component": "front",
+        "ready": true,
+        "restarts": 0
+      }
+    ]
+  },
+  {
+    "seconds": 5.654,
+    "pods": [
+      {
+        "name": "api-6dffc9d4d5-7c86j",
+        "uid": "c1ad14eb-86ce-42d8-947a-3487ae3fb3bc",
+        "component": "api",
+        "ready": true,
+        "restarts": 0
+      },
+      {
+        "name": "api-6dffc9d4d5-wwrhh",
+        "uid": "ef4d1071-1838-4496-98a1-583d2d666b43",
+        "component": "api",
+        "ready": true,
+        "restarts": 0
+      },
+      {
+        "name": "db-0",
+        "uid": "a0e4bfe3-2660-46b9-8fc9-a1c9af47d386",
+        "component": "database",
+        "ready": true,
+        "restarts": 0
+      },
+      {
+        "name": "front-5cd7dcfdfd-j2rhw",
+        "uid": "cedb8026-23bb-427d-aa4b-493016e6f8d2",
+        "component": "front",
+        "ready": true,
+        "restarts": 0
+      },
+      {
+        "name": "front-5cd7dcfdfd-nhc4d",
+        "uid": "0a0c92bd-9b03-477a-9c5a-99f565259965",
+        "component": "front",
+        "ready": true,
+        "restarts": 0
+      }
+    ]
+  },
+  {
+    "seconds": 6.135,
+    "pods": [
+      {
+        "name": "api-6dffc9d4d5-7c86j",
+        "uid": "c1ad14eb-86ce-42d8-947a-3487ae3fb3bc",
+        "component": "api",
+        "ready": true,
+        "restarts": 0
+      },
+      {
+        "name": "api-6dffc9d4d5-wwrhh",
+        "uid": "ef4d1071-1838-4496-98a1-583d2d666b43",
+        "component": "api",
+        "ready": true,
+        "restarts": 0
+      },
+      {
+        "name": "db-0",
+        "uid": "a0e4bfe3-2660-46b9-8fc9-a1c9af47d386",
+        "component": "database",
+        "ready": true,
+        "restarts": 0
+      },
+      {
+        "name": "front-5cd7dcfdfd-j2rhw",
+        "uid": "cedb8026-23bb-427d-aa4b-493016e6f8d2",
+        "component": "front",
+        "ready": true,
+        "restarts": 0
+      },
+      {
+        "name": "front-5cd7dcfdfd-nhc4d",
+        "uid": "0a0c92bd-9b03-477a-9c5a-99f565259965",
+        "component": "front",
+        "ready": true,
+        "restarts": 0
+      }
+    ]
+  },
+  {
+    "seconds": 6.623,
+    "pods": [
+      {
+        "name": "api-6dffc9d4d5-7c86j",
+        "uid": "c1ad14eb-86ce-42d8-947a-3487ae3fb3bc",
+        "component": "api",
+        "ready": true,
+        "restarts": 0
+      },
+      {
+        "name": "api-6dffc9d4d5-wwrhh",
+        "uid": "ef4d1071-1838-4496-98a1-583d2d666b43",
+        "component": "api",
+        "ready": true,
+        "restarts": 0
+      },
+      {
+        "name": "db-0",
+        "uid": "a0e4bfe3-2660-46b9-8fc9-a1c9af47d386",
+        "component": "database",
+        "ready": true,
+        "restarts": 0
+      },
+      {
+        "name": "front-5cd7dcfdfd-j2rhw",
+        "uid": "cedb8026-23bb-427d-aa4b-493016e6f8d2",
+        "component": "front",
+        "ready": true,
+        "restarts": 0
+      },
+      {
+        "name": "front-5cd7dcfdfd-nhc4d",
+        "uid": "0a0c92bd-9b03-477a-9c5a-99f565259965",
+        "component": "front",
+        "ready": true,
+        "restarts": 0
+      }
+    ]
+  },
+  {
+    "seconds": 7.101,
+    "pods": [
+      {
+        "name": "api-6dffc9d4d5-7c86j",
+        "uid": "c1ad14eb-86ce-42d8-947a-3487ae3fb3bc",
+        "component": "api",
+        "ready": true,
+        "restarts": 0
+      },
+      {
+        "name": "api-6dffc9d4d5-wwrhh",
+        "uid": "ef4d1071-1838-4496-98a1-583d2d666b43",
+        "component": "api",
+        "ready": true,
+        "restarts": 0
+      },
+      {
+        "name": "db-0",
+        "uid": "a0e4bfe3-2660-46b9-8fc9-a1c9af47d386",
+        "component": "database",
+        "ready": true,
+        "restarts": 0
+      },
+      {
+        "name": "front-5cd7dcfdfd-j2rhw",
+        "uid": "cedb8026-23bb-427d-aa4b-493016e6f8d2",
+        "component": "front",
+        "ready": true,
+        "restarts": 0
+      },
+      {
+        "name": "front-5cd7dcfdfd-nhc4d",
+        "uid": "0a0c92bd-9b03-477a-9c5a-99f565259965",
+        "component": "front",
+        "ready": true,
+        "restarts": 0
+      }
+    ]
+  },
+  {
+    "seconds": 7.572,
+    "pods": [
+      {
+        "name": "api-6dffc9d4d5-7c86j",
+        "uid": "c1ad14eb-86ce-42d8-947a-3487ae3fb3bc",
+        "component": "api",
+        "ready": true,
+        "restarts": 0
+      },
+      {
+        "name": "api-6dffc9d4d5-wwrhh",
+        "uid": "ef4d1071-1838-4496-98a1-583d2d666b43",
+        "component": "api",
+        "ready": true,
+        "restarts": 0
+      },
+      {
+        "name": "db-0",
+        "uid": "a0e4bfe3-2660-46b9-8fc9-a1c9af47d386",
+        "component": "database",
+        "ready": true,
+        "restarts": 0
+      },
+      {
+        "name": "front-5cd7dcfdfd-j2rhw",
+        "uid": "cedb8026-23bb-427d-aa4b-493016e6f8d2",
+        "component": "front",
+        "ready": true,
+        "restarts": 0
+      },
+      {
+        "name": "front-5cd7dcfdfd-nhc4d",
+        "uid": "0a0c92bd-9b03-477a-9c5a-99f565259965",
+        "component": "front",
+        "ready": true,
+        "restarts": 0
+      }
+    ]
+  },
+  {
+    "seconds": 8.042,
+    "pods": [
+      {
+        "name": "api-6dffc9d4d5-7c86j",
+        "uid": "c1ad14eb-86ce-42d8-947a-3487ae3fb3bc",
+        "component": "api",
+        "ready": true,
+        "restarts": 0
+      },
+      {
+        "name": "api-6dffc9d4d5-wwrhh",
+        "uid": "ef4d1071-1838-4496-98a1-583d2d666b43",
+        "component": "api",
+        "ready": true,
+        "restarts": 0
+      },
+      {
+        "name": "db-0",
+        "uid": "a0e4bfe3-2660-46b9-8fc9-a1c9af47d386",
+        "component": "database",
+        "ready": true,
+        "restarts": 0
+      },
+      {
+        "name": "front-5cd7dcfdfd-j2rhw",
+        "uid": "cedb8026-23bb-427d-aa4b-493016e6f8d2",
+        "component": "front",
+        "ready": true,
+        "restarts": 0
+      },
+      {
+        "name": "front-5cd7dcfdfd-nhc4d",
+        "uid": "0a0c92bd-9b03-477a-9c5a-99f565259965",
+        "component": "front",
+        "ready": true,
+        "restarts": 0
+      }
+    ]
+  },
+  {
+    "seconds": 8.523,
+    "pods": [
+      {
+        "name": "api-6dffc9d4d5-7c86j",
+        "uid": "c1ad14eb-86ce-42d8-947a-3487ae3fb3bc",
+        "component": "api",
+        "ready": true,
+        "restarts": 0
+      },
+      {
+        "name": "api-6dffc9d4d5-wwrhh",
+        "uid": "ef4d1071-1838-4496-98a1-583d2d666b43",
+        "component": "api",
+        "ready": true,
+        "restarts": 0
+      },
+      {
+        "name": "db-0",
+        "uid": "a0e4bfe3-2660-46b9-8fc9-a1c9af47d386",
+        "component": "database",
+        "ready": true,
+        "restarts": 0
+      },
+      {
+        "name": "front-5cd7dcfdfd-j2rhw",
+        "uid": "cedb8026-23bb-427d-aa4b-493016e6f8d2",
+        "component": "front",
+        "ready": true,
+        "restarts": 0
+      },
+      {
+        "name": "front-5cd7dcfdfd-nhc4d",
+        "uid": "0a0c92bd-9b03-477a-9c5a-99f565259965",
+        "component": "front",
+        "ready": true,
+        "restarts": 0
+      }
+    ]
+  },
+  {
+    "seconds": 8.997,
+    "pods": [
+      {
+        "name": "api-6dffc9d4d5-7c86j",
+        "uid": "c1ad14eb-86ce-42d8-947a-3487ae3fb3bc",
+        "component": "api",
+        "ready": true,
+        "restarts": 0
+      },
+      {
+        "name": "api-6dffc9d4d5-wwrhh",
+        "uid": "ef4d1071-1838-4496-98a1-583d2d666b43",
+        "component": "api",
+        "ready": true,
+        "restarts": 0
+      },
+      {
+        "name": "db-0",
+        "uid": "a0e4bfe3-2660-46b9-8fc9-a1c9af47d386",
+        "component": "database",
+        "ready": true,
+        "restarts": 0
+      },
+      {
+        "name": "front-5cd7dcfdfd-j2rhw",
+        "uid": "cedb8026-23bb-427d-aa4b-493016e6f8d2",
+        "component": "front",
+        "ready": true,
+        "restarts": 0
+      },
+      {
+        "name": "front-5cd7dcfdfd-nhc4d",
+        "uid": "0a0c92bd-9b03-477a-9c5a-99f565259965",
+        "component": "front",
+        "ready": true,
+        "restarts": 0
+      }
+    ]
+  },
+  {
+    "seconds": 9.488,
+    "pods": [
+      {
+        "name": "api-6dffc9d4d5-7c86j",
+        "uid": "c1ad14eb-86ce-42d8-947a-3487ae3fb3bc",
+        "component": "api",
+        "ready": true,
+        "restarts": 0
+      },
+      {
+        "name": "api-6dffc9d4d5-wwrhh",
+        "uid": "ef4d1071-1838-4496-98a1-583d2d666b43",
+        "component": "api",
+        "ready": true,
+        "restarts": 0
+      },
+      {
+        "name": "db-0",
+        "uid": "a0e4bfe3-2660-46b9-8fc9-a1c9af47d386",
+        "component": "database",
+        "ready": true,
+        "restarts": 0
+      },
+      {
+        "name": "front-5cd7dcfdfd-j2rhw",
+        "uid": "cedb8026-23bb-427d-aa4b-493016e6f8d2",
+        "component": "front",
+        "ready": true,
+        "restarts": 0
+      },
+      {
+        "name": "front-5cd7dcfdfd-nhc4d",
+        "uid": "0a0c92bd-9b03-477a-9c5a-99f565259965",
+        "component": "front",
+        "ready": true,
+        "restarts": 0
+      }
+    ]
+  }
+]

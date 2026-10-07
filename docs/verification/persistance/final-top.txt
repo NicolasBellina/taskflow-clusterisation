@@ -1,0 +1,6 @@
+NAME                     CPU(cores)   MEMORY(bytes)   
+api-6dffc9d4d5-7c86j     10m          25Mi            
+api-6dffc9d4d5-wwrhh     2m           27Mi            
+db-0                     24m          39Mi            
+front-5cd7dcfdfd-j2rhw   1m           9Mi             
+front-5cd7dcfdfd-nhc4d   1m           9Mi             

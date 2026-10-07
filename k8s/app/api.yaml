@@ -1,3 +1,17 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: api-config
+  namespace: taskflow
+data:
+  NODE_ENV: production
+  APP_ENV: kubernetes-lab
+  HOST: 0.0.0.0
+  PORT: '3000'
+  DB_HOST: db
+  DB_PORT: '5432'
+  DB_PASSWORD_FILE: /run/secrets/db/password
+---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -8,7 +22,6 @@ metadata:
     app.kubernetes.io/component: api
 spec:
   replicas: 2
-  # Temporisation prudente ; une sonde de disponibilité sera ajoutée plus tard.
   minReadySeconds: 5
   strategy:
     type: RollingUpdate
@@ -25,36 +38,77 @@ spec:
         app.kubernetes.io/name: taskflow
         app.kubernetes.io/component: api
     spec:
-      # Évite les variables DB_PORT/API_PORT injectées depuis les Services.
       enableServiceLinks: false
-      terminationGracePeriodSeconds: 10
+      terminationGracePeriodSeconds: 20
       containers:
-        - name: api
-          image: nicolasbellina/taskflow-api:1.0.0
-          ports:
-            - name: http
-              containerPort: 3000
-          env:
-            - name: NODE_ENV
-              value: production
-            - name: APP_ENV
-              value: kubernetes-lab
-            - name: HOST
-              value: "0.0.0.0"
-            - name: PORT
-              value: "3000"
-            # Nom stable du Service, résolu par le DNS du cluster.
-            - name: DB_HOST
-              value: db
-            - name: DB_PORT
-              value: "5432"
-            - name: DB_NAME
-              value: taskflow
-            - name: DB_USER
-              value: taskflow
-            # Même valeur fictive que dans db.yaml ; aucun secret réel.
-            - name: DB_PASSWORD
-              value: taskflow-lab-only-not-a-real-secret
+      - name: api
+        image: nicolasbellina/taskflow-api:1.0.0
+        ports:
+        - name: http
+          containerPort: 3000
+        env:
+        - name: DB_PORT
+          valueFrom:
+            configMapKeyRef:
+              name: api-config
+              key: DB_PORT
+        - name: DB_NAME
+          valueFrom:
+            configMapKeyRef:
+              name: db-config
+              key: POSTGRES_DB
+        - name: DB_USER
+          valueFrom:
+            configMapKeyRef:
+              name: db-config
+              key: POSTGRES_USER
+        envFrom:
+        - configMapRef:
+            name: api-config
+        volumeMounts:
+        - name: db-credentials
+          mountPath: /run/secrets/db
+          readOnly: true
+        startupProbe:
+          httpGet:
+            path: /healthz
+            port: http
+          periodSeconds: 2
+          timeoutSeconds: 2
+          failureThreshold: 30
+        livenessProbe:
+          httpGet:
+            path: /healthz
+            port: http
+          periodSeconds: 10
+          timeoutSeconds: 2
+          failureThreshold: 3
+        readinessProbe:
+          httpGet:
+            path: /readyz
+            port: http
+          periodSeconds: 5
+          timeoutSeconds: 6
+          failureThreshold: 2
+        resources:
+          requests:
+            cpu: 100m
+            memory: 128Mi
+          limits:
+            cpu: 500m
+            memory: 256Mi
+        lifecycle:
+          preStop:
+            exec:
+              command:
+              - /bin/sh
+              - -c
+              - sleep 5
+      volumes:
+      - name: db-credentials
+        secret:
+          secretName: db-credentials
+          defaultMode: 292
 ---
 apiVersion: v1
 kind: Service
@@ -70,6 +124,6 @@ spec:
     app.kubernetes.io/name: taskflow
     app.kubernetes.io/component: api
   ports:
-    - name: http
-      port: 3000
-      targetPort: http
+  - name: http
+    port: 3000
+    targetPort: http

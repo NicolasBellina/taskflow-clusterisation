@@ -1,0 +1,37 @@
+[
+  {
+    "name": "api-6dffc9d4d5-7c86j",
+    "uid": "c1ad14eb-86ce-42d8-947a-3487ae3fb3bc",
+    "component": "api",
+    "ready": true,
+    "restarts": 0
+  },
+  {
+    "name": "api-6dffc9d4d5-wwrhh",
+    "uid": "ef4d1071-1838-4496-98a1-583d2d666b43",
+    "component": "api",
+    "ready": true,
+    "restarts": 0
+  },
+  {
+    "name": "db-0",
+    "uid": "45dd35b9-25b6-44da-9266-8476314b2080",
+    "component": "database",
+    "ready": true,
+    "restarts": 0
+  },
+  {
+    "name": "front-5cd7dcfdfd-j2rhw",
+    "uid": "cedb8026-23bb-427d-aa4b-493016e6f8d2",
+    "component": "front",
+    "ready": true,
+    "restarts": 0
+  },
+  {
+    "name": "front-5cd7dcfdfd-nhc4d",
+    "uid": "0a0c92bd-9b03-477a-9c5a-99f565259965",
+    "component": "front",
+    "ready": true,
+    "restarts": 0
+  }
+]

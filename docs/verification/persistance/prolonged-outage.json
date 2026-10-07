@@ -1,0 +1,59 @@
+{
+  "api_before": [
+    {
+      "name": "api-6dffc9d4d5-7c86j",
+      "uid": "c1ad14eb-86ce-42d8-947a-3487ae3fb3bc",
+      "ready": true,
+      "restarts": 0,
+      "qos": "Burstable"
+    },
+    {
+      "name": "api-6dffc9d4d5-wwrhh",
+      "uid": "ef4d1071-1838-4496-98a1-583d2d666b43",
+      "ready": true,
+      "restarts": 0,
+      "qos": "Burstable"
+    }
+  ],
+  "api_without_database": [
+    {
+      "name": "api-6dffc9d4d5-7c86j",
+      "uid": "c1ad14eb-86ce-42d8-947a-3487ae3fb3bc",
+      "ready": false,
+      "restarts": 0,
+      "qos": "Burstable"
+    },
+    {
+      "name": "api-6dffc9d4d5-wwrhh",
+      "uid": "ef4d1071-1838-4496-98a1-583d2d666b43",
+      "ready": false,
+      "restarts": 0,
+      "qos": "Burstable"
+    }
+  ],
+  "front": {
+    "status": 200,
+    "body": "<!doctype html>\n<html lang=\"fr\">\n  <head>\n    <meta charset=\"UTF-8\" />\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />\n    <link rel=\"icon\" type=\"image/svg+xml\" href=\"/favicon.svg\" />\n    <title>TaskFlow</title>\n    <script type=\"module\" crossorigin src=\"/assets/index-VqnvRzr0.js\"></script>\n    <link rel=\"stylesheet\" crossorigin href=\"/assets/index-D3uTQ4FB.css\">\n  </head>\n  <body>\n    <div id=\"app\"></div>\n  </body>\n</html>\n"
+  },
+  "tasks": {
+    "status": 502,
+    "body": "<html>\r\n<head><title>502 Bad Gateway</title></head>\r\n<body>\r\n<center><h1>502 Bad Gateway</h1></center>\r\n<hr><center>nginx/1.30.5</center>\r\n</body>\r\n</html>\r\n"
+  },
+  "health": "[{\"path\":\"/healthz\",\"status\":200,\"body\":{\"status\":\"ok\",\"version\":\"1.0.0\",\"hostname\":\"api-6dffc9d4d5-7c86j\"}},{\"path\":\"/readyz\",\"status\":503,\"body\":{\"status\":\"database-unavailable\",\"hostname\":\"api-6dffc9d4d5-7c86j\"}}]\n",
+  "api_after": [
+    {
+      "name": "api-6dffc9d4d5-7c86j",
+      "uid": "c1ad14eb-86ce-42d8-947a-3487ae3fb3bc",
+      "ready": true,
+      "restarts": 0,
+      "qos": "Burstable"
+    },
+    {
+      "name": "api-6dffc9d4d5-wwrhh",
+      "uid": "ef4d1071-1838-4496-98a1-583d2d666b43",
+      "ready": true,
+      "restarts": 0,
+      "qos": "Burstable"
+    }
+  ]
+}

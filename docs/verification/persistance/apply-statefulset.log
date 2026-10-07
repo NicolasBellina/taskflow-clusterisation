@@ -1,0 +1,11 @@
+namespace/taskflow unchanged
+configmap/api-config unchanged
+deployment.apps/api unchanged
+service/api unchanged
+configmap/db-config unchanged
+statefulset.apps/db created
+service/db unchanged
+service/db-headless created
+configmap/front-config unchanged
+deployment.apps/front unchanged
+service/front unchanged

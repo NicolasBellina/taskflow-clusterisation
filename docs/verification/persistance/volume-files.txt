@@ -1,0 +1,28 @@
+/var/lib/rancher/k3s/storage/pvc-0fb692fb-dead-41fb-8e66-799b3cd6a071_taskflow_data-db-0
+total 136
+drwx------ 19   70 root  4096 Oct  7 16:35 .
+drwxrwxrwx  3 root root  4096 Oct  7 16:26 ..
+-rw-------  1   70   70     3 Oct  7 16:26 PG_VERSION
+drwx------  6   70   70  4096 Oct  7 16:35 base
+drwx------  2   70   70  4096 Oct  7 16:36 global
+drwx------  2   70   70  4096 Oct  7 16:26 pg_commit_ts
+drwx------  2   70   70  4096 Oct  7 16:26 pg_dynshmem
+-rw-------  1   70   70  5743 Oct  7 16:26 pg_hba.conf
+-rw-------  1   70   70  2640 Oct  7 16:26 pg_ident.conf
+drwx------  4   70   70  4096 Oct  7 16:35 pg_logical
+drwx------  4   70   70  4096 Oct  7 16:26 pg_multixact
+drwx------  2   70   70  4096 Oct  7 16:26 pg_notify
+drwx------  2   70   70  4096 Oct  7 16:26 pg_replslot
+drwx------  2   70   70  4096 Oct  7 16:26 pg_serial
+drwx------  2   70   70  4096 Oct  7 16:26 pg_snapshots
+drwx------  2   70   70  4096 Oct  7 16:35 pg_stat
+drwx------  2   70   70  4096 Oct  7 16:26 pg_stat_tmp
+drwx------  2   70   70  4096 Oct  7 16:26 pg_subtrans
+drwx------  2   70   70  4096 Oct  7 16:26 pg_tblspc
+drwx------  2   70   70  4096 Oct  7 16:26 pg_twophase
+drwx------  4   70   70  4096 Oct  7 16:35 pg_wal
+drwx------  2   70   70  4096 Oct  7 16:26 pg_xact
+-rw-------  1   70   70    88 Oct  7 16:26 postgresql.auto.conf
+-rw-------  1   70   70 30944 Oct  7 16:26 postgresql.conf
+-rw-------  1   70   70    24 Oct  7 16:35 postmaster.opts
+-rw-------  1   70   70   101 Oct  7 16:35 postmaster.pid

@@ -1,10 +1,10 @@
-# Point de contrôle — séance 3 : Deployments et Services
+# Point de contrôle : séance 5, Deployments et Services
 
-Contrôle réalisé le **7 octobre 2026**, sur le cluster local **`k3d-seance3`** (k3s `v1.32.5+k3s1`, Linux ARM64), depuis macOS/Docker Desktop. Le troisième PDF est intitulé « Séance 5 » dans le cours ; il correspond ici à la troisième séance fournie.
+Contrôle du 7 octobre 2026 sur `k3d-seance3`, sous k3s `v1.32.5+k3s1`, en Linux ARM64 dans Docker Desktop. L'état présenté comprend une base PostgreSQL 17, deux API 1.0.0 et deux fronts 1.0.0.
 
-**État final : une base PostgreSQL 17, deux API 1.0.0 et deux fronts 1.0.0 sont disponibles.** Les quatre fichiers de [k8s/app/](../k8s/app/) suffisent à créer les ressources de l'application. Le [guide détaillé](seance-3-services.md) décrit les six étapes ; le [README](../README.md#réponses-et-justifications--troisième-sujet-deployments-et-services) centralise les réponses et justifications.
+Ces sorties correspondent à la fin de la séance 5, avant l'ajout des sondes et de la persistance. Les manifestes associés sont ceux du commit `3546edc`. Le [compte rendu](seance-05-deployments-services.md) explique les choix et les expériences.
 
-## 1. Sortie Kubernetes réelle
+## 1. Deployments et Services
 
 Commande exécutée avec le kubeconfig privé du poste :
 
@@ -54,16 +54,16 @@ La [réponse JSON finale](verification/services/browser-final-tasks.json) confir
 | Port-forward de `service/api` | `/healthz`, `/readyz` et `/api/tasks` répondent 200. |
 | Manifestes restaurés | Validation serveur réussie ; `kubectl diff -f k8s/app/` retourne 0. |
 
-Le [rapport d'exécution](verification/services/results.json) renvoie les valeurs et périodes des expériences. Le [guide](seance-3-services.md#résultats-effectivement-mesurés) donne les liens vers chaque preuve. Les 397 requêtes couvrent la mise à jour et son retour arrière. Aucun de ces échantillons ne garantit l'absence de toute future erreur, notamment sans readiness probe.
+Le [rapport d'exécution](verification/services/results.json) renvoie les valeurs et périodes des expériences. Le [compte rendu](seance-05-deployments-services.md) présente les expériences et les liens vers les journaux. Les 397 requêtes couvrent la mise à jour et son retour arrière. Aucun de ces échantillons ne garantit l'absence de toute future erreur, notamment sans readiness probe.
 
 L'image **`nicolasbellina/taskflow-api:2.0.0`** a été construite avec une véritable version embarquée 2.0.0 et publiée. Son accès anonyme et son architecture Linux ARM64 ont été [vérifiés](verification/services/anonymous-image-2.json). Digest publié : `sha256:53d00f2259f9d8a7ebce9a4ee66b78dabf56645a5737e7406e793a062fd88402`. Le manifeste final utilise 1.0.0 après le retour arrière demandé.
 
 ## 4. Dépôt et portée du rendu
 
-Dépôt personnel : [NicolasBellina/taskflow-clusterisation](https://github.com/NicolasBellina/taskflow-clusterisation). Lien de rendu : [manifestes k8s/app sur main](https://github.com/NicolasBellina/taskflow-clusterisation/tree/main/k8s/app). Le dépôt étant privé, le destinataire doit disposer de l'accès nécessaire.
+Dépôt personnel : [NicolasBellina/taskflow-clusterisation](https://github.com/NicolasBellina/taskflow-clusterisation). Lien de rendu : [manifestes de cette séance](https://github.com/NicolasBellina/taskflow-clusterisation/tree/3546edc76fedfb98bed0c95e787e2942c08f4fe9/k8s/app). Le dépôt étant privé, le destinataire doit disposer de l'accès nécessaire.
 
-**Livraison Git vérifiée :** le commit d'implémentation [`3546edc`](https://github.com/NicolasBellina/taskflow-clusterisation/commit/3546edc76fedfb98bed0c95e787e2942c08f4fe9) a été enregistré puis envoyé sur `origin/main`. La comparaison avec `git ls-remote origin refs/heads/main` a retrouvé exactement ce commit le 7 octobre 2026. La [preuve d'envoi](verification/services/git-delivery.json) consigne ce contrôle ; un commit documentaire suivant ajoute ce constat au dépôt. Les trois PDF sources, le `.env` local et les kubeconfigs ne sont pas inclus dans la livraison Git. Ce fichier est le rendu préparé ; il ne constitue pas un message envoyé au fil du cours.
+La livraison historique est identifiée par Git : le commit d'implémentation [`3546edc`](https://github.com/NicolasBellina/taskflow-clusterisation/commit/3546edc76fedfb98bed0c95e787e2942c08f4fe9) a été enregistré puis envoyé sur `origin/main`. La comparaison avec `git ls-remote origin refs/heads/main` a retrouvé exactement ce commit le 7 octobre 2026. La [preuve d'envoi](verification/services/git-delivery.json) consigne ce contrôle ; un commit documentaire suivant ajoute ce constat au dépôt. Les PDF sources, le `.env` local et les kubeconfigs ne sont pas inclus dans la livraison Git. Le dépôt dans le fil du cours reste distinct de la publication Git.
 
-**Limite d'environnement :** la VM `k3s-lab` n'a pas été utilisée pour cette séance. ServiceLB est actif sur k3d, où Traefik est désactivé ; la configuration VM fournie conserve Traefik et ServiceLB actifs. Les images TaskFlow sont ARM64 ; une VM AMD64 demande des images compatibles avant déploiement. Il n'y a pas de résultat mesuré de comparaison avec Swarm.
+Concernant l’environnement, la VM `k3s-lab` n'a pas été utilisée pour cette séance. ServiceLB est actif sur k3d, où Traefik est désactivé ; la configuration VM fournie conserve Traefik et ServiceLB actifs. Les images TaskFlow sont ARM64 ; une VM AMD64 demande des images compatibles avant déploiement. Il n'y a pas de résultat mesuré de comparaison avec Swarm.
 
-Le mot de passe des manifestes est uniquement la valeur fictive publique du TP. La base reste sans persistance ; les sondes, Secrets et limites de ressources sont réservés aux séances suivantes, comme demandé par le sujet.
+À cette étape, les manifestes utilisaient une valeur fictive de mot de passe et la base ne disposait pas de volume. Les séances 6 et 7 ont ensuite introduit le Secret, les sondes, les ressources et la persistance.

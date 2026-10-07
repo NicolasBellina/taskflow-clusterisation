@@ -1,0 +1,6 @@
+{
+  "wrong_url_rejected": true,
+  "no_task_mutated_in_either_cluster": true,
+  "correct_url_accepted": true,
+  "error": "ValueError: L'URL ne dessert pas une API du contexte s\u00e9lectionn\u00e9 ; aucune mutation effectu\u00e9e"
+}

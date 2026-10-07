@@ -1,0 +1,26 @@
+{
+  "status": 200,
+  "body": [
+    {
+      "id": 3,
+      "title": "Persistance 20261007T162711Z - tâche 3",
+      "done": false,
+      "createdAt": "2026-10-07T16:27:11.987Z",
+      "updatedAt": "2026-10-07T16:27:11.987Z"
+    },
+    {
+      "id": 2,
+      "title": "Persistance 20261007T162711Z - tâche 2",
+      "done": false,
+      "createdAt": "2026-10-07T16:27:11.977Z",
+      "updatedAt": "2026-10-07T16:27:11.977Z"
+    },
+    {
+      "id": 1,
+      "title": "Persistance 20261007T162711Z - tâche 1",
+      "done": false,
+      "createdAt": "2026-10-07T16:27:11.972Z",
+      "updatedAt": "2026-10-07T16:27:11.972Z"
+    }
+  ]
+}

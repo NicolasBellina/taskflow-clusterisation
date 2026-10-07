@@ -1,14 +1,10 @@
-# Point de contrôle — séance 2 / premiers Pods Kubernetes
+# Point de contrôle : séance 4, premiers Pods
 
-Ce fichier est l'**extrait de rendu** : les trois sorties demandées dans le PDF, à copier dans le fil « Point de contrôle séance 4 ». Le nom « séance 4 » vient du titre interne du fichier fourni pour la séance 2. Le [mode opératoire et les six étapes](notes-kubernetes.md) détaillent le déploiement et les expériences ; le [README](../README.md) regroupe les questions et justifications.
+Ce document rassemble les trois sorties demandées pour la séance 4 : l'état des nœuds, celui des Pods et la réponse de l'API. Le [compte rendu](seance-04-premiers-pods.md) présente la démarche et l'analyse des expériences.
 
-## Environnement et portée des preuves
+Les sorties datent du 7 octobre 2026, à 14 h 05, heure de Paris. Elles concernent k3s dans k3d/Docker Desktop, contexte `k3d-seance2`, sur ARM64. La VM k3s-lab n'a pas été utilisée. L'[audit de 17 h 14](verification/audit-seances.json) a ensuite confirmé le fonctionnement de l'API et de la base ; les extraits ci-dessous restent ceux du premier contrôle.
 
-Sorties **historiques du 7 octobre 2026**, contrôle final à **14 h 05, heure de Paris**. Elles montrent un cluster **k3s dans k3d/Docker Desktop**, contexte `k3d-seance2`, nœud ARM64. **La VM `k3s-lab` demandée par le PDF n'a pas été installée ni testée.** Ces sorties ne constituent pas un contrôle de cette VM et ne décrivent pas forcément l'état actuel du cluster.
-
-Les [résultats historiques](verification/kubernetes/results.json) conservent les expériences d'origine. Le [nouvel audit du 7 octobre à 17 h 14](verification/audit-seances.json) confirme de nouveau les Pods `Running`, `/healthz` et `/readyz` à 200, ainsi que la création et la relecture d'une tâche temporaire. Les sorties reproduites ci-dessous restent celles du contrôle de 14 h 05. Aucun message au fil de cours n'est attesté : le texte ci-dessous est préparé pour le rendu.
-
-## Sortie 1 — les nœuds du cluster
+## 1. Nœuds du cluster
 
 Commande de collecte :
 
@@ -25,7 +21,7 @@ k3d-seance2-server-0   Ready    control-plane,master   29h   v1.32.5+k3s1
 
 Le nœud est `Ready`. Son nom confirme l'environnement k3d utilisé.
 
-## Sortie 2 — les Pods de TaskFlow
+## 2. Pods de TaskFlow
 
 Commande de collecte :
 
@@ -43,7 +39,7 @@ db     1/1     Running   0               3m58s   10.42.0.93   k3d-seance2-server
 
 Les deux Pods s'exécutent dans `taskflow`. Le redémarrage de l'API correspond à l'expérience `kill 1` ; il a redémarré le conteneur sans changer l'UID du Pod. Les IP sont celles de cet instantané et ne doivent pas être réutilisées sans vérification.
 
-## Sortie 3 — réponse HTTP de l'API par port-forward
+## 3. Réponse HTTP par port-forward
 
 Premier terminal :
 

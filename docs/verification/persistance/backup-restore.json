@@ -1,0 +1,10 @@
+{
+  "source": "taskflow",
+  "target": "taskflow_restorecheck",
+  "task_count": 4,
+  "all_rows_equal": true,
+  "dump_bytes": 2450,
+  "restore_output": "SET\nSET\nSET\nSET\nSET\nSET\n set_config \n------------\n \n(1 row)\n\nSET\nSET\nSET\nSET\nSET\nSET\nCREATE TABLE\nCREATE SEQUENCE\nALTER SEQUENCE\nALTER TABLE\nCOPY 4\n setval \n--------\n      4\n(1 row)\n\nALTER TABLE\n",
+  "backup_retained": false,
+  "note": "Test en mémoire, pas de sauvegarde durable automatique"
+}

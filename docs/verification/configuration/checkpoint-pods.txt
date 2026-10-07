@@ -1,0 +1,6 @@
+NAME                     READY   STATUS    RESTARTS   AGE
+api-6dffc9d4d5-7c86j     1/1     Running   0          12m
+api-6dffc9d4d5-wwrhh     1/1     Running   0          12m
+db-0                     1/1     Running   0          10s
+front-5cd7dcfdfd-j2rhw   1/1     Running   0          15m
+front-5cd7dcfdfd-nhc4d   1/1     Running   0          15m

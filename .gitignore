@@ -1,6 +1,7 @@
 # Dépendances et artefacts de construction
 node_modules/
 dist/
+__pycache__/
 
 # Fichiers d'environnement locaux (peuvent contenir des secrets)
 .env

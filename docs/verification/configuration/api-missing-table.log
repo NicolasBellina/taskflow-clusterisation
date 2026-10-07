@@ -1,0 +1,10 @@
+2026-10-07T16:24:19.258Z INFO  [api-7d6fd7c659-wl4dv] Démarrage de taskflow-api 1.0.0 (APP_ENV=kubernetes-lab)
+2026-10-07T16:24:19.273Z INFO  [api-7d6fd7c659-wl4dv] Base de données taskflow joignable sur db:5432, schéma vérifié
+2026-10-07T16:24:19.275Z INFO  [api-7d6fd7c659-wl4dv] API à l'écoute sur 0.0.0.0:3000
+2026-10-07T16:24:26.714Z INFO  [api-7d6fd7c659-wl4dv] POST /api/tasks 201 3.8ms
+2026-10-07T16:24:26.843Z ERROR [api-7d6fd7c659-wl4dv] Erreur sur une connexion inactive : terminating connection due to administrator command
+2026-10-07T16:24:44.138Z ERROR [api-7d6fd7c659-wl4dv] GET /api/tasks : error: relation "tasks" does not exist
+    at /app/node_modules/pg-pool/index.js:45:11
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async file:///app/src/routes/tasks.js:45:20
+2026-10-07T16:24:44.138Z INFO  [api-7d6fd7c659-wl4dv] GET /api/tasks 500 4.0ms

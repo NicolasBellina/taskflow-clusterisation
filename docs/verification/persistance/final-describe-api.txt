@@ -1,0 +1,74 @@
+Name:             api-6dffc9d4d5-7c86j
+Namespace:        taskflow
+Priority:         0
+Service Account:  default
+Node:             k3d-taskflow-final-server-0/172.23.0.3
+Start Time:       Wed, 07 Oct 2026 18:26:18 +0200
+Labels:           app.kubernetes.io/component=api
+                  app.kubernetes.io/name=taskflow
+                  pod-template-hash=6dffc9d4d5
+Annotations:      kubectl.kubernetes.io/restartedAt: 2026-10-07T18:26:18+02:00
+Status:           Running
+IP:               10.42.0.28
+IPs:
+  IP:           10.42.0.28
+Controlled By:  ReplicaSet/api-6dffc9d4d5
+Containers:
+  api:
+    Container ID:   containerd://19d5abf696db46f16db87de711c6a12d27d9dcf866fde9ff1e4a65fe1563e4e1
+    Image:          nicolasbellina/taskflow-api:1.0.0
+    Image ID:       docker.io/nicolasbellina/taskflow-api@sha256:b63fd156d12d1f9fbde18984b7b0972d92b919f2fe838c32cb78deb70e585bff
+    Port:           3000/TCP (http)
+    Host Port:      0/TCP (http)
+    State:          Running
+      Started:      Wed, 07 Oct 2026 18:26:18 +0200
+    Ready:          True
+    Restart Count:  0
+    Limits:
+      cpu:     500m
+      memory:  256Mi
+    Requests:
+      cpu:      100m
+      memory:   128Mi
+    Liveness:   http-get http://:http/healthz delay=0s timeout=2s period=10s #success=1 #failure=3
+    Readiness:  http-get http://:http/readyz delay=0s timeout=6s period=5s #success=1 #failure=2
+    Startup:    http-get http://:http/healthz delay=0s timeout=2s period=2s #success=1 #failure=30
+    Environment Variables from:
+      api-config  ConfigMap  Optional: false
+    Environment:
+      DB_PORT:  <set to the key 'DB_PORT' of config map 'api-config'>       Optional: false
+      DB_NAME:  <set to the key 'POSTGRES_DB' of config map 'db-config'>    Optional: false
+      DB_USER:  <set to the key 'POSTGRES_USER' of config map 'db-config'>  Optional: false
+    Mounts:
+      /run/secrets/db from db-credentials (ro)
+      /var/run/secrets/kubernetes.io/serviceaccount from kube-api-access-mjk9j (ro)
+Conditions:
+  Type                        Status
+  PodReadyToStartContainers   True 
+  Initialized                 True 
+  Ready                       True 
+  ContainersReady             True 
+  PodScheduled                True 
+Volumes:
+  db-credentials:
+    Type:        Secret (a volume populated by a Secret)
+    SecretName:  db-credentials
+    Optional:    false
+  kube-api-access-mjk9j:
+    Type:                    Projected (a volume that contains injected data from multiple sources)
+    TokenExpirationSeconds:  3607
+    ConfigMapName:           kube-root-ca.crt
+    Optional:                false
+    DownwardAPI:             true
+QoS Class:                   Burstable
+Node-Selectors:              <none>
+Tolerations:                 node.kubernetes.io/not-ready:NoExecute op=Exists for 300s
+                             node.kubernetes.io/unreachable:NoExecute op=Exists for 300s
+Events:
+  Type     Reason     Age                  From               Message
+  ----     ------     ----                 ----               -------
+  Normal   Scheduled  10m                  default-scheduler  Successfully assigned taskflow/api-6dffc9d4d5-7c86j to k3d-taskflow-final-server-0
+  Normal   Pulled     10m                  kubelet            Container image "nicolasbellina/taskflow-api:1.0.0" already present on machine
+  Normal   Created    10m                  kubelet            Created container: api
+  Normal   Started    10m                  kubelet            Started container api
+  Warning  Unhealthy  34s (x6 over 4m29s)  kubelet            Readiness probe failed: HTTP probe failed with statuscode: 503

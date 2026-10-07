@@ -1,0 +1,61 @@
+{
+  "context": "k3d-taskflow-final",
+  "date": "20261007T162711Z",
+  "url": "http://127.0.0.1:32003",
+  "created_tasks": [
+    {
+      "id": 1,
+      "title": "Persistance 20261007T162711Z - tâche 1",
+      "done": false,
+      "createdAt": "2026-10-07T16:27:11.972Z",
+      "updatedAt": "2026-10-07T16:27:11.972Z"
+    },
+    {
+      "id": 2,
+      "title": "Persistance 20261007T162711Z - tâche 2",
+      "done": false,
+      "createdAt": "2026-10-07T16:27:11.977Z",
+      "updatedAt": "2026-10-07T16:27:11.977Z"
+    },
+    {
+      "id": 3,
+      "title": "Persistance 20261007T162711Z - tâche 3",
+      "done": false,
+      "createdAt": "2026-10-07T16:27:11.987Z",
+      "updatedAt": "2026-10-07T16:27:11.987Z"
+    }
+  ],
+  "pvc_uid": "0fb692fb-dead-41fb-8e66-799b3cd6a071",
+  "scenarios": {
+    "delete-pod": {
+      "duration_seconds": 9.552,
+      "requests": 67,
+      "failed_requests": 17,
+      "observed_failure_to_recovery_seconds": 3.986,
+      "api_not_ready_observed": false,
+      "tasks_identical": true,
+      "api_uid_and_restarts_unchanged": true,
+      "pvc_uid_unchanged": true
+    },
+    "restart-statefulset": {
+      "duration_seconds": 10.013,
+      "requests": 72,
+      "failed_requests": 16,
+      "observed_failure_to_recovery_seconds": 3.793,
+      "api_not_ready_observed": false,
+      "tasks_identical": true,
+      "api_uid_and_restarts_unchanged": true,
+      "pvc_uid_unchanged": true
+    },
+    "recreate-statefulset": {
+      "duration_seconds": 9.957,
+      "requests": 71,
+      "failed_requests": 15,
+      "observed_failure_to_recovery_seconds": 3.724,
+      "api_not_ready_observed": false,
+      "tasks_identical": true,
+      "api_uid_and_restarts_unchanged": true,
+      "pvc_uid_unchanged": true
+    }
+  }
+}

@@ -1,0 +1,6 @@
+NAME                     READY   STATUS    RESTARTS   AGE   IP           NODE                          NOMINATED NODE   READINESS GATES
+api-6dffc9d4d5-7c86j     1/1     Running   0          12m   10.42.0.28   k3d-taskflow-final-server-0   <none>           <none>
+api-6dffc9d4d5-wwrhh     1/1     Running   0          12m   10.42.0.29   k3d-taskflow-final-server-0   <none>           <none>
+db-0                     1/1     Running   0          10s   10.42.0.35   k3d-taskflow-final-server-0   <none>           <none>
+front-5cd7dcfdfd-j2rhw   1/1     Running   0          15m   10.42.0.11   k3d-taskflow-final-server-0   <none>           <none>
+front-5cd7dcfdfd-nhc4d   1/1     Running   0          15m   10.42.0.10   k3d-taskflow-final-server-0   <none>           <none>

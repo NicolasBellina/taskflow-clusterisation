@@ -1,5 +1,20 @@
+# Séance 7 : Deployment db à supprimer avant cette migration.
+# Une instance, mêmes sélecteurs : le Service db garde son adresse.
+# PGDATA est un sous-répertoire du volume pour éviter lost+found.
+# Retain conserve le PVC après suppression du StatefulSet, pas du namespace.
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: db-config
+  namespace: taskflow
+data:
+  POSTGRES_DB: taskflow
+  POSTGRES_USER: taskflow
+  POSTGRES_PASSWORD_FILE: /run/secrets/db/password
+  PGDATA: /var/lib/postgresql/data/pgdata
+---
 apiVersion: apps/v1
-kind: Deployment
+kind: StatefulSet
 metadata:
   name: db
   namespace: taskflow
@@ -8,9 +23,6 @@ metadata:
     app.kubernetes.io/component: database
 spec:
   replicas: 1
-  # Une seule base à la fois : arrêter l'ancien Pod avant de créer le suivant.
-  strategy:
-    type: Recreate
   selector:
     matchLabels:
       app.kubernetes.io/name: taskflow
@@ -22,20 +34,78 @@ spec:
         app.kubernetes.io/component: database
     spec:
       containers:
+      - name: postgres
+        image: postgres:17-alpine@sha256:b0f9560a2de083e2cc7382e75f808c7381a32852a7ec49117deedb300e552b24
+        ports:
         - name: postgres
-          image: postgres:17-alpine@sha256:b0f9560a2de083e2cc7382e75f808c7381a32852a7ec49117deedb300e552b24
-          ports:
-            - name: postgres
-              containerPort: 5432
-          env:
-            - name: POSTGRES_DB
-              value: taskflow
-            - name: POSTGRES_USER
-              value: taskflow
-            # Valeur publique et fictive, réservée à ce TP jetable.
-            - name: POSTGRES_PASSWORD
-              value: taskflow-lab-only-not-a-real-secret
-          # Aucun volume : la recréation du Pod efface les données du TP.
+          containerPort: 5432
+        envFrom:
+        - configMapRef:
+            name: db-config
+        volumeMounts:
+        - name: db-credentials
+          mountPath: /run/secrets/db
+          readOnly: true
+        - name: data
+          mountPath: /var/lib/postgresql/data
+        startupProbe:
+          exec:
+            command:
+            - /bin/sh
+            - -ec
+            - pg_isready -h 127.0.0.1 -U "$POSTGRES_USER" -d "$POSTGRES_DB"
+          timeoutSeconds: 3
+          periodSeconds: 2
+          failureThreshold: 30
+        livenessProbe:
+          exec:
+            command:
+            - /bin/sh
+            - -ec
+            - pg_isready -h 127.0.0.1 -U "$POSTGRES_USER" -d "$POSTGRES_DB"
+          timeoutSeconds: 3
+          periodSeconds: 10
+          failureThreshold: 3
+        readinessProbe:
+          exec:
+            command:
+            - /bin/sh
+            - -ec
+            - pg_isready -h 127.0.0.1 -U "$POSTGRES_USER" -d "$POSTGRES_DB"
+          timeoutSeconds: 3
+          periodSeconds: 5
+          failureThreshold: 2
+        resources:
+          requests:
+            cpu: 500m
+            memory: 512Mi
+          limits:
+            cpu: 500m
+            memory: 512Mi
+      volumes:
+      - name: db-credentials
+        secret:
+          secretName: db-credentials
+          defaultMode: 292
+      terminationGracePeriodSeconds: 30
+      enableServiceLinks: false
+  serviceName: db-headless
+  podManagementPolicy: OrderedReady
+  updateStrategy:
+    type: RollingUpdate
+  persistentVolumeClaimRetentionPolicy:
+    whenDeleted: Retain
+    whenScaled: Retain
+  volumeClaimTemplates:
+  - metadata:
+      name: data
+    spec:
+      accessModes:
+      - ReadWriteOnce
+      storageClassName: local-path
+      resources:
+        requests:
+          storage: 1Gi
 ---
 apiVersion: v1
 kind: Service
@@ -51,6 +121,25 @@ spec:
     app.kubernetes.io/name: taskflow
     app.kubernetes.io/component: database
   ports:
-    - name: postgres
-      port: 5432
-      targetPort: postgres
+  - name: postgres
+    port: 5432
+    targetPort: postgres
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: db-headless
+  namespace: taskflow
+  labels:
+    app.kubernetes.io/name: taskflow
+    app.kubernetes.io/component: database
+spec:
+  type: ClusterIP
+  selector:
+    app.kubernetes.io/name: taskflow
+    app.kubernetes.io/component: database
+  ports:
+  - name: postgres
+    port: 5432
+    targetPort: postgres
+  clusterIP: None
