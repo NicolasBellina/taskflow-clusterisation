@@ -10,8 +10,7 @@ ne font pas partie de cette livraison. Le front reste présent comme code source
 ## Étape 1 — Préparation du dépôt
 
 Le dépôt de départ est cloné dans le sous-dossier `taskflow` du dossier de cours.
-L'historique Git d'origine est conservé. La publication sur un dépôt personnel
-est suivie dans la section « État de la livraison » du README.
+L'historique Git d'origine est conservé. La publication sur un dépôt personnest suivie dans la section « État de la livraison » du README.
 
 ## Étape 2 — Lecture du code
 
