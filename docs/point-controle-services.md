@@ -62,7 +62,7 @@ L'image **`nicolasbellina/taskflow-api:2.0.0`** a été construite avec une vér
 
 Dépôt personnel : [NicolasBellina/taskflow-clusterisation](https://github.com/NicolasBellina/taskflow-clusterisation). Lien de rendu : [manifestes k8s/app sur main](https://github.com/NicolasBellina/taskflow-clusterisation/tree/main/k8s/app). Le dépôt étant privé, le destinataire doit disposer de l'accès nécessaire.
 
-Le contrôle de l'enregistrement et de l'envoi Git est ajouté ici après comparaison avec `origin/main`. Les trois PDF sources, le `.env` local et les kubeconfigs ne sont pas inclus dans la livraison Git. Ce fichier est le rendu préparé ; il ne constitue pas un message envoyé au fil du cours.
+**Livraison Git vérifiée :** le commit d'implémentation [`3546edc`](https://github.com/NicolasBellina/taskflow-clusterisation/commit/3546edc76fedfb98bed0c95e787e2942c08f4fe9) a été enregistré puis envoyé sur `origin/main`. La comparaison avec `git ls-remote origin refs/heads/main` a retrouvé exactement ce commit le 7 octobre 2026. La [preuve d'envoi](verification/services/git-delivery.json) consigne ce contrôle ; un commit documentaire suivant ajoute ce constat au dépôt. Les trois PDF sources, le `.env` local et les kubeconfigs ne sont pas inclus dans la livraison Git. Ce fichier est le rendu préparé ; il ne constitue pas un message envoyé au fil du cours.
 
 **Limite d'environnement :** la VM `k3s-lab` n'a pas été utilisée pour cette séance. ServiceLB est actif sur k3d, où Traefik est désactivé ; la configuration VM fournie conserve Traefik et ServiceLB actifs. Les images TaskFlow sont ARM64 ; une VM AMD64 demande des images compatibles avant déploiement. Il n'y a pas de résultat mesuré de comparaison avec Swarm.
 

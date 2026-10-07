@@ -22,7 +22,7 @@
     "api_info_version": "1.0.0",
     "nginx_dns_fix": "Résolveur du Pod et FQDN api.taskflow.svc.cluster.local ; résolution du nom court seule renvoyait 502."
   },
-  "last_verified_at": "2026-10-07T17:52:33.730641+02:00",
+  "last_verified_at": "2026-10-07T17:55:34.926686+02:00",
   "environment_trap": {
     "reproduced": true,
     "pod_phase": "Failed",
@@ -197,5 +197,19 @@
     "course_exclusions_respected": true,
     "sources_still_api_1_0_0": true,
     "real_local_password_absent_from_delivery": true
+  },
+  "git_delivery": {
+    "at": "2026-10-07T17:55:34.924591+02:00",
+    "branch": "main",
+    "remote": "https://github.com/NicolasBellina/taskflow-clusterisation.git",
+    "implementation_commit": "3546edc76fedfb98bed0c95e787e2942c08f4fe9",
+    "origin_main_at_verification": "3546edc76fedfb98bed0c95e787e2942c08f4fe9",
+    "commit_pushed_and_remote_verified": true,
+    "excluded_from_delivery": [
+      "three source PDF files",
+      ".env",
+      "kubeconfigs"
+    ],
+    "course_message_sent": false
   }
 }
