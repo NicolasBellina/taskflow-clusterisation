@@ -1,0 +1,12 @@
+# Configuration de référence pour la VM k3s-lab (pas un objet Kubernetes).
+# Adapter l'IP et l'interface à la VM avant copie dans /etc/rancher/k3s/config.yaml.
+# Le test sur Mac utilise le cluster k3d-seance2 existant ; voir docs/notes-kubernetes.md.
+node-name: k3s-lab
+node-ip: 192.168.56.10
+flannel-iface: enp0s8
+tls-san:
+  - 192.168.56.10
+write-kubeconfig-mode: "0600"
+disable:
+  - servicelb
+  - traefik

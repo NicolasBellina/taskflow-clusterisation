@@ -1,0 +1,38 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: api
+  namespace: taskflow
+  labels:
+    app.kubernetes.io/name: taskflow
+    app.kubernetes.io/component: api
+spec:
+  restartPolicy: Always
+  terminationGracePeriodSeconds: 10
+  containers:
+    - name: api
+      image: nicolasbellina/taskflow-api:1.0.0
+      ports:
+        - name: http
+          containerPort: 3000
+      env:
+        - name: NODE_ENV
+          value: production
+        - name: APP_ENV
+          value: kubernetes-lab
+        - name: HOST
+          value: "0.0.0.0"
+        - name: PORT
+          value: "3000"
+        # IP temporaire : scripts/set-db-pod-ip.py la met à jour avant application.
+        - name: DB_HOST
+          value: "10.42.0.93" # DB_POD_IP
+        - name: DB_PORT
+          value: "5432"
+        - name: DB_NAME
+          value: taskflow
+        - name: DB_USER
+          value: taskflow
+        # Même valeur fictive que dans db.yaml ; aucun secret réel.
+        - name: DB_PASSWORD
+          value: taskflow-lab-only-not-a-real-secret

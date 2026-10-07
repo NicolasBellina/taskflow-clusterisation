@@ -1,0 +1,25 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: db
+  namespace: taskflow
+  labels:
+    app.kubernetes.io/name: taskflow
+    app.kubernetes.io/component: database
+spec:
+  restartPolicy: Always
+  containers:
+    - name: postgres
+      image: postgres:18-alpine@sha256:77f585114c32fbca283dc835b0596f4e52b51b4c6662d7810b2f4084f60a1873
+      ports:
+        - name: postgres
+          containerPort: 5432
+      env:
+        - name: POSTGRES_DB
+          value: taskflow
+        - name: POSTGRES_USER
+          value: taskflow
+        # Valeur publique et fictive, réservée à ce TP jetable.
+        - name: POSTGRES_PASSWORD
+          value: taskflow-lab-only-not-a-real-secret
+      # Aucun volume : la suppression du Pod efface les données du TP.

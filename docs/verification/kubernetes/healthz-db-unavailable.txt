@@ -1,0 +1,2 @@
+{"status":"ok","version":"1.0.0","hostname":"api"}
+HTTP 200

@@ -1,0 +1,2 @@
+NAME                   STATUS   ROLES                  AGE   VERSION
+k3d-seance2-server-0   Ready    control-plane,master   29h   v1.32.5+k3s1

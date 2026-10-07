@@ -1,0 +1,221 @@
+{
+    "apiVersion": "v1",
+    "kind": "Pod",
+    "metadata": {
+        "annotations": {
+            "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"v1\",\"kind\":\"Pod\",\"metadata\":{\"annotations\":{},\"labels\":{\"app.kubernetes.io/component\":\"api\",\"app.kubernetes.io/name\":\"taskflow\"},\"name\":\"api\",\"namespace\":\"taskflow\"},\"spec\":{\"containers\":[{\"env\":[{\"name\":\"NODE_ENV\",\"value\":\"production\"},{\"name\":\"APP_ENV\",\"value\":\"kubernetes-lab\"},{\"name\":\"HOST\",\"value\":\"0.0.0.0\"},{\"name\":\"PORT\",\"value\":\"3000\"},{\"name\":\"DB_HOST\",\"value\":\"10.42.0.93\"},{\"name\":\"DB_PORT\",\"value\":\"5432\"},{\"name\":\"DB_NAME\",\"value\":\"taskflow\"},{\"name\":\"DB_USER\",\"value\":\"taskflow\"},{\"name\":\"DB_PASSWORD\",\"value\":\"taskflow-lab-only-not-a-real-secret\"}],\"image\":\"nicolasbellina/taskflow-api:1.0.0\",\"name\":\"api\",\"ports\":[{\"containerPort\":3000,\"name\":\"http\"}]}],\"restartPolicy\":\"Always\",\"terminationGracePeriodSeconds\":10}}\n"
+        },
+        "creationTimestamp": "2026-10-07T12:01:59Z",
+        "labels": {
+            "app.kubernetes.io/component": "api",
+            "app.kubernetes.io/name": "taskflow"
+        },
+        "name": "api",
+        "namespace": "taskflow",
+        "resourceVersion": "12928",
+        "uid": "646e1143-bc35-4b09-ad91-5cbb8e42d65b"
+    },
+    "spec": {
+        "containers": [
+            {
+                "env": [
+                    {
+                        "name": "NODE_ENV",
+                        "value": "production"
+                    },
+                    {
+                        "name": "APP_ENV",
+                        "value": "kubernetes-lab"
+                    },
+                    {
+                        "name": "HOST",
+                        "value": "0.0.0.0"
+                    },
+                    {
+                        "name": "PORT",
+                        "value": "3000"
+                    },
+                    {
+                        "name": "DB_HOST",
+                        "value": "10.42.0.93"
+                    },
+                    {
+                        "name": "DB_PORT",
+                        "value": "5432"
+                    },
+                    {
+                        "name": "DB_NAME",
+                        "value": "taskflow"
+                    },
+                    {
+                        "name": "DB_USER",
+                        "value": "taskflow"
+                    },
+                    {
+                        "name": "DB_PASSWORD",
+                        "value": "taskflow-lab-only-not-a-real-secret"
+                    }
+                ],
+                "image": "nicolasbellina/taskflow-api:1.0.0",
+                "imagePullPolicy": "IfNotPresent",
+                "name": "api",
+                "ports": [
+                    {
+                        "containerPort": 3000,
+                        "name": "http",
+                        "protocol": "TCP"
+                    }
+                ],
+                "resources": {},
+                "terminationMessagePath": "/dev/termination-log",
+                "terminationMessagePolicy": "File",
+                "volumeMounts": [
+                    {
+                        "mountPath": "/var/run/secrets/kubernetes.io/serviceaccount",
+                        "name": "kube-api-access-2qf6v",
+                        "readOnly": true
+                    }
+                ]
+            }
+        ],
+        "dnsPolicy": "ClusterFirst",
+        "enableServiceLinks": true,
+        "nodeName": "k3d-seance2-server-0",
+        "preemptionPolicy": "PreemptLowerPriority",
+        "priority": 0,
+        "restartPolicy": "Always",
+        "schedulerName": "default-scheduler",
+        "securityContext": {},
+        "serviceAccount": "default",
+        "serviceAccountName": "default",
+        "terminationGracePeriodSeconds": 10,
+        "tolerations": [
+            {
+                "effect": "NoExecute",
+                "key": "node.kubernetes.io/not-ready",
+                "operator": "Exists",
+                "tolerationSeconds": 300
+            },
+            {
+                "effect": "NoExecute",
+                "key": "node.kubernetes.io/unreachable",
+                "operator": "Exists",
+                "tolerationSeconds": 300
+            }
+        ],
+        "volumes": [
+            {
+                "name": "kube-api-access-2qf6v",
+                "projected": {
+                    "defaultMode": 420,
+                    "sources": [
+                        {
+                            "serviceAccountToken": {
+                                "expirationSeconds": 3607,
+                                "path": "token"
+                            }
+                        },
+                        {
+                            "configMap": {
+                                "items": [
+                                    {
+                                        "key": "ca.crt",
+                                        "path": "ca.crt"
+                                    }
+                                ],
+                                "name": "kube-root-ca.crt"
+                            }
+                        },
+                        {
+                            "downwardAPI": {
+                                "items": [
+                                    {
+                                        "fieldRef": {
+                                            "apiVersion": "v1",
+                                            "fieldPath": "metadata.namespace"
+                                        },
+                                        "path": "namespace"
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            }
+        ]
+    },
+    "status": {
+        "conditions": [
+            {
+                "lastProbeTime": null,
+                "lastTransitionTime": "2026-10-07T12:02:00Z",
+                "status": "True",
+                "type": "PodReadyToStartContainers"
+            },
+            {
+                "lastProbeTime": null,
+                "lastTransitionTime": "2026-10-07T12:01:59Z",
+                "status": "True",
+                "type": "Initialized"
+            },
+            {
+                "lastProbeTime": null,
+                "lastTransitionTime": "2026-10-07T12:02:00Z",
+                "status": "True",
+                "type": "Ready"
+            },
+            {
+                "lastProbeTime": null,
+                "lastTransitionTime": "2026-10-07T12:02:00Z",
+                "status": "True",
+                "type": "ContainersReady"
+            },
+            {
+                "lastProbeTime": null,
+                "lastTransitionTime": "2026-10-07T12:01:59Z",
+                "status": "True",
+                "type": "PodScheduled"
+            }
+        ],
+        "containerStatuses": [
+            {
+                "containerID": "containerd://0e27d881ce05e859a2bd848f8b101036acd6932205611f251aa3a2cab0d1b450",
+                "image": "docker.io/nicolasbellina/taskflow-api:1.0.0",
+                "imageID": "docker.io/nicolasbellina/taskflow-api@sha256:b63fd156d12d1f9fbde18984b7b0972d92b919f2fe838c32cb78deb70e585bff",
+                "lastState": {},
+                "name": "api",
+                "ready": true,
+                "restartCount": 0,
+                "started": true,
+                "state": {
+                    "running": {
+                        "startedAt": "2026-10-07T12:02:00Z"
+                    }
+                },
+                "volumeMounts": [
+                    {
+                        "mountPath": "/var/run/secrets/kubernetes.io/serviceaccount",
+                        "name": "kube-api-access-2qf6v",
+                        "readOnly": true,
+                        "recursiveReadOnly": "Disabled"
+                    }
+                ]
+            }
+        ],
+        "hostIP": "172.21.0.3",
+        "hostIPs": [
+            {
+                "ip": "172.21.0.3"
+            }
+        ],
+        "phase": "Running",
+        "podIP": "10.42.0.94",
+        "podIPs": [
+            {
+                "ip": "10.42.0.94"
+            }
+        ],
+        "qosClass": "BestEffort",
+        "startTime": "2026-10-07T12:01:59Z"
+    }
+}

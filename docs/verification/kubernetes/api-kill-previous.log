@@ -1,0 +1,5 @@
+2026-10-07T12:03:02.009Z INFO  [api] Démarrage de taskflow-api 1.0.0 (APP_ENV=kubernetes-lab)
+2026-10-07T12:03:02.019Z INFO  [api] Base de données taskflow joignable sur 10.42.0.93:5432, schéma vérifié
+2026-10-07T12:03:02.024Z INFO  [api] API à l'écoute sur 0.0.0.0:3000
+2026-10-07T12:03:02.198Z INFO  [api] Signal SIGTERM reçu : arrêt en cours
+2026-10-07T12:03:02.199Z INFO  [api] Arrêt terminé

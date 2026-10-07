@@ -1,0 +1,2 @@
+{"status":"database-unavailable","hostname":"api"}
+HTTP 503

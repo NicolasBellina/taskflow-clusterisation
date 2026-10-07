@@ -1,0 +1,5 @@
+2026-10-07T12:03:03.221Z INFO  [api] Démarrage de taskflow-api 1.0.0 (APP_ENV=kubernetes-lab)
+2026-10-07T12:03:03.228Z INFO  [api] Base de données taskflow joignable sur 10.42.0.93:5432, schéma vérifié
+2026-10-07T12:03:03.232Z INFO  [api] API à l'écoute sur 0.0.0.0:3000
+2026-10-07T12:05:28.806Z INFO  [api] POST /api/tasks 201 6.0ms
+2026-10-07T12:05:28.818Z INFO  [api] GET /api/tasks 200 2.1ms

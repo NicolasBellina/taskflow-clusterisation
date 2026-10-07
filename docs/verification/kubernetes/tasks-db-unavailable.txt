@@ -1,0 +1,2 @@
+{"error":"Erreur interne"}
+HTTP 500

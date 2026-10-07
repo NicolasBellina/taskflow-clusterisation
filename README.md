@@ -2,6 +2,21 @@
 
 Application web de gestion de tâches, utilisée comme projet fil rouge du module « Clusterisation de conteneurs ».
 
+## Séance 2 — premiers Pods Kubernetes
+
+La séance 2 du fil rouge (intitulée « séance 4 » dans le PDF) est réalisée dans
+`k8s/` : namespace `taskflow`, Pod PostgreSQL et Pod API. Le front reste hors
+périmètre. Les essais utilisent le cluster local k3d du TP ; la configuration
+VM fournie reste à adapter et n'a pas été exécutée.
+
+Voir [le compte rendu et les commandes](docs/notes-kubernetes.md) et
+[le point de contrôle](docs/point-controle-kubernetes.md).
+La base de ce TP est **jetable**, sans volume, avec un mot de passe fictif public.
+`DB_HOST` est l'IP temporaire du Pod db : la recalculer avant le déploiement avec
+`scripts/set-db-pod-ip.py --context <contexte>`.
+Ne pas appliquer récursivement `k8s/` : `k3s-config.yaml` est une configuration
+d'installation, pas un objet Kubernetes.
+
 ## Démarrage du projet conteneurisé
 
 La séance 1 est implémentée : images API et front, Nginx, Compose, configuration

@@ -1,0 +1,20 @@
+{
+  "verified_at": "2026-10-07T12:05:28.958859+00:00",
+  "context": "k3d-seance2",
+  "vm_k3s_lab_tested": false,
+  "initial_db_ip": "10.42.0.89",
+  "final_db_ip": "10.42.0.93",
+  "initial_task_created_and_read": true,
+  "database_recreation_loses_data": true,
+  "old_ip_healthz_http": 200,
+  "old_ip_readyz_http": 503,
+  "old_ip_tasks_http": 500,
+  "deleted_api_stays_absent_observation_seconds": 10,
+  "kill_1_preserves_pod_uid": true,
+  "restarts_before": 0,
+  "restarts_after": 1,
+  "final_healthz_http": 200,
+  "final_database_ready": true,
+  "final_task_created_and_read": true,
+  "server_dry_run": "passed"
+}
