@@ -122,7 +122,7 @@ front-5cd7dcfdfd-nhc4d   1/1     Running   0          15m   10.42.0.10   k3d-tas
 }
 ```
 
-Les **quatre tâches** sont identiques. Les trois témoins ont déjà traversé les trois scénarios ; la quatrième a été créée et cochée dans le navigateur ensuite. Le nouveau contrôle de suppression confirme la persistance de cette tâche terminée aussi. Les API n'ont pas été redémarrées.
+Les **quatre tâches** sont identiques. Les trois témoins ont déjà traversé les trois scénarios ; la quatrième a été créée dans le navigateur ensuite. Le nouveau contrôle de suppression confirme également sa persistance, avec son état « à faire » (`done: false`). Les API n'ont pas été redémarrées.
 
 Les trois scénarios complets, les durées et les UID/PVC sont dans [le rapport](verification/persistance/results.json). Le bonus sauvegarde/restauration dans une base neuve a également comparé toutes les lignes avec succès.
 

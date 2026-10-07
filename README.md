@@ -32,7 +32,7 @@ Essais locaux le **7 octobre 2026**, k3s `v1.32.5+k3s1` dans k3d/Docker Desktop 
 | Rollout API 1.0.0 → 2.0.0 puis retour | **248 + 202 appels, zéro erreur**, deux versions observées | Même rapport |
 | QoS et ressources | PostgreSQL Guaranteed ; API/front Burstable ; Pods prêts | [Ressources](docs/verification/configuration/top-pods.txt) |
 | Persistance, trois scénarios | Tâches strictement identiques après suppression du Pod, restart et recréation du StatefulSet ; même PVC ; API jamais redémarrées | [Persistance](docs/verification/persistance/results.json) |
-| Navigateur | Création, tâche terminée puis rechargement, deux instances API observées | [Capture](docs/verification/persistance/browser-final.png) |
+| Navigateur | Création et relecture des tâches, deux instances API observées | [Capture](docs/verification/persistance/browser-final.png) |
 
 La base unique provoque des erreurs HTTP pendant son remplacement : la persistance n'est pas de la haute disponibilité. Le stockage `local-path` dépend du nœud Docker ; aucune sauvegarde automatique, réplication PostgreSQL ou tolérance à la perte du nœud n'est mise en place. Les résultats locaux ne valident pas la VM `k3s-lab` 2 vCPU/4 Go attendue par le cours : **cette VM n'a pas été installée ni testée**.
 
