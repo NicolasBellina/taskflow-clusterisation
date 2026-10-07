@@ -1,0 +1,1073 @@
+{
+  "apiVersion": "v1",
+  "items": [
+    {
+      "apiVersion": "v1",
+      "kind": "Pod",
+      "metadata": {
+        "creationTimestamp": "2026-10-07T15:31:18Z",
+        "generateName": "api-56c54f747b-",
+        "labels": {
+          "app.kubernetes.io/component": "api",
+          "app.kubernetes.io/name": "taskflow",
+          "pod-template-hash": "56c54f747b"
+        },
+        "name": "api-56c54f747b-fsbqc",
+        "namespace": "taskflow",
+        "ownerReferences": [
+          {
+            "apiVersion": "apps/v1",
+            "blockOwnerDeletion": true,
+            "controller": true,
+            "kind": "ReplicaSet",
+            "name": "api-56c54f747b",
+            "uid": "a820899d-b9aa-48cc-878f-59806fff3704"
+          }
+        ],
+        "resourceVersion": "588",
+        "uid": "3c0670a5-85c7-4d42-9314-a85b97b9564f"
+      },
+      "spec": {
+        "containers": [
+          {
+            "env": [
+              {
+                "name": "NODE_ENV",
+                "value": "production"
+              },
+              {
+                "name": "APP_ENV",
+                "value": "kubernetes-lab"
+              },
+              {
+                "name": "HOST",
+                "value": "0.0.0.0"
+              },
+              {
+                "name": "PORT",
+                "value": "3000"
+              },
+              {
+                "name": "DB_HOST",
+                "value": "db"
+              },
+              {
+                "name": "DB_PORT",
+                "value": "5432"
+              },
+              {
+                "name": "DB_NAME",
+                "value": "taskflow"
+              },
+              {
+                "name": "DB_USER",
+                "value": "taskflow"
+              },
+              {
+                "name": "DB_PASSWORD",
+                "value": "taskflow-lab-only-not-a-real-secret"
+              }
+            ],
+            "image": "nicolasbellina/taskflow-api:1.0.0",
+            "imagePullPolicy": "IfNotPresent",
+            "name": "api",
+            "ports": [
+              {
+                "containerPort": 3000,
+                "name": "http",
+                "protocol": "TCP"
+              }
+            ],
+            "resources": {},
+            "terminationMessagePath": "/dev/termination-log",
+            "terminationMessagePolicy": "File",
+            "volumeMounts": [
+              {
+                "mountPath": "/var/run/secrets/kubernetes.io/serviceaccount",
+                "name": "kube-api-access-x9v5z",
+                "readOnly": true
+              }
+            ]
+          }
+        ],
+        "dnsPolicy": "ClusterFirst",
+        "enableServiceLinks": false,
+        "nodeName": "k3d-seance3-server-0",
+        "preemptionPolicy": "PreemptLowerPriority",
+        "priority": 0,
+        "restartPolicy": "Always",
+        "schedulerName": "default-scheduler",
+        "securityContext": {},
+        "serviceAccount": "default",
+        "serviceAccountName": "default",
+        "terminationGracePeriodSeconds": 10,
+        "tolerations": [
+          {
+            "effect": "NoExecute",
+            "key": "node.kubernetes.io/not-ready",
+            "operator": "Exists",
+            "tolerationSeconds": 300
+          },
+          {
+            "effect": "NoExecute",
+            "key": "node.kubernetes.io/unreachable",
+            "operator": "Exists",
+            "tolerationSeconds": 300
+          }
+        ],
+        "volumes": [
+          {
+            "name": "kube-api-access-x9v5z",
+            "projected": {
+              "defaultMode": 420,
+              "sources": [
+                {
+                  "serviceAccountToken": {
+                    "expirationSeconds": 3607,
+                    "path": "token"
+                  }
+                },
+                {
+                  "configMap": {
+                    "items": [
+                      {
+                        "key": "ca.crt",
+                        "path": "ca.crt"
+                      }
+                    ],
+                    "name": "kube-root-ca.crt"
+                  }
+                },
+                {
+                  "downwardAPI": {
+                    "items": [
+                      {
+                        "fieldRef": {
+                          "apiVersion": "v1",
+                          "fieldPath": "metadata.namespace"
+                        },
+                        "path": "namespace"
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "status": {
+        "conditions": [
+          {
+            "lastProbeTime": null,
+            "lastTransitionTime": "2026-10-07T15:31:28Z",
+            "status": "True",
+            "type": "PodReadyToStartContainers"
+          },
+          {
+            "lastProbeTime": null,
+            "lastTransitionTime": "2026-10-07T15:31:18Z",
+            "status": "True",
+            "type": "Initialized"
+          },
+          {
+            "lastProbeTime": null,
+            "lastTransitionTime": "2026-10-07T15:31:28Z",
+            "status": "True",
+            "type": "Ready"
+          },
+          {
+            "lastProbeTime": null,
+            "lastTransitionTime": "2026-10-07T15:31:28Z",
+            "status": "True",
+            "type": "ContainersReady"
+          },
+          {
+            "lastProbeTime": null,
+            "lastTransitionTime": "2026-10-07T15:31:18Z",
+            "status": "True",
+            "type": "PodScheduled"
+          }
+        ],
+        "containerStatuses": [
+          {
+            "containerID": "containerd://c96d284e4fe397d14f6e70e174edf1400f04dca7a57ca2824a71d310a627689d",
+            "image": "docker.io/nicolasbellina/taskflow-api:1.0.0",
+            "imageID": "docker.io/nicolasbellina/taskflow-api@sha256:b63fd156d12d1f9fbde18984b7b0972d92b919f2fe838c32cb78deb70e585bff",
+            "lastState": {},
+            "name": "api",
+            "ready": true,
+            "restartCount": 0,
+            "started": true,
+            "state": {
+              "running": {
+                "startedAt": "2026-10-07T15:31:28Z"
+              }
+            },
+            "volumeMounts": [
+              {
+                "mountPath": "/var/run/secrets/kubernetes.io/serviceaccount",
+                "name": "kube-api-access-x9v5z",
+                "readOnly": true,
+                "recursiveReadOnly": "Disabled"
+              }
+            ]
+          }
+        ],
+        "hostIP": "172.22.0.3",
+        "hostIPs": [
+          {
+            "ip": "172.22.0.3"
+          }
+        ],
+        "phase": "Running",
+        "podIP": "10.42.0.7",
+        "podIPs": [
+          {
+            "ip": "10.42.0.7"
+          }
+        ],
+        "qosClass": "BestEffort",
+        "startTime": "2026-10-07T15:31:18Z"
+      }
+    },
+    {
+      "apiVersion": "v1",
+      "kind": "Pod",
+      "metadata": {
+        "creationTimestamp": "2026-10-07T15:31:18Z",
+        "generateName": "api-56c54f747b-",
+        "labels": {
+          "app.kubernetes.io/component": "api",
+          "app.kubernetes.io/name": "taskflow",
+          "pod-template-hash": "56c54f747b"
+        },
+        "name": "api-56c54f747b-ngjn8",
+        "namespace": "taskflow",
+        "ownerReferences": [
+          {
+            "apiVersion": "apps/v1",
+            "blockOwnerDeletion": true,
+            "controller": true,
+            "kind": "ReplicaSet",
+            "name": "api-56c54f747b",
+            "uid": "a820899d-b9aa-48cc-878f-59806fff3704"
+          }
+        ],
+        "resourceVersion": "584",
+        "uid": "51f040bb-7f99-44bc-a88d-37322312b998"
+      },
+      "spec": {
+        "containers": [
+          {
+            "env": [
+              {
+                "name": "NODE_ENV",
+                "value": "production"
+              },
+              {
+                "name": "APP_ENV",
+                "value": "kubernetes-lab"
+              },
+              {
+                "name": "HOST",
+                "value": "0.0.0.0"
+              },
+              {
+                "name": "PORT",
+                "value": "3000"
+              },
+              {
+                "name": "DB_HOST",
+                "value": "db"
+              },
+              {
+                "name": "DB_PORT",
+                "value": "5432"
+              },
+              {
+                "name": "DB_NAME",
+                "value": "taskflow"
+              },
+              {
+                "name": "DB_USER",
+                "value": "taskflow"
+              },
+              {
+                "name": "DB_PASSWORD",
+                "value": "taskflow-lab-only-not-a-real-secret"
+              }
+            ],
+            "image": "nicolasbellina/taskflow-api:1.0.0",
+            "imagePullPolicy": "IfNotPresent",
+            "name": "api",
+            "ports": [
+              {
+                "containerPort": 3000,
+                "name": "http",
+                "protocol": "TCP"
+              }
+            ],
+            "resources": {},
+            "terminationMessagePath": "/dev/termination-log",
+            "terminationMessagePolicy": "File",
+            "volumeMounts": [
+              {
+                "mountPath": "/var/run/secrets/kubernetes.io/serviceaccount",
+                "name": "kube-api-access-vkf5p",
+                "readOnly": true
+              }
+            ]
+          }
+        ],
+        "dnsPolicy": "ClusterFirst",
+        "enableServiceLinks": false,
+        "nodeName": "k3d-seance3-server-0",
+        "preemptionPolicy": "PreemptLowerPriority",
+        "priority": 0,
+        "restartPolicy": "Always",
+        "schedulerName": "default-scheduler",
+        "securityContext": {},
+        "serviceAccount": "default",
+        "serviceAccountName": "default",
+        "terminationGracePeriodSeconds": 10,
+        "tolerations": [
+          {
+            "effect": "NoExecute",
+            "key": "node.kubernetes.io/not-ready",
+            "operator": "Exists",
+            "tolerationSeconds": 300
+          },
+          {
+            "effect": "NoExecute",
+            "key": "node.kubernetes.io/unreachable",
+            "operator": "Exists",
+            "tolerationSeconds": 300
+          }
+        ],
+        "volumes": [
+          {
+            "name": "kube-api-access-vkf5p",
+            "projected": {
+              "defaultMode": 420,
+              "sources": [
+                {
+                  "serviceAccountToken": {
+                    "expirationSeconds": 3607,
+                    "path": "token"
+                  }
+                },
+                {
+                  "configMap": {
+                    "items": [
+                      {
+                        "key": "ca.crt",
+                        "path": "ca.crt"
+                      }
+                    ],
+                    "name": "kube-root-ca.crt"
+                  }
+                },
+                {
+                  "downwardAPI": {
+                    "items": [
+                      {
+                        "fieldRef": {
+                          "apiVersion": "v1",
+                          "fieldPath": "metadata.namespace"
+                        },
+                        "path": "namespace"
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "status": {
+        "conditions": [
+          {
+            "lastProbeTime": null,
+            "lastTransitionTime": "2026-10-07T15:31:28Z",
+            "status": "True",
+            "type": "PodReadyToStartContainers"
+          },
+          {
+            "lastProbeTime": null,
+            "lastTransitionTime": "2026-10-07T15:31:18Z",
+            "status": "True",
+            "type": "Initialized"
+          },
+          {
+            "lastProbeTime": null,
+            "lastTransitionTime": "2026-10-07T15:31:28Z",
+            "status": "True",
+            "type": "Ready"
+          },
+          {
+            "lastProbeTime": null,
+            "lastTransitionTime": "2026-10-07T15:31:28Z",
+            "status": "True",
+            "type": "ContainersReady"
+          },
+          {
+            "lastProbeTime": null,
+            "lastTransitionTime": "2026-10-07T15:31:18Z",
+            "status": "True",
+            "type": "PodScheduled"
+          }
+        ],
+        "containerStatuses": [
+          {
+            "containerID": "containerd://b058612713a61439a0593f1351f2ff8b1ba6565759dd76f5ffe3f2294e3234d3",
+            "image": "docker.io/nicolasbellina/taskflow-api:1.0.0",
+            "imageID": "docker.io/nicolasbellina/taskflow-api@sha256:b63fd156d12d1f9fbde18984b7b0972d92b919f2fe838c32cb78deb70e585bff",
+            "lastState": {},
+            "name": "api",
+            "ready": true,
+            "restartCount": 0,
+            "started": true,
+            "state": {
+              "running": {
+                "startedAt": "2026-10-07T15:31:28Z"
+              }
+            },
+            "volumeMounts": [
+              {
+                "mountPath": "/var/run/secrets/kubernetes.io/serviceaccount",
+                "name": "kube-api-access-vkf5p",
+                "readOnly": true,
+                "recursiveReadOnly": "Disabled"
+              }
+            ]
+          }
+        ],
+        "hostIP": "172.22.0.3",
+        "hostIPs": [
+          {
+            "ip": "172.22.0.3"
+          }
+        ],
+        "phase": "Running",
+        "podIP": "10.42.0.6",
+        "podIPs": [
+          {
+            "ip": "10.42.0.6"
+          }
+        ],
+        "qosClass": "BestEffort",
+        "startTime": "2026-10-07T15:31:18Z"
+      }
+    },
+    {
+      "apiVersion": "v1",
+      "kind": "Pod",
+      "metadata": {
+        "creationTimestamp": "2026-10-07T15:31:18Z",
+        "generateName": "db-cd6884bfc-",
+        "labels": {
+          "app.kubernetes.io/component": "database",
+          "app.kubernetes.io/name": "taskflow",
+          "pod-template-hash": "cd6884bfc"
+        },
+        "name": "db-cd6884bfc-h47jk",
+        "namespace": "taskflow",
+        "ownerReferences": [
+          {
+            "apiVersion": "apps/v1",
+            "blockOwnerDeletion": true,
+            "controller": true,
+            "kind": "ReplicaSet",
+            "name": "db-cd6884bfc",
+            "uid": "e3c7485c-2157-48d2-be2f-7c7dff7833c8"
+          }
+        ],
+        "resourceVersion": "598",
+        "uid": "2591946a-6557-4b19-a149-706a9b2c3d28"
+      },
+      "spec": {
+        "containers": [
+          {
+            "env": [
+              {
+                "name": "POSTGRES_DB",
+                "value": "taskflow"
+              },
+              {
+                "name": "POSTGRES_USER",
+                "value": "taskflow"
+              },
+              {
+                "name": "POSTGRES_PASSWORD",
+                "value": "taskflow-lab-only-not-a-real-secret"
+              }
+            ],
+            "image": "postgres:17-alpine@sha256:b0f9560a2de083e2cc7382e75f808c7381a32852a7ec49117deedb300e552b24",
+            "imagePullPolicy": "IfNotPresent",
+            "name": "postgres",
+            "ports": [
+              {
+                "containerPort": 5432,
+                "name": "postgres",
+                "protocol": "TCP"
+              }
+            ],
+            "resources": {},
+            "terminationMessagePath": "/dev/termination-log",
+            "terminationMessagePolicy": "File",
+            "volumeMounts": [
+              {
+                "mountPath": "/var/run/secrets/kubernetes.io/serviceaccount",
+                "name": "kube-api-access-kmg2r",
+                "readOnly": true
+              }
+            ]
+          }
+        ],
+        "dnsPolicy": "ClusterFirst",
+        "enableServiceLinks": true,
+        "nodeName": "k3d-seance3-server-0",
+        "preemptionPolicy": "PreemptLowerPriority",
+        "priority": 0,
+        "restartPolicy": "Always",
+        "schedulerName": "default-scheduler",
+        "securityContext": {},
+        "serviceAccount": "default",
+        "serviceAccountName": "default",
+        "terminationGracePeriodSeconds": 30,
+        "tolerations": [
+          {
+            "effect": "NoExecute",
+            "key": "node.kubernetes.io/not-ready",
+            "operator": "Exists",
+            "tolerationSeconds": 300
+          },
+          {
+            "effect": "NoExecute",
+            "key": "node.kubernetes.io/unreachable",
+            "operator": "Exists",
+            "tolerationSeconds": 300
+          }
+        ],
+        "volumes": [
+          {
+            "name": "kube-api-access-kmg2r",
+            "projected": {
+              "defaultMode": 420,
+              "sources": [
+                {
+                  "serviceAccountToken": {
+                    "expirationSeconds": 3607,
+                    "path": "token"
+                  }
+                },
+                {
+                  "configMap": {
+                    "items": [
+                      {
+                        "key": "ca.crt",
+                        "path": "ca.crt"
+                      }
+                    ],
+                    "name": "kube-root-ca.crt"
+                  }
+                },
+                {
+                  "downwardAPI": {
+                    "items": [
+                      {
+                        "fieldRef": {
+                          "apiVersion": "v1",
+                          "fieldPath": "metadata.namespace"
+                        },
+                        "path": "namespace"
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "status": {
+        "conditions": [
+          {
+            "lastProbeTime": null,
+            "lastTransitionTime": "2026-10-07T15:31:32Z",
+            "status": "True",
+            "type": "PodReadyToStartContainers"
+          },
+          {
+            "lastProbeTime": null,
+            "lastTransitionTime": "2026-10-07T15:31:18Z",
+            "status": "True",
+            "type": "Initialized"
+          },
+          {
+            "lastProbeTime": null,
+            "lastTransitionTime": "2026-10-07T15:31:32Z",
+            "status": "True",
+            "type": "Ready"
+          },
+          {
+            "lastProbeTime": null,
+            "lastTransitionTime": "2026-10-07T15:31:32Z",
+            "status": "True",
+            "type": "ContainersReady"
+          },
+          {
+            "lastProbeTime": null,
+            "lastTransitionTime": "2026-10-07T15:31:18Z",
+            "status": "True",
+            "type": "PodScheduled"
+          }
+        ],
+        "containerStatuses": [
+          {
+            "containerID": "containerd://d49c49fc7b6cb97fa0dca4770cfd8de7ecc9d1f124048abd0d240bdfb9c96dc5",
+            "image": "sha256:25a89970a83255ae96484d709005bb35aa71f7455f941bc1634514f31c5d5c62",
+            "imageID": "docker.io/library/postgres@sha256:b0f9560a2de083e2cc7382e75f808c7381a32852a7ec49117deedb300e552b24",
+            "lastState": {},
+            "name": "postgres",
+            "ready": true,
+            "restartCount": 0,
+            "started": true,
+            "state": {
+              "running": {
+                "startedAt": "2026-10-07T15:31:32Z"
+              }
+            },
+            "volumeMounts": [
+              {
+                "mountPath": "/var/run/secrets/kubernetes.io/serviceaccount",
+                "name": "kube-api-access-kmg2r",
+                "readOnly": true,
+                "recursiveReadOnly": "Disabled"
+              }
+            ]
+          }
+        ],
+        "hostIP": "172.22.0.3",
+        "hostIPs": [
+          {
+            "ip": "172.22.0.3"
+          }
+        ],
+        "phase": "Running",
+        "podIP": "10.42.0.8",
+        "podIPs": [
+          {
+            "ip": "10.42.0.8"
+          }
+        ],
+        "qosClass": "BestEffort",
+        "startTime": "2026-10-07T15:31:18Z"
+      }
+    },
+    {
+      "apiVersion": "v1",
+      "kind": "Pod",
+      "metadata": {
+        "creationTimestamp": "2026-10-07T15:32:46Z",
+        "generateName": "front-646d79c6f-",
+        "labels": {
+          "app.kubernetes.io/component": "front",
+          "app.kubernetes.io/name": "taskflow",
+          "pod-template-hash": "646d79c6f"
+        },
+        "name": "front-646d79c6f-bjvrn",
+        "namespace": "taskflow",
+        "ownerReferences": [
+          {
+            "apiVersion": "apps/v1",
+            "blockOwnerDeletion": true,
+            "controller": true,
+            "kind": "ReplicaSet",
+            "name": "front-646d79c6f",
+            "uid": "ab35fdcb-6881-4fec-bd12-a425d0be8232"
+          }
+        ],
+        "resourceVersion": "699",
+        "uid": "b2763210-4d2a-43af-bb26-77d140e657a6"
+      },
+      "spec": {
+        "containers": [
+          {
+            "args": [
+              "set -eu\ndns_resolver=\"$(awk '/^nameserver / { print $2; exit }' /etc/resolv.conf)\"\ntest -n \"$dns_resolver\"\nsed -i \"s/resolver 127.0.0.11 /resolver $dns_resolver /\" /etc/nginx/conf.d/default.conf\n# Le resolver Nginx n'applique pas les suffixes search de resolv.conf.\nsed -i 's@http://api:3000@http://api.taskflow.svc.cluster.local:3000@' /etc/nginx/conf.d/default.conf\nexec /docker-entrypoint.sh nginx -g 'daemon off;'\n"
+            ],
+            "command": [
+              "/bin/sh",
+              "-c"
+            ],
+            "image": "nicolasbellina/taskflow-front:1.0.0",
+            "imagePullPolicy": "IfNotPresent",
+            "name": "front",
+            "ports": [
+              {
+                "containerPort": 80,
+                "name": "http",
+                "protocol": "TCP"
+              }
+            ],
+            "resources": {},
+            "terminationMessagePath": "/dev/termination-log",
+            "terminationMessagePolicy": "File",
+            "volumeMounts": [
+              {
+                "mountPath": "/var/run/secrets/kubernetes.io/serviceaccount",
+                "name": "kube-api-access-dc6gn",
+                "readOnly": true
+              }
+            ]
+          }
+        ],
+        "dnsPolicy": "ClusterFirst",
+        "enableServiceLinks": true,
+        "nodeName": "k3d-seance3-server-0",
+        "preemptionPolicy": "PreemptLowerPriority",
+        "priority": 0,
+        "restartPolicy": "Always",
+        "schedulerName": "default-scheduler",
+        "securityContext": {},
+        "serviceAccount": "default",
+        "serviceAccountName": "default",
+        "terminationGracePeriodSeconds": 30,
+        "tolerations": [
+          {
+            "effect": "NoExecute",
+            "key": "node.kubernetes.io/not-ready",
+            "operator": "Exists",
+            "tolerationSeconds": 300
+          },
+          {
+            "effect": "NoExecute",
+            "key": "node.kubernetes.io/unreachable",
+            "operator": "Exists",
+            "tolerationSeconds": 300
+          }
+        ],
+        "volumes": [
+          {
+            "name": "kube-api-access-dc6gn",
+            "projected": {
+              "defaultMode": 420,
+              "sources": [
+                {
+                  "serviceAccountToken": {
+                    "expirationSeconds": 3607,
+                    "path": "token"
+                  }
+                },
+                {
+                  "configMap": {
+                    "items": [
+                      {
+                        "key": "ca.crt",
+                        "path": "ca.crt"
+                      }
+                    ],
+                    "name": "kube-root-ca.crt"
+                  }
+                },
+                {
+                  "downwardAPI": {
+                    "items": [
+                      {
+                        "fieldRef": {
+                          "apiVersion": "v1",
+                          "fieldPath": "metadata.namespace"
+                        },
+                        "path": "namespace"
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "status": {
+        "conditions": [
+          {
+            "lastProbeTime": null,
+            "lastTransitionTime": "2026-10-07T15:32:47Z",
+            "status": "True",
+            "type": "PodReadyToStartContainers"
+          },
+          {
+            "lastProbeTime": null,
+            "lastTransitionTime": "2026-10-07T15:32:46Z",
+            "status": "True",
+            "type": "Initialized"
+          },
+          {
+            "lastProbeTime": null,
+            "lastTransitionTime": "2026-10-07T15:32:47Z",
+            "status": "True",
+            "type": "Ready"
+          },
+          {
+            "lastProbeTime": null,
+            "lastTransitionTime": "2026-10-07T15:32:47Z",
+            "status": "True",
+            "type": "ContainersReady"
+          },
+          {
+            "lastProbeTime": null,
+            "lastTransitionTime": "2026-10-07T15:32:46Z",
+            "status": "True",
+            "type": "PodScheduled"
+          }
+        ],
+        "containerStatuses": [
+          {
+            "containerID": "containerd://994a682c40bd35423a5ca5ff41c69b71ec235b984e22d77451fc192b311af328",
+            "image": "docker.io/nicolasbellina/taskflow-front:1.0.0",
+            "imageID": "docker.io/nicolasbellina/taskflow-front@sha256:f0a575db086353685a95da09ff07345f4c4b534f1d1dfd756eb047e61d113ee6",
+            "lastState": {},
+            "name": "front",
+            "ready": true,
+            "restartCount": 0,
+            "started": true,
+            "state": {
+              "running": {
+                "startedAt": "2026-10-07T15:32:47Z"
+              }
+            },
+            "volumeMounts": [
+              {
+                "mountPath": "/var/run/secrets/kubernetes.io/serviceaccount",
+                "name": "kube-api-access-dc6gn",
+                "readOnly": true,
+                "recursiveReadOnly": "Disabled"
+              }
+            ]
+          }
+        ],
+        "hostIP": "172.22.0.3",
+        "hostIPs": [
+          {
+            "ip": "172.22.0.3"
+          }
+        ],
+        "phase": "Running",
+        "podIP": "10.42.0.12",
+        "podIPs": [
+          {
+            "ip": "10.42.0.12"
+          }
+        ],
+        "qosClass": "BestEffort",
+        "startTime": "2026-10-07T15:32:46Z"
+      }
+    },
+    {
+      "apiVersion": "v1",
+      "kind": "Pod",
+      "metadata": {
+        "creationTimestamp": "2026-10-07T15:32:40Z",
+        "generateName": "front-646d79c6f-",
+        "labels": {
+          "app.kubernetes.io/component": "front",
+          "app.kubernetes.io/name": "taskflow",
+          "pod-template-hash": "646d79c6f"
+        },
+        "name": "front-646d79c6f-hddhc",
+        "namespace": "taskflow",
+        "ownerReferences": [
+          {
+            "apiVersion": "apps/v1",
+            "blockOwnerDeletion": true,
+            "controller": true,
+            "kind": "ReplicaSet",
+            "name": "front-646d79c6f",
+            "uid": "ab35fdcb-6881-4fec-bd12-a425d0be8232"
+          }
+        ],
+        "resourceVersion": "663",
+        "uid": "eb0866d8-d136-4a86-92c1-bed5cc4cbc62"
+      },
+      "spec": {
+        "containers": [
+          {
+            "args": [
+              "set -eu\ndns_resolver=\"$(awk '/^nameserver / { print $2; exit }' /etc/resolv.conf)\"\ntest -n \"$dns_resolver\"\nsed -i \"s/resolver 127.0.0.11 /resolver $dns_resolver /\" /etc/nginx/conf.d/default.conf\n# Le resolver Nginx n'applique pas les suffixes search de resolv.conf.\nsed -i 's@http://api:3000@http://api.taskflow.svc.cluster.local:3000@' /etc/nginx/conf.d/default.conf\nexec /docker-entrypoint.sh nginx -g 'daemon off;'\n"
+            ],
+            "command": [
+              "/bin/sh",
+              "-c"
+            ],
+            "image": "nicolasbellina/taskflow-front:1.0.0",
+            "imagePullPolicy": "IfNotPresent",
+            "name": "front",
+            "ports": [
+              {
+                "containerPort": 80,
+                "name": "http",
+                "protocol": "TCP"
+              }
+            ],
+            "resources": {},
+            "terminationMessagePath": "/dev/termination-log",
+            "terminationMessagePolicy": "File",
+            "volumeMounts": [
+              {
+                "mountPath": "/var/run/secrets/kubernetes.io/serviceaccount",
+                "name": "kube-api-access-64csb",
+                "readOnly": true
+              }
+            ]
+          }
+        ],
+        "dnsPolicy": "ClusterFirst",
+        "enableServiceLinks": true,
+        "nodeName": "k3d-seance3-server-0",
+        "preemptionPolicy": "PreemptLowerPriority",
+        "priority": 0,
+        "restartPolicy": "Always",
+        "schedulerName": "default-scheduler",
+        "securityContext": {},
+        "serviceAccount": "default",
+        "serviceAccountName": "default",
+        "terminationGracePeriodSeconds": 30,
+        "tolerations": [
+          {
+            "effect": "NoExecute",
+            "key": "node.kubernetes.io/not-ready",
+            "operator": "Exists",
+            "tolerationSeconds": 300
+          },
+          {
+            "effect": "NoExecute",
+            "key": "node.kubernetes.io/unreachable",
+            "operator": "Exists",
+            "tolerationSeconds": 300
+          }
+        ],
+        "volumes": [
+          {
+            "name": "kube-api-access-64csb",
+            "projected": {
+              "defaultMode": 420,
+              "sources": [
+                {
+                  "serviceAccountToken": {
+                    "expirationSeconds": 3607,
+                    "path": "token"
+                  }
+                },
+                {
+                  "configMap": {
+                    "items": [
+                      {
+                        "key": "ca.crt",
+                        "path": "ca.crt"
+                      }
+                    ],
+                    "name": "kube-root-ca.crt"
+                  }
+                },
+                {
+                  "downwardAPI": {
+                    "items": [
+                      {
+                        "fieldRef": {
+                          "apiVersion": "v1",
+                          "fieldPath": "metadata.namespace"
+                        },
+                        "path": "namespace"
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "status": {
+        "conditions": [
+          {
+            "lastProbeTime": null,
+            "lastTransitionTime": "2026-10-07T15:32:41Z",
+            "status": "True",
+            "type": "PodReadyToStartContainers"
+          },
+          {
+            "lastProbeTime": null,
+            "lastTransitionTime": "2026-10-07T15:32:40Z",
+            "status": "True",
+            "type": "Initialized"
+          },
+          {
+            "lastProbeTime": null,
+            "lastTransitionTime": "2026-10-07T15:32:41Z",
+            "status": "True",
+            "type": "Ready"
+          },
+          {
+            "lastProbeTime": null,
+            "lastTransitionTime": "2026-10-07T15:32:41Z",
+            "status": "True",
+            "type": "ContainersReady"
+          },
+          {
+            "lastProbeTime": null,
+            "lastTransitionTime": "2026-10-07T15:32:40Z",
+            "status": "True",
+            "type": "PodScheduled"
+          }
+        ],
+        "containerStatuses": [
+          {
+            "containerID": "containerd://6ed4a162ad4f4d8d62d791274252e0efa1ab1ba8fcb73ceb79d72a6d4320bd2f",
+            "image": "docker.io/nicolasbellina/taskflow-front:1.0.0",
+            "imageID": "docker.io/nicolasbellina/taskflow-front@sha256:f0a575db086353685a95da09ff07345f4c4b534f1d1dfd756eb047e61d113ee6",
+            "lastState": {},
+            "name": "front",
+            "ready": true,
+            "restartCount": 0,
+            "started": true,
+            "state": {
+              "running": {
+                "startedAt": "2026-10-07T15:32:41Z"
+              }
+            },
+            "volumeMounts": [
+              {
+                "mountPath": "/var/run/secrets/kubernetes.io/serviceaccount",
+                "name": "kube-api-access-64csb",
+                "readOnly": true,
+                "recursiveReadOnly": "Disabled"
+              }
+            ]
+          }
+        ],
+        "hostIP": "172.22.0.3",
+        "hostIPs": [
+          {
+            "ip": "172.22.0.3"
+          }
+        ],
+        "phase": "Running",
+        "podIP": "10.42.0.11",
+        "podIPs": [
+          {
+            "ip": "10.42.0.11"
+          }
+        ],
+        "qosClass": "BestEffort",
+        "startTime": "2026-10-07T15:32:40Z"
+      }
+    }
+  ],
+  "kind": "List",
+  "metadata": {
+    "resourceVersion": ""
+  }
+}

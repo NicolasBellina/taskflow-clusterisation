@@ -1,0 +1,220 @@
+{
+  "apiVersion": "v1",
+  "items": [
+    {
+      "addressType": "IPv4",
+      "apiVersion": "discovery.k8s.io/v1",
+      "endpoints": [
+        {
+          "addresses": [
+            "10.42.0.31"
+          ],
+          "conditions": {
+            "ready": true,
+            "serving": true,
+            "terminating": false
+          },
+          "nodeName": "k3d-seance3-server-0",
+          "targetRef": {
+            "kind": "Pod",
+            "name": "api-56c54f747b-j7d2t",
+            "namespace": "taskflow",
+            "uid": "a74b6ceb-32b2-4e54-b85b-3d539ff311f6"
+          }
+        },
+        {
+          "addresses": [
+            "10.42.0.32"
+          ],
+          "conditions": {
+            "ready": true,
+            "serving": true,
+            "terminating": false
+          },
+          "nodeName": "k3d-seance3-server-0",
+          "targetRef": {
+            "kind": "Pod",
+            "name": "api-56c54f747b-wnv7n",
+            "namespace": "taskflow",
+            "uid": "8e5cee97-4de1-4974-83ca-7628ee335295"
+          }
+        }
+      ],
+      "kind": "EndpointSlice",
+      "metadata": {
+        "annotations": {
+          "endpoints.kubernetes.io/last-change-trigger-time": "2026-10-07T15:47:07Z"
+        },
+        "creationTimestamp": "2026-10-07T15:47:05Z",
+        "generateName": "api-",
+        "generation": 3,
+        "labels": {
+          "app.kubernetes.io/component": "api",
+          "app.kubernetes.io/name": "taskflow",
+          "endpointslice.kubernetes.io/managed-by": "endpointslice-controller.k8s.io",
+          "kubernetes.io/service-name": "api"
+        },
+        "name": "api-mnrjk",
+        "namespace": "taskflow",
+        "ownerReferences": [
+          {
+            "apiVersion": "v1",
+            "blockOwnerDeletion": true,
+            "controller": true,
+            "kind": "Service",
+            "name": "api",
+            "uid": "2d540860-6f2c-4067-9557-99642b7c7a0a"
+          }
+        ],
+        "resourceVersion": "1876",
+        "uid": "1ee6d36e-3a77-468c-bbb2-7243a66cf3d0"
+      },
+      "ports": [
+        {
+          "name": "http",
+          "port": 3000,
+          "protocol": "TCP"
+        }
+      ]
+    },
+    {
+      "addressType": "IPv4",
+      "apiVersion": "discovery.k8s.io/v1",
+      "endpoints": [
+        {
+          "addresses": [
+            "10.42.0.33"
+          ],
+          "conditions": {
+            "ready": true,
+            "serving": true,
+            "terminating": false
+          },
+          "nodeName": "k3d-seance3-server-0",
+          "targetRef": {
+            "kind": "Pod",
+            "name": "db-cd6884bfc-8w9pm",
+            "namespace": "taskflow",
+            "uid": "52a90b67-8c62-4d55-80b7-8a9a7ceeee2c"
+          }
+        }
+      ],
+      "kind": "EndpointSlice",
+      "metadata": {
+        "annotations": {
+          "endpoints.kubernetes.io/last-change-trigger-time": "2026-10-07T15:47:07Z"
+        },
+        "creationTimestamp": "2026-10-07T15:47:05Z",
+        "generateName": "db-",
+        "generation": 2,
+        "labels": {
+          "app.kubernetes.io/component": "database",
+          "app.kubernetes.io/name": "taskflow",
+          "endpointslice.kubernetes.io/managed-by": "endpointslice-controller.k8s.io",
+          "kubernetes.io/service-name": "db"
+        },
+        "name": "db-w8flk",
+        "namespace": "taskflow",
+        "ownerReferences": [
+          {
+            "apiVersion": "v1",
+            "blockOwnerDeletion": true,
+            "controller": true,
+            "kind": "Service",
+            "name": "db",
+            "uid": "56328853-fd9b-456a-80eb-be90222ada3a"
+          }
+        ],
+        "resourceVersion": "1864",
+        "uid": "18a60317-8594-49ea-a36d-3dbe7f8a14b5"
+      },
+      "ports": [
+        {
+          "name": "postgres",
+          "port": 5432,
+          "protocol": "TCP"
+        }
+      ]
+    },
+    {
+      "addressType": "IPv4",
+      "apiVersion": "discovery.k8s.io/v1",
+      "endpoints": [
+        {
+          "addresses": [
+            "10.42.0.35"
+          ],
+          "conditions": {
+            "ready": true,
+            "serving": true,
+            "terminating": false
+          },
+          "nodeName": "k3d-seance3-server-0",
+          "targetRef": {
+            "kind": "Pod",
+            "name": "front-646d79c6f-clrtk",
+            "namespace": "taskflow",
+            "uid": "c241bb35-9630-4a72-b6a5-a451b1d97e6f"
+          }
+        },
+        {
+          "addresses": [
+            "10.42.0.34"
+          ],
+          "conditions": {
+            "ready": true,
+            "serving": true,
+            "terminating": false
+          },
+          "nodeName": "k3d-seance3-server-0",
+          "targetRef": {
+            "kind": "Pod",
+            "name": "front-646d79c6f-9plm9",
+            "namespace": "taskflow",
+            "uid": "4d2abd77-b8fc-4678-b92a-789598e61d62"
+          }
+        }
+      ],
+      "kind": "EndpointSlice",
+      "metadata": {
+        "annotations": {
+          "endpoints.kubernetes.io/last-change-trigger-time": "2026-10-07T15:47:07Z"
+        },
+        "creationTimestamp": "2026-10-07T15:47:05Z",
+        "generateName": "front-",
+        "generation": 3,
+        "labels": {
+          "app.kubernetes.io/component": "front",
+          "app.kubernetes.io/name": "taskflow",
+          "endpointslice.kubernetes.io/managed-by": "endpointslice-controller.k8s.io",
+          "kubernetes.io/service-name": "front"
+        },
+        "name": "front-c4mjq",
+        "namespace": "taskflow",
+        "ownerReferences": [
+          {
+            "apiVersion": "v1",
+            "blockOwnerDeletion": true,
+            "controller": true,
+            "kind": "Service",
+            "name": "front",
+            "uid": "fd900db5-fc6c-46f3-b24c-5567bb031dbe"
+          }
+        ],
+        "resourceVersion": "1881",
+        "uid": "667e9602-a9ce-47b7-b279-a71852ef07a0"
+      },
+      "ports": [
+        {
+          "name": "http",
+          "port": 80,
+          "protocol": "TCP"
+        }
+      ]
+    }
+  ],
+  "kind": "List",
+  "metadata": {
+    "resourceVersion": ""
+  }
+}

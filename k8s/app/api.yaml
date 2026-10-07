@@ -1,0 +1,75 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: api
+  namespace: taskflow
+  labels:
+    app.kubernetes.io/name: taskflow
+    app.kubernetes.io/component: api
+spec:
+  replicas: 2
+  # Temporisation prudente ; une sonde de disponibilité sera ajoutée plus tard.
+  minReadySeconds: 5
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxUnavailable: 0
+      maxSurge: 1
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: taskflow
+      app.kubernetes.io/component: api
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/name: taskflow
+        app.kubernetes.io/component: api
+    spec:
+      # Évite les variables DB_PORT/API_PORT injectées depuis les Services.
+      enableServiceLinks: false
+      terminationGracePeriodSeconds: 10
+      containers:
+        - name: api
+          image: nicolasbellina/taskflow-api:1.0.0
+          ports:
+            - name: http
+              containerPort: 3000
+          env:
+            - name: NODE_ENV
+              value: production
+            - name: APP_ENV
+              value: kubernetes-lab
+            - name: HOST
+              value: "0.0.0.0"
+            - name: PORT
+              value: "3000"
+            # Nom stable du Service, résolu par le DNS du cluster.
+            - name: DB_HOST
+              value: db
+            - name: DB_PORT
+              value: "5432"
+            - name: DB_NAME
+              value: taskflow
+            - name: DB_USER
+              value: taskflow
+            # Même valeur fictive que dans db.yaml ; aucun secret réel.
+            - name: DB_PASSWORD
+              value: taskflow-lab-only-not-a-real-secret
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: api
+  namespace: taskflow
+  labels:
+    app.kubernetes.io/name: taskflow
+    app.kubernetes.io/component: api
+spec:
+  type: ClusterIP
+  selector:
+    app.kubernetes.io/name: taskflow
+    app.kubernetes.io/component: api
+  ports:
+    - name: http
+      port: 3000
+      targetPort: http

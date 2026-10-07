@@ -1,0 +1,56 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: db
+  namespace: taskflow
+  labels:
+    app.kubernetes.io/name: taskflow
+    app.kubernetes.io/component: database
+spec:
+  replicas: 1
+  # Une seule base à la fois : arrêter l'ancien Pod avant de créer le suivant.
+  strategy:
+    type: Recreate
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: taskflow
+      app.kubernetes.io/component: database
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/name: taskflow
+        app.kubernetes.io/component: database
+    spec:
+      containers:
+        - name: postgres
+          image: postgres:17-alpine@sha256:b0f9560a2de083e2cc7382e75f808c7381a32852a7ec49117deedb300e552b24
+          ports:
+            - name: postgres
+              containerPort: 5432
+          env:
+            - name: POSTGRES_DB
+              value: taskflow
+            - name: POSTGRES_USER
+              value: taskflow
+            # Valeur publique et fictive, réservée à ce TP jetable.
+            - name: POSTGRES_PASSWORD
+              value: taskflow-lab-only-not-a-real-secret
+          # Aucun volume : la recréation du Pod efface les données du TP.
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: db
+  namespace: taskflow
+  labels:
+    app.kubernetes.io/name: taskflow
+    app.kubernetes.io/component: database
+spec:
+  type: ClusterIP
+  selector:
+    app.kubernetes.io/name: taskflow
+    app.kubernetes.io/component: database
+  ports:
+    - name: postgres
+      port: 5432
+      targetPort: postgres

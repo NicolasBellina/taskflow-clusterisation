@@ -1,0 +1,57 @@
+API_PORT=tcp://10.43.232.42:3000
+API_PORT_3000_TCP=tcp://10.43.232.42:3000
+API_PORT_3000_TCP_ADDR=10.43.232.42
+API_PORT_3000_TCP_PORT=3000
+API_PORT_3000_TCP_PROTO=tcp
+API_SERVICE_HOST=10.43.232.42
+API_SERVICE_PORT=3000
+API_SERVICE_PORT_HTTP=3000
+DB_HOST=db
+DB_NAME=taskflow
+DB_PASSWORD=taskflow-lab-only-not-a-real-secret
+DB_PORT=tcp://10.43.16.226:5432
+DB_PORT_5432_TCP=tcp://10.43.16.226:5432
+DB_PORT_5432_TCP_ADDR=10.43.16.226
+DB_PORT_5432_TCP_PORT=5432
+DB_PORT_5432_TCP_PROTO=tcp
+DB_SERVICE_HOST=10.43.16.226
+DB_SERVICE_PORT=5432
+DB_SERVICE_PORT_POSTGRES=5432
+DB_USER=taskflow
+FRONT_PORT=tcp://10.43.215.188:32000
+FRONT_PORT_32000_TCP=tcp://10.43.215.188:32000
+FRONT_PORT_32000_TCP_ADDR=10.43.215.188
+FRONT_PORT_32000_TCP_PORT=32000
+FRONT_PORT_32000_TCP_PROTO=tcp
+FRONT_SERVICE_HOST=10.43.215.188
+FRONT_SERVICE_PORT=32000
+FRONT_SERVICE_PORT_HTTP=32000
+HOME=/home/node
+HOST=0.0.0.0
+HOSTNAME=env-trap
+KUBERNETES_PORT=tcp://10.43.0.1:443
+KUBERNETES_PORT_443_TCP=tcp://10.43.0.1:443
+KUBERNETES_PORT_443_TCP_ADDR=10.43.0.1
+KUBERNETES_PORT_443_TCP_PORT=443
+KUBERNETES_PORT_443_TCP_PROTO=tcp
+KUBERNETES_SERVICE_HOST=10.43.0.1
+KUBERNETES_SERVICE_PORT=443
+KUBERNETES_SERVICE_PORT_HTTPS=443
+NODE_ENV=production
+NODE_VERSION=24.21.0
+PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+PORT=3000
+PWD=/app
+YARN_VERSION=1.22.22
+file:///app/src/config.js:10
+    throw new Error(`La variable ${name} doit être un entier positif (valeur reçue : "${raw}")`);
+          ^
+
+Error: La variable DB_PORT doit être un entier positif (valeur reçue : "tcp://10.43.16.226:5432")
+    at readInt (file:///app/src/config.js:10:11)
+    at file:///app/src/config.js:45:11
+    at ModuleJob.run (node:internal/modules/esm/module_job:561:25)
+    at async node:internal/modules/esm/loader:647:26
+    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:101:5)
+
+Node.js v24.21.0

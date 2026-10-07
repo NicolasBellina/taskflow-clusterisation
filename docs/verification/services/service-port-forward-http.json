@@ -1,0 +1,41 @@
+{
+  "/healthz": {
+    "at": "2026-10-07T17:47:12.699689+02:00",
+    "status": 200,
+    "headers": {
+      "X-Served-By": "api-56c54f747b-j7d2t",
+      "Content-Type": "application/json; charset=utf-8",
+      "Content-Length": "67",
+      "ETag": "W/\"43-kDwsRji9booVwjtIZXbxcgiMydk\"",
+      "Date": "Wed, 07 Oct 2026 15:47:12 GMT",
+      "Connection": "close"
+    },
+    "body": "{\"status\":\"ok\",\"version\":\"1.0.0\",\"hostname\":\"api-56c54f747b-j7d2t\"}"
+  },
+  "/readyz": {
+    "at": "2026-10-07T17:47:12.705215+02:00",
+    "status": 200,
+    "headers": {
+      "X-Served-By": "api-56c54f747b-j7d2t",
+      "Content-Type": "application/json; charset=utf-8",
+      "Content-Length": "52",
+      "ETag": "W/\"34-ALFR4SEVCqZCSmVljgqF4vCJxd0\"",
+      "Date": "Wed, 07 Oct 2026 15:47:12 GMT",
+      "Connection": "close"
+    },
+    "body": "{\"status\":\"ready\",\"hostname\":\"api-56c54f747b-j7d2t\"}"
+  },
+  "/api/tasks": {
+    "at": "2026-10-07T17:47:12.710631+02:00",
+    "status": 200,
+    "headers": {
+      "X-Served-By": "api-56c54f747b-j7d2t",
+      "Content-Type": "application/json; charset=utf-8",
+      "Content-Length": "2",
+      "ETag": "W/\"2-l9Fw4VUO7kr8CvBlt4zaMCqXZ0w\"",
+      "Date": "Wed, 07 Oct 2026 15:47:12 GMT",
+      "Connection": "close"
+    },
+    "body": "[]"
+  }
+}

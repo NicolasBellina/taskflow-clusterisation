@@ -1,0 +1,10 @@
+{
+  "at": "2026-10-07T17:47:39.656815+02:00",
+  "repository": "nicolasbellina/taskflow-api",
+  "tag": "2.0.0",
+  "anonymous_pull_manifest_access": true,
+  "os": "linux",
+  "architecture": "arm64",
+  "media_type": "application/vnd.oci.image.manifest.v1+json",
+  "authentication_credentials_used": false
+}

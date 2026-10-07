@@ -1,0 +1,32 @@
+[
+  {
+    "component": "api",
+    "deleted_pod": "api-56c54f747b-fsbqc",
+    "deleted_uid": "3c0670a5-85c7-4d42-9314-a85b97b9564f",
+    "pods_after": [
+      {
+        "name": "api-56c54f747b-lwmmq",
+        "uid": "7ccf85a7-b672-4b20-8118-3765e0261e02"
+      },
+      {
+        "name": "api-56c54f747b-ngjn8",
+        "uid": "51f040bb-7f99-44bc-a88d-37322312b998"
+      }
+    ]
+  },
+  {
+    "component": "front",
+    "deleted_pod": "front-646d79c6f-bjvrn",
+    "deleted_uid": "b2763210-4d2a-43af-bb26-77d140e657a6",
+    "pods_after": [
+      {
+        "name": "front-646d79c6f-hddhc",
+        "uid": "eb0866d8-d136-4a86-92c1-bed5cc4cbc62"
+      },
+      {
+        "name": "front-646d79c6f-w6kq2",
+        "uid": "291b37a1-7874-46bd-b3ad-96a44d8d6abf"
+      }
+    ]
+  }
+]

@@ -1,0 +1,140 @@
+{
+  "verified_at": "2026-10-07T17:14:33.226795+02:00",
+  "scope": "Nouvel audit des deux séances ; expériences destructives Kubernetes conservées dans les preuves antérieures.",
+  "compose": {
+    "config_validation": true,
+    "stack_checks": {
+      "checks": [
+        "Accueil et route history /a-propos : HTTP 200, même index.html",
+        "Proxy /api/info et en-tête X-Served-By fonctionnels",
+        "Création, lecture, modification, suppression, erreurs 400/404 et charge CPU validées",
+        "Deux tâches conservées après docker compose down puis up",
+        "Arrêt API avec base active : code 0 en 0.245 seconde(s)"
+      ],
+      "persistent_task_ids": [
+        6,
+        7
+      ],
+      "api_stop_seconds": 0.245,
+      "base_url": "http://localhost:8080"
+    },
+    "api_user": "uid=1000(node) gid=1000(node) groups=1000(node)",
+    "services": [
+      {
+        "service": "api",
+        "state": "running",
+        "health": "healthy"
+      },
+      {
+        "service": "db",
+        "state": "running",
+        "health": "healthy"
+      },
+      {
+        "service": "front",
+        "state": "running",
+        "health": "healthy"
+      }
+    ]
+  },
+  "images": {
+    "nicolasbellina/taskflow-api": {
+      "tag": "1.0.0",
+      "anonymous_manifest_access": true,
+      "remote_digest": "sha256:b63fd156d12d1f9fbde18984b7b0972d92b919f2fe838c32cb78deb70e585bff",
+      "local_repository_digests": [
+        "nicolasbellina/taskflow-api@sha256:b63fd156d12d1f9fbde18984b7b0972d92b919f2fe838c32cb78deb70e585bff"
+      ],
+      "platforms": [
+        {
+          "architecture": "arm64",
+          "os": "linux"
+        }
+      ],
+      "size_bytes": 82016112
+    },
+    "nicolasbellina/taskflow-front": {
+      "tag": "1.0.0",
+      "anonymous_manifest_access": true,
+      "remote_digest": "sha256:f0a575db086353685a95da09ff07345f4c4b534f1d1dfd756eb047e61d113ee6",
+      "local_repository_digests": [
+        "nicolasbellina/taskflow-front@sha256:f0a575db086353685a95da09ff07345f4c4b534f1d1dfd756eb047e61d113ee6"
+      ],
+      "platforms": [
+        {
+          "architecture": "arm64",
+          "os": "linux"
+        }
+      ],
+      "size_bytes": 26020652
+    }
+  },
+  "kubernetes": {
+    "context": "k3d-seance2",
+    "vm_k3s_lab_tested": false,
+    "kubeconfig_used": "Copie privée temporaire récupérée du nœud k3d actif ; aucun kubeconfig ajouté au dépôt.",
+    "nodes": [
+      {
+        "name": "k3d-seance2-server-0",
+        "ready": true,
+        "version": "v1.32.5+k3s1"
+      }
+    ],
+    "pods": [
+      {
+        "name": "api",
+        "uid": "a6381f94-03d3-4cdd-a7cf-44ef06ab0f85",
+        "phase": "Running",
+        "ip": "10.42.0.95",
+        "restarts": 1
+      },
+      {
+        "name": "db",
+        "uid": "0c1d7216-c67c-4bcc-8324-745ccd92a121",
+        "phase": "Running",
+        "ip": "10.42.0.93",
+        "restarts": 0
+      }
+    ],
+    "db_host_matches_current_pod": true,
+    "server_dry_run": "namespace/taskflow unchanged (server dry run)\npod/api unchanged (server dry run)\npod/db unchanged (server dry run)",
+    "http_checks": {
+      "healthz_http": 200,
+      "readyz_http": 200,
+      "x_served_by": "api",
+      "task_create_http": 201,
+      "task_read_http": 200,
+      "task_list_http": 200,
+      "temporary_task_delete_http": 204
+    }
+  },
+  "git": {
+    "head": "e92ace3e493bb996c92d9af1dfec2c080581703c",
+    "origin_main": "e92ace3e493bb996c92d9af1dfec2c080581703c",
+    "env_tracked": false,
+    "env_ignored": true
+  },
+  "remaining_limits": [
+    "VM k3s-lab non exécutée ; adaptation locale k3d.",
+    "Images publiées pour linux/arm64 uniquement.",
+    "Point de contrôle préparé ; envoi au fil de cours non attesté.",
+    "Mode PAT du login historique non démontrable par les logs.",
+    "Réécriture documentaire de cet audit locale, non commitée ni poussée."
+  ],
+  "front_base_comparison": {
+    "base_reference": "nginx:stable-alpine@sha256:0985e772fb9f729e6fa0980da05fca5d9c468e870eed43071545afa9d2e27d94",
+    "platform": "linux/arm64",
+    "nginx_base_size_bytes": 25991522,
+    "front_size_bytes": 26020652,
+    "difference_bytes": 29130,
+    "measured_at": "2026-10-07T17:22:02.246778+02:00"
+  },
+  "documentation_validation": {
+    "verified_at": "2026-10-07T17:23:21.469376+02:00",
+    "markdown_files": 6,
+    "valid_local_links_and_anchors": 183,
+    "shell_blocks_syntax_valid": 36,
+    "local_password_absent_from_tracked_files_and_new_docs": true,
+    "independent_requirements_review": "Questions des deux PDF couvertes ; limites VM/PAT/ARM64/envoi explicites ; remise en état db corrigée pour éviter une recréation inutile."
+  }
+}

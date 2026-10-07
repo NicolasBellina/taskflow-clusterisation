@@ -1,0 +1,65 @@
+Name:             api-f9667bb4f-mbq84
+Namespace:        taskflow
+Priority:         0
+Service Account:  default
+Node:             k3d-seance3-server-0/172.22.0.3
+Start Time:       Wed, 07 Oct 2026 17:42:36 +0200
+Labels:           app.kubernetes.io/component=api
+                  app.kubernetes.io/name=taskflow
+                  pod-template-hash=f9667bb4f
+Annotations:      kubectl.kubernetes.io/restartedAt: 2026-10-07T17:39:12+02:00
+Status:           Pending
+IP:               10.42.0.29
+IPs:
+  IP:           10.42.0.29
+Controlled By:  ReplicaSet/api-f9667bb4f
+Containers:
+  api:
+    Container ID:
+    Image:          nicolasbellina/taskflow-api:9.9.9
+    Image ID:
+    Port:           3000/TCP (http)
+    Host Port:      0/TCP (http)
+    State:          Waiting
+      Reason:       ImagePullBackOff
+    Ready:          False
+    Restart Count:  0
+    Environment:
+      NODE_ENV:     production
+      APP_ENV:      kubernetes-lab
+      HOST:         0.0.0.0
+      PORT:         3000
+      DB_HOST:      db
+      DB_PORT:      5432
+      DB_NAME:      taskflow
+      DB_USER:      taskflow
+      DB_PASSWORD:  taskflow-lab-only-not-a-real-secret
+    Mounts:
+      /var/run/secrets/kubernetes.io/serviceaccount from kube-api-access-8d5jc (ro)
+Conditions:
+  Type                        Status
+  PodReadyToStartContainers   True
+  Initialized                 True
+  Ready                       False
+  ContainersReady             False
+  PodScheduled                True
+Volumes:
+  kube-api-access-8d5jc:
+    Type:                    Projected (a volume that contains injected data from multiple sources)
+    TokenExpirationSeconds:  3607
+    ConfigMapName:           kube-root-ca.crt
+    Optional:                false
+    DownwardAPI:             true
+QoS Class:                   BestEffort
+Node-Selectors:              <none>
+Tolerations:                 node.kubernetes.io/not-ready:NoExecute op=Exists for 300s
+                             node.kubernetes.io/unreachable:NoExecute op=Exists for 300s
+Events:
+  Type     Reason     Age               From               Message
+  ----     ------     ----              ----               -------
+  Normal   Scheduled  14s               default-scheduler  Successfully assigned taskflow/api-f9667bb4f-mbq84 to k3d-seance3-server-0
+  Warning  Failed     12s               kubelet            Failed to pull image "nicolasbellina/taskflow-api:9.9.9": rpc error: code = NotFound desc = failed to pull and unpack image "docker.io/nicolasbellina/taskflow-api:9.9.9": failed to resolve reference "docker.io/nicolasbellina/taskflow-api:9.9.9": docker.io/nicolasbellina/taskflow-api:9.9.9: not found
+  Warning  Failed     12s               kubelet            Error: ErrImagePull
+  Normal   BackOff    12s               kubelet            Back-off pulling image "nicolasbellina/taskflow-api:9.9.9"
+  Warning  Failed     12s               kubelet            Error: ImagePullBackOff
+  Normal   Pulling    0s (x2 over 14s)  kubelet            Pulling image "nicolasbellina/taskflow-api:9.9.9"

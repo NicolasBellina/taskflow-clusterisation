@@ -1,0 +1,205 @@
+{
+  "apiVersion": "v1",
+  "kind": "Pod",
+  "metadata": {
+    "creationTimestamp": "2026-10-07T15:35:22Z",
+    "labels": {
+      "run": "env-trap"
+    },
+    "name": "env-trap",
+    "namespace": "taskflow",
+    "resourceVersion": "805",
+    "uid": "81d1036e-c9c3-43a8-810f-60058785aba6"
+  },
+  "spec": {
+    "containers": [
+      {
+        "command": [
+          "/bin/sh",
+          "-c",
+          "env | sort; exec node src/server.js"
+        ],
+        "env": [
+          {
+            "name": "DB_HOST",
+            "value": "db"
+          },
+          {
+            "name": "DB_NAME",
+            "value": "taskflow"
+          },
+          {
+            "name": "DB_USER",
+            "value": "taskflow"
+          },
+          {
+            "name": "DB_PASSWORD",
+            "value": "taskflow-lab-only-not-a-real-secret"
+          },
+          {
+            "name": "PORT",
+            "value": "3000"
+          }
+        ],
+        "image": "nicolasbellina/taskflow-api:1.0.0",
+        "imagePullPolicy": "IfNotPresent",
+        "name": "env-trap",
+        "resources": {},
+        "terminationMessagePath": "/dev/termination-log",
+        "terminationMessagePolicy": "File",
+        "volumeMounts": [
+          {
+            "mountPath": "/var/run/secrets/kubernetes.io/serviceaccount",
+            "name": "kube-api-access-clmpv",
+            "readOnly": true
+          }
+        ]
+      }
+    ],
+    "dnsPolicy": "ClusterFirst",
+    "enableServiceLinks": true,
+    "nodeName": "k3d-seance3-server-0",
+    "preemptionPolicy": "PreemptLowerPriority",
+    "priority": 0,
+    "restartPolicy": "Never",
+    "schedulerName": "default-scheduler",
+    "securityContext": {},
+    "serviceAccount": "default",
+    "serviceAccountName": "default",
+    "terminationGracePeriodSeconds": 30,
+    "tolerations": [
+      {
+        "effect": "NoExecute",
+        "key": "node.kubernetes.io/not-ready",
+        "operator": "Exists",
+        "tolerationSeconds": 300
+      },
+      {
+        "effect": "NoExecute",
+        "key": "node.kubernetes.io/unreachable",
+        "operator": "Exists",
+        "tolerationSeconds": 300
+      }
+    ],
+    "volumes": [
+      {
+        "name": "kube-api-access-clmpv",
+        "projected": {
+          "defaultMode": 420,
+          "sources": [
+            {
+              "serviceAccountToken": {
+                "expirationSeconds": 3607,
+                "path": "token"
+              }
+            },
+            {
+              "configMap": {
+                "items": [
+                  {
+                    "key": "ca.crt",
+                    "path": "ca.crt"
+                  }
+                ],
+                "name": "kube-root-ca.crt"
+              }
+            },
+            {
+              "downwardAPI": {
+                "items": [
+                  {
+                    "fieldRef": {
+                      "apiVersion": "v1",
+                      "fieldPath": "metadata.namespace"
+                    },
+                    "path": "namespace"
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "status": {
+    "conditions": [
+      {
+        "lastProbeTime": null,
+        "lastTransitionTime": "2026-10-07T15:35:24Z",
+        "status": "False",
+        "type": "PodReadyToStartContainers"
+      },
+      {
+        "lastProbeTime": null,
+        "lastTransitionTime": "2026-10-07T15:35:22Z",
+        "status": "True",
+        "type": "Initialized"
+      },
+      {
+        "lastProbeTime": null,
+        "lastTransitionTime": "2026-10-07T15:35:22Z",
+        "reason": "PodFailed",
+        "status": "False",
+        "type": "Ready"
+      },
+      {
+        "lastProbeTime": null,
+        "lastTransitionTime": "2026-10-07T15:35:22Z",
+        "reason": "PodFailed",
+        "status": "False",
+        "type": "ContainersReady"
+      },
+      {
+        "lastProbeTime": null,
+        "lastTransitionTime": "2026-10-07T15:35:22Z",
+        "status": "True",
+        "type": "PodScheduled"
+      }
+    ],
+    "containerStatuses": [
+      {
+        "containerID": "containerd://91ea2f98943ddfd4369fc88a0d3807a45858f9248e025b7b4569552ab7fa6853",
+        "image": "docker.io/nicolasbellina/taskflow-api:1.0.0",
+        "imageID": "docker.io/nicolasbellina/taskflow-api@sha256:b63fd156d12d1f9fbde18984b7b0972d92b919f2fe838c32cb78deb70e585bff",
+        "lastState": {},
+        "name": "env-trap",
+        "ready": false,
+        "restartCount": 0,
+        "started": false,
+        "state": {
+          "terminated": {
+            "containerID": "containerd://91ea2f98943ddfd4369fc88a0d3807a45858f9248e025b7b4569552ab7fa6853",
+            "exitCode": 1,
+            "finishedAt": "2026-10-07T15:35:23Z",
+            "reason": "Error",
+            "startedAt": "2026-10-07T15:35:23Z"
+          }
+        },
+        "volumeMounts": [
+          {
+            "mountPath": "/var/run/secrets/kubernetes.io/serviceaccount",
+            "name": "kube-api-access-clmpv",
+            "readOnly": true,
+            "recursiveReadOnly": "Disabled"
+          }
+        ]
+      }
+    ],
+    "hostIP": "172.22.0.3",
+    "hostIPs": [
+      {
+        "ip": "172.22.0.3"
+      }
+    ],
+    "phase": "Failed",
+    "podIP": "10.42.0.15",
+    "podIPs": [
+      {
+        "ip": "10.42.0.15"
+      }
+    ],
+    "qosClass": "BestEffort",
+    "startTime": "2026-10-07T15:35:22Z"
+  }
+}

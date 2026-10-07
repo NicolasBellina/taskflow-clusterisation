@@ -1,0 +1,15 @@
+{
+  "at": "2026-10-07T17:39:24.475312+02:00",
+  "status": 201,
+  "headers": {
+    "Server": "nginx/1.30.5",
+    "Date": "Wed, 07 Oct 2026 15:39:24 GMT",
+    "Content-Type": "application/json; charset=utf-8",
+    "Content-Length": "162",
+    "Connection": "close",
+    "X-Served-By": "api-5477cdff68-c24ht",
+    "Location": "/api/tasks/1",
+    "ETag": "W/\"a2-ywON1YjkPMQJHppCU4vPM+QdT48\""
+  },
+  "body": "{\"id\":1,\"title\":\"Séance 3 : reprise après recréation de PostgreSQL\",\"done\":false,\"createdAt\":\"2026-10-07T15:39:24.471Z\",\"updatedAt\":\"2026-10-07T15:39:24.471Z\"}"
+}

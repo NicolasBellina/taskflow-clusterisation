@@ -1,0 +1,14 @@
+{
+  "at": "2026-10-07T17:39:24.459760+02:00",
+  "status": 200,
+  "headers": {
+    "Server": "nginx/1.30.5",
+    "Date": "Wed, 07 Oct 2026 15:39:24 GMT",
+    "Content-Type": "application/json; charset=utf-8",
+    "Content-Length": "2",
+    "Connection": "close",
+    "X-Served-By": "api-5477cdff68-hlhq9",
+    "ETag": "W/\"2-l9Fw4VUO7kr8CvBlt4zaMCqXZ0w\""
+  },
+  "body": "[]"
+}

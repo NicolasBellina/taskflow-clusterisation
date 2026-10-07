@@ -1,0 +1,14 @@
+[pod/api-56c54f747b-fsbqc/api] 2026-10-07T15:31:28.136Z INFO  [api-56c54f747b-fsbqc] Démarrage de taskflow-api 1.0.0 (APP_ENV=kubernetes-lab)
+[pod/api-56c54f747b-fsbqc/api] 2026-10-07T15:31:28.148Z WARN  [api-56c54f747b-fsbqc] Connexion à db:5432 impossible (tentative 1/6) : ECONNREFUSED connect ECONNREFUSED 10.43.16.226:5432
+[pod/api-56c54f747b-fsbqc/api] 2026-10-07T15:31:30.153Z WARN  [api-56c54f747b-fsbqc] Connexion à db:5432 impossible (tentative 2/6) : ECONNREFUSED connect ECONNREFUSED 10.43.16.226:5432
+[pod/api-56c54f747b-fsbqc/api] 2026-10-07T15:31:32.157Z WARN  [api-56c54f747b-fsbqc] Connexion à db:5432 impossible (tentative 3/6) : ECONNREFUSED connect ECONNREFUSED 10.43.16.226:5432
+[pod/api-56c54f747b-fsbqc/api] 2026-10-07T15:31:34.207Z INFO  [api-56c54f747b-fsbqc] Base de données taskflow joignable sur db:5432, schéma vérifié
+[pod/api-56c54f747b-fsbqc/api] 2026-10-07T15:31:34.211Z INFO  [api-56c54f747b-fsbqc] API à l'écoute sur 0.0.0.0:3000
+[pod/api-56c54f747b-ngjn8/api] 2026-10-07T15:31:28.138Z INFO  [api-56c54f747b-ngjn8] Démarrage de taskflow-api 1.0.0 (APP_ENV=kubernetes-lab)
+[pod/api-56c54f747b-ngjn8/api] 2026-10-07T15:31:28.146Z WARN  [api-56c54f747b-ngjn8] Connexion à db:5432 impossible (tentative 1/6) : ECONNREFUSED connect ECONNREFUSED 10.43.16.226:5432
+[pod/api-56c54f747b-ngjn8/api] 2026-10-07T15:31:30.153Z WARN  [api-56c54f747b-ngjn8] Connexion à db:5432 impossible (tentative 2/6) : ECONNREFUSED connect ECONNREFUSED 10.43.16.226:5432
+[pod/api-56c54f747b-ngjn8/api] 2026-10-07T15:31:32.156Z WARN  [api-56c54f747b-ngjn8] Connexion à db:5432 impossible (tentative 3/6) : ECONNREFUSED connect ECONNREFUSED 10.43.16.226:5432
+[pod/api-56c54f747b-ngjn8/api] 2026-10-07T15:31:34.205Z INFO  [api-56c54f747b-ngjn8] Base de données taskflow joignable sur db:5432, schéma vérifié
+[pod/api-56c54f747b-ngjn8/api] 2026-10-07T15:31:34.211Z INFO  [api-56c54f747b-ngjn8] API à l'écoute sur 0.0.0.0:3000
+[pod/api-56c54f747b-ngjn8/api] 2026-10-07T15:32:53.038Z INFO  [api-56c54f747b-ngjn8] GET /api/info 200 10.6ms
+[pod/api-56c54f747b-ngjn8/api] 2026-10-07T15:33:41.032Z INFO  [api-56c54f747b-ngjn8] GET /api/info 200 3.2ms

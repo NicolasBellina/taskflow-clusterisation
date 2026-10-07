@@ -1,0 +1,21 @@
+diff -u -N /var/folders/z7/16s3y4q94y7273xgv428xdbw0000gn/T/LIVE-3645328063/apps.v1.Deployment.taskflow.api /var/folders/z7/16s3y4q94y7273xgv428xdbw0000gn/T/MERGED-2576100517/apps.v1.Deployment.taskflow.api
+--- /var/folders/z7/16s3y4q94y7273xgv428xdbw0000gn/T/LIVE-3645328063/apps.v1.Deployment.taskflow.api	2026-10-07 17:42:36
++++ /var/folders/z7/16s3y4q94y7273xgv428xdbw0000gn/T/MERGED-2576100517/apps.v1.Deployment.taskflow.api	2026-10-07 17:42:36
+@@ -6,7 +6,7 @@
+     kubectl.kubernetes.io/last-applied-configuration: |
+       {"apiVersion":"apps/v1","kind":"Deployment","metadata":{"annotations":{},"labels":{"app.kubernetes.io/component":"api","app.kubernetes.io/name":"taskflow"},"name":"api","namespace":"taskflow"},"spec":{"minReadySeconds":5,"replicas":2,"selector":{"matchLabels":{"app.kubernetes.io/component":"api","app.kubernetes.io/name":"taskflow"}},"strategy":{"rollingUpdate":{"maxSurge":1,"maxUnavailable":0},"type":"RollingUpdate"},"template":{"metadata":{"labels":{"app.kubernetes.io/component":"api","app.kubernetes.io/name":"taskflow"}},"spec":{"containers":[{"env":[{"name":"NODE_ENV","value":"production"},{"name":"APP_ENV","value":"kubernetes-lab"},{"name":"HOST","value":"0.0.0.0"},{"name":"PORT","value":"3000"},{"name":"DB_HOST","value":"db"},{"name":"DB_PORT","value":"5432"},{"name":"DB_NAME","value":"taskflow"},{"name":"DB_USER","value":"taskflow"},{"name":"DB_PASSWORD","value":"taskflow-lab-only-not-a-real-secret"}],"image":"nicolasbellina/taskflow-api:2.0.0","name":"api","ports":[{"containerPort":3000,"name":"http"}]}],"enableServiceLinks":false,"terminationGracePeriodSeconds":10}}}}
+   creationTimestamp: "2026-10-07T15:31:18Z"
+-  generation: 6
++  generation: 7
+   labels:
+     app.kubernetes.io/component: api
+     app.kubernetes.io/name: taskflow
+@@ -57,7 +57,7 @@
+           value: taskflow
+         - name: DB_PASSWORD
+           value: taskflow-lab-only-not-a-real-secret
+-        image: nicolasbellina/taskflow-api:1.0.0
++        image: nicolasbellina/taskflow-api:9.9.9
+         imagePullPolicy: IfNotPresent
+         name: api
+         ports:

@@ -1,0 +1,9 @@
+{
+  "status": 200,
+  "body": {
+    "status": "ok",
+    "version": "1.0.0",
+    "hostname": "api-56c54f747b-fsbqc"
+  },
+  "servedBy": "api-56c54f747b-fsbqc"
+}

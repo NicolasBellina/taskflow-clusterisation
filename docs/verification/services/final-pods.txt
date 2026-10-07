@@ -1,0 +1,6 @@
+NAME                    READY   STATUS    RESTARTS   AGE   IP           NODE                   NOMINATED NODE   READINESS GATES
+api-56c54f747b-j7d2t    1/1     Running   0          7s    10.42.0.31   k3d-seance3-server-0   <none>           <none>
+api-56c54f747b-wnv7n    1/1     Running   0          7s    10.42.0.32   k3d-seance3-server-0   <none>           <none>
+db-cd6884bfc-8w9pm      1/1     Running   0          7s    10.42.0.33   k3d-seance3-server-0   <none>           <none>
+front-646d79c6f-9plm9   1/1     Running   0          7s    10.42.0.34   k3d-seance3-server-0   <none>           <none>
+front-646d79c6f-clrtk   1/1     Running   0          7s    10.42.0.35   k3d-seance3-server-0   <none>           <none>

@@ -4,12 +4,12 @@
     "Proxy /api/info et en-tête X-Served-By fonctionnels",
     "Création, lecture, modification, suppression, erreurs 400/404 et charge CPU validées",
     "Deux tâches conservées après docker compose down puis up",
-    "Arrêt API avec base active : code 0 en 0.235 seconde(s)"
+    "Arrêt API avec base active : code 0 en 0.245 seconde(s)"
   ],
   "persistent_task_ids": [
-    2,
-    3
+    6,
+    7
   ],
-  "api_stop_seconds": 0.235,
+  "api_stop_seconds": 0.245,
   "base_url": "http://localhost:8080"
 }

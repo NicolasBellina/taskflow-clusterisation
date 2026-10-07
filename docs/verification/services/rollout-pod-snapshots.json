@@ -1,0 +1,2358 @@
+[
+  {
+    "at": "2026-10-07T17:41:09.925615+02:00",
+    "phase": "before-update",
+    "pods": [
+      {
+        "name": "api-58c9886585-47jgr",
+        "uid": "9006fca6-77b7-4db0-9be9-5a95c19bcce1",
+        "image": "nicolasbellina/taskflow-api:1.0.0",
+        "phase": "Running",
+        "terminating": false
+      },
+      {
+        "name": "api-58c9886585-kkt2r",
+        "uid": "a4fb740e-35cb-42e8-948e-b1ccd1015d09",
+        "image": "nicolasbellina/taskflow-api:1.0.0",
+        "phase": "Running",
+        "terminating": false
+      }
+    ]
+  },
+  {
+    "at": "2026-10-07T17:41:10.247107+02:00",
+    "phase": "before-update",
+    "pods": [
+      {
+        "name": "api-58c9886585-47jgr",
+        "uid": "9006fca6-77b7-4db0-9be9-5a95c19bcce1",
+        "image": "nicolasbellina/taskflow-api:1.0.0",
+        "phase": "Running",
+        "terminating": false
+      },
+      {
+        "name": "api-58c9886585-kkt2r",
+        "uid": "a4fb740e-35cb-42e8-948e-b1ccd1015d09",
+        "image": "nicolasbellina/taskflow-api:1.0.0",
+        "phase": "Running",
+        "terminating": false
+      }
+    ]
+  },
+  {
+    "at": "2026-10-07T17:41:10.567508+02:00",
+    "phase": "upgrade-to-2",
+    "pods": [
+      {
+        "name": "api-58c9886585-47jgr",
+        "uid": "9006fca6-77b7-4db0-9be9-5a95c19bcce1",
+        "image": "nicolasbellina/taskflow-api:1.0.0",
+        "phase": "Running",
+        "terminating": false
+      },
+      {
+        "name": "api-58c9886585-kkt2r",
+        "uid": "a4fb740e-35cb-42e8-948e-b1ccd1015d09",
+        "image": "nicolasbellina/taskflow-api:1.0.0",
+        "phase": "Running",
+        "terminating": false
+      }
+    ]
+  },
+  {
+    "at": "2026-10-07T17:41:10.856322+02:00",
+    "phase": "upgrade-to-2",
+    "pods": [
+      {
+        "name": "api-5477cdff68-sgnzl",
+        "uid": "d2f01846-78a9-4b09-8a72-c133ca424521",
+        "image": "nicolasbellina/taskflow-api:2.0.0",
+        "phase": "Pending",
+        "terminating": false
+      },
+      {
+        "name": "api-58c9886585-47jgr",
+        "uid": "9006fca6-77b7-4db0-9be9-5a95c19bcce1",
+        "image": "nicolasbellina/taskflow-api:1.0.0",
+        "phase": "Running",
+        "terminating": false
+      },
+      {
+        "name": "api-58c9886585-kkt2r",
+        "uid": "a4fb740e-35cb-42e8-948e-b1ccd1015d09",
+        "image": "nicolasbellina/taskflow-api:1.0.0",
+        "phase": "Running",
+        "terminating": false
+      }
+    ]
+  },
+  {
+    "at": "2026-10-07T17:41:11.160536+02:00",
+    "phase": "upgrade-to-2",
+    "pods": [
+      {
+        "name": "api-5477cdff68-sgnzl",
+        "uid": "d2f01846-78a9-4b09-8a72-c133ca424521",
+        "image": "nicolasbellina/taskflow-api:2.0.0",
+        "phase": "Pending",
+        "terminating": false
+      },
+      {
+        "name": "api-58c9886585-47jgr",
+        "uid": "9006fca6-77b7-4db0-9be9-5a95c19bcce1",
+        "image": "nicolasbellina/taskflow-api:1.0.0",
+        "phase": "Running",
+        "terminating": false
+      },
+      {
+        "name": "api-58c9886585-kkt2r",
+        "uid": "a4fb740e-35cb-42e8-948e-b1ccd1015d09",
+        "image": "nicolasbellina/taskflow-api:1.0.0",
+        "phase": "Running",
+        "terminating": false
+      }
+    ]
+  },
+  {
+    "at": "2026-10-07T17:41:11.464755+02:00",
+    "phase": "upgrade-to-2",
+    "pods": [
+      {
+        "name": "api-5477cdff68-sgnzl",
+        "uid": "d2f01846-78a9-4b09-8a72-c133ca424521",
+        "image": "nicolasbellina/taskflow-api:2.0.0",
+        "phase": "Pending",
+        "terminating": false
+      },
+      {
+        "name": "api-58c9886585-47jgr",
+        "uid": "9006fca6-77b7-4db0-9be9-5a95c19bcce1",
+        "image": "nicolasbellina/taskflow-api:1.0.0",
+        "phase": "Running",
+        "terminating": false
+      },
+      {
+        "name": "api-58c9886585-kkt2r",
+        "uid": "a4fb740e-35cb-42e8-948e-b1ccd1015d09",
+        "image": "nicolasbellina/taskflow-api:1.0.0",
+        "phase": "Running",
+        "terminating": false
+      }
+    ]
+  },
+  {
+    "at": "2026-10-07T17:41:11.772463+02:00",
+    "phase": "upgrade-to-2",
+    "pods": [
+      {
+        "name": "api-5477cdff68-sgnzl",
+        "uid": "d2f01846-78a9-4b09-8a72-c133ca424521",
+        "image": "nicolasbellina/taskflow-api:2.0.0",
+        "phase": "Running",
+        "terminating": false
+      },
+      {
+        "name": "api-58c9886585-47jgr",
+        "uid": "9006fca6-77b7-4db0-9be9-5a95c19bcce1",
+        "image": "nicolasbellina/taskflow-api:1.0.0",
+        "phase": "Running",
+        "terminating": false
+      },
+      {
+        "name": "api-58c9886585-kkt2r",
+        "uid": "a4fb740e-35cb-42e8-948e-b1ccd1015d09",
+        "image": "nicolasbellina/taskflow-api:1.0.0",
+        "phase": "Running",
+        "terminating": false
+      }
+    ]
+  },
+  {
+    "at": "2026-10-07T17:41:12.092381+02:00",
+    "phase": "upgrade-to-2",
+    "pods": [
+      {
+        "name": "api-5477cdff68-sgnzl",
+        "uid": "d2f01846-78a9-4b09-8a72-c133ca424521",
+        "image": "nicolasbellina/taskflow-api:2.0.0",
+        "phase": "Running",
+        "terminating": false
+      },
+      {
+        "name": "api-58c9886585-47jgr",
+        "uid": "9006fca6-77b7-4db0-9be9-5a95c19bcce1",
+        "image": "nicolasbellina/taskflow-api:1.0.0",
+        "phase": "Running",
+        "terminating": false
+      },
+      {
+        "name": "api-58c9886585-kkt2r",
+        "uid": "a4fb740e-35cb-42e8-948e-b1ccd1015d09",
+        "image": "nicolasbellina/taskflow-api:1.0.0",
+        "phase": "Running",
+        "terminating": false
+      }
+    ]
+  },
+  {
+    "at": "2026-10-07T17:41:12.415536+02:00",
+    "phase": "upgrade-to-2",
+    "pods": [
+      {
+        "name": "api-5477cdff68-sgnzl",
+        "uid": "d2f01846-78a9-4b09-8a72-c133ca424521",
+        "image": "nicolasbellina/taskflow-api:2.0.0",
+        "phase": "Running",
+        "terminating": false
+      },
+      {
+        "name": "api-58c9886585-47jgr",
+        "uid": "9006fca6-77b7-4db0-9be9-5a95c19bcce1",
+        "image": "nicolasbellina/taskflow-api:1.0.0",
+        "phase": "Running",
+        "terminating": false
+      },
+      {
+        "name": "api-58c9886585-kkt2r",
+        "uid": "a4fb740e-35cb-42e8-948e-b1ccd1015d09",
+        "image": "nicolasbellina/taskflow-api:1.0.0",
+        "phase": "Running",
+        "terminating": false
+      }
+    ]
+  },
+  {
+    "at": "2026-10-07T17:41:12.735878+02:00",
+    "phase": "upgrade-to-2",
+    "pods": [
+      {
+        "name": "api-5477cdff68-sgnzl",
+        "uid": "d2f01846-78a9-4b09-8a72-c133ca424521",
+        "image": "nicolasbellina/taskflow-api:2.0.0",
+        "phase": "Running",
+        "terminating": false
+      },
+      {
+        "name": "api-58c9886585-47jgr",
+        "uid": "9006fca6-77b7-4db0-9be9-5a95c19bcce1",
+        "image": "nicolasbellina/taskflow-api:1.0.0",
+        "phase": "Running",
+        "terminating": false
+      },
+      {
+        "name": "api-58c9886585-kkt2r",
+        "uid": "a4fb740e-35cb-42e8-948e-b1ccd1015d09",
+        "image": "nicolasbellina/taskflow-api:1.0.0",
+        "phase": "Running",
+        "terminating": false
+      }
+    ]
+  },
+  {
+    "at": "2026-10-07T17:41:13.063606+02:00",
+    "phase": "upgrade-to-2",
+    "pods": [
+      {
+        "name": "api-5477cdff68-sgnzl",
+        "uid": "d2f01846-78a9-4b09-8a72-c133ca424521",
+        "image": "nicolasbellina/taskflow-api:2.0.0",
+        "phase": "Running",
+        "terminating": false
+      },
+      {
+        "name": "api-58c9886585-47jgr",
+        "uid": "9006fca6-77b7-4db0-9be9-5a95c19bcce1",
+        "image": "nicolasbellina/taskflow-api:1.0.0",
+        "phase": "Running",
+        "terminating": false
+      },
+      {
+        "name": "api-58c9886585-kkt2r",
+        "uid": "a4fb740e-35cb-42e8-948e-b1ccd1015d09",
+        "image": "nicolasbellina/taskflow-api:1.0.0",
+        "phase": "Running",
+        "terminating": false
+      }
+    ]
+  },
+  {
+    "at": "2026-10-07T17:41:13.382105+02:00",
+    "phase": "upgrade-to-2",
+    "pods": [
+      {
+        "name": "api-5477cdff68-sgnzl",
+        "uid": "d2f01846-78a9-4b09-8a72-c133ca424521",
+        "image": "nicolasbellina/taskflow-api:2.0.0",
+        "phase": "Running",
+        "terminating": false
+      },
+      {
+        "name": "api-58c9886585-47jgr",
+        "uid": "9006fca6-77b7-4db0-9be9-5a95c19bcce1",
+        "image": "nicolasbellina/taskflow-api:1.0.0",
+        "phase": "Running",
+        "terminating": false
+      },
+      {
+        "name": "api-58c9886585-kkt2r",
+        "uid": "a4fb740e-35cb-42e8-948e-b1ccd1015d09",
+        "image": "nicolasbellina/taskflow-api:1.0.0",
+        "phase": "Running",
+        "terminating": false
+      }
+    ]
+  },
+  {
+    "at": "2026-10-07T17:41:13.706724+02:00",
+    "phase": "upgrade-to-2",
+    "pods": [
+      {
+        "name": "api-5477cdff68-sgnzl",
+        "uid": "d2f01846-78a9-4b09-8a72-c133ca424521",
+        "image": "nicolasbellina/taskflow-api:2.0.0",
+        "phase": "Running",
+        "terminating": false
+      },
+      {
+        "name": "api-58c9886585-47jgr",
+        "uid": "9006fca6-77b7-4db0-9be9-5a95c19bcce1",
+        "image": "nicolasbellina/taskflow-api:1.0.0",
+        "phase": "Running",
+        "terminating": false
+      },
+      {
+        "name": "api-58c9886585-kkt2r",
+        "uid": "a4fb740e-35cb-42e8-948e-b1ccd1015d09",
+        "image": "nicolasbellina/taskflow-api:1.0.0",
+        "phase": "Running",
+        "terminating": false
+      }
+    ]
+  },
+  {
+    "at": "2026-10-07T17:41:14.028050+02:00",
+    "phase": "upgrade-to-2",
+    "pods": [
+      {
+        "name": "api-5477cdff68-sgnzl",
+        "uid": "d2f01846-78a9-4b09-8a72-c133ca424521",
+        "image": "nicolasbellina/taskflow-api:2.0.0",
+        "phase": "Running",
+        "terminating": false
+      },
+      {
+        "name": "api-58c9886585-47jgr",
+        "uid": "9006fca6-77b7-4db0-9be9-5a95c19bcce1",
+        "image": "nicolasbellina/taskflow-api:1.0.0",
+        "phase": "Running",
+        "terminating": false
+      },
+      {
+        "name": "api-58c9886585-kkt2r",
+        "uid": "a4fb740e-35cb-42e8-948e-b1ccd1015d09",
+        "image": "nicolasbellina/taskflow-api:1.0.0",
+        "phase": "Running",
+        "terminating": false
+      }
+    ]
+  },
+  {
+    "at": "2026-10-07T17:41:14.351253+02:00",
+    "phase": "upgrade-to-2",
+    "pods": [
+      {
+        "name": "api-5477cdff68-sgnzl",
+        "uid": "d2f01846-78a9-4b09-8a72-c133ca424521",
+        "image": "nicolasbellina/taskflow-api:2.0.0",
+        "phase": "Running",
+        "terminating": false
+      },
+      {
+        "name": "api-58c9886585-47jgr",
+        "uid": "9006fca6-77b7-4db0-9be9-5a95c19bcce1",
+        "image": "nicolasbellina/taskflow-api:1.0.0",
+        "phase": "Running",
+        "terminating": false
+      },
+      {
+        "name": "api-58c9886585-kkt2r",
+        "uid": "a4fb740e-35cb-42e8-948e-b1ccd1015d09",
+        "image": "nicolasbellina/taskflow-api:1.0.0",
+        "phase": "Running",
+        "terminating": false
+      }
+    ]
+  },
+  {
+    "at": "2026-10-07T17:41:14.673271+02:00",
+    "phase": "upgrade-to-2",
+    "pods": [
+      {
+        "name": "api-5477cdff68-sgnzl",
+        "uid": "d2f01846-78a9-4b09-8a72-c133ca424521",
+        "image": "nicolasbellina/taskflow-api:2.0.0",
+        "phase": "Running",
+        "terminating": false
+      },
+      {
+        "name": "api-58c9886585-47jgr",
+        "uid": "9006fca6-77b7-4db0-9be9-5a95c19bcce1",
+        "image": "nicolasbellina/taskflow-api:1.0.0",
+        "phase": "Running",
+        "terminating": false
+      },
+      {
+        "name": "api-58c9886585-kkt2r",
+        "uid": "a4fb740e-35cb-42e8-948e-b1ccd1015d09",
+        "image": "nicolasbellina/taskflow-api:1.0.0",
+        "phase": "Running",
+        "terminating": false
+      }
+    ]
+  },
+  {
+    "at": "2026-10-07T17:41:14.968767+02:00",
+    "phase": "upgrade-to-2",
+    "pods": [
+      {
+        "name": "api-5477cdff68-sgnzl",
+        "uid": "d2f01846-78a9-4b09-8a72-c133ca424521",
+        "image": "nicolasbellina/taskflow-api:2.0.0",
+        "phase": "Running",
+        "terminating": false
+      },
+      {
+        "name": "api-58c9886585-47jgr",
+        "uid": "9006fca6-77b7-4db0-9be9-5a95c19bcce1",
+        "image": "nicolasbellina/taskflow-api:1.0.0",
+        "phase": "Running",
+        "terminating": false
+      },
+      {
+        "name": "api-58c9886585-kkt2r",
+        "uid": "a4fb740e-35cb-42e8-948e-b1ccd1015d09",
+        "image": "nicolasbellina/taskflow-api:1.0.0",
+        "phase": "Running",
+        "terminating": false
+      }
+    ]
+  },
+  {
+    "at": "2026-10-07T17:41:15.287291+02:00",
+    "phase": "upgrade-to-2",
+    "pods": [
+      {
+        "name": "api-5477cdff68-sgnzl",
+        "uid": "d2f01846-78a9-4b09-8a72-c133ca424521",
+        "image": "nicolasbellina/taskflow-api:2.0.0",
+        "phase": "Running",
+        "terminating": false
+      },
+      {
+        "name": "api-58c9886585-47jgr",
+        "uid": "9006fca6-77b7-4db0-9be9-5a95c19bcce1",
+        "image": "nicolasbellina/taskflow-api:1.0.0",
+        "phase": "Running",
+        "terminating": false
+      },
+      {
+        "name": "api-58c9886585-kkt2r",
+        "uid": "a4fb740e-35cb-42e8-948e-b1ccd1015d09",
+        "image": "nicolasbellina/taskflow-api:1.0.0",
+        "phase": "Running",
+        "terminating": false
+      }
+    ]
+  },
+  {
+    "at": "2026-10-07T17:41:15.610764+02:00",
+    "phase": "upgrade-to-2",
+    "pods": [
+      {
+        "name": "api-5477cdff68-sgnzl",
+        "uid": "d2f01846-78a9-4b09-8a72-c133ca424521",
+        "image": "nicolasbellina/taskflow-api:2.0.0",
+        "phase": "Running",
+        "terminating": false
+      },
+      {
+        "name": "api-58c9886585-47jgr",
+        "uid": "9006fca6-77b7-4db0-9be9-5a95c19bcce1",
+        "image": "nicolasbellina/taskflow-api:1.0.0",
+        "phase": "Running",
+        "terminating": false
+      },
+      {
+        "name": "api-58c9886585-kkt2r",
+        "uid": "a4fb740e-35cb-42e8-948e-b1ccd1015d09",
+        "image": "nicolasbellina/taskflow-api:1.0.0",
+        "phase": "Running",
+        "terminating": false
+      }
+    ]
+  },
+  {
+    "at": "2026-10-07T17:41:15.921540+02:00",
+    "phase": "upgrade-to-2",
+    "pods": [
+      {
+        "name": "api-5477cdff68-sgnzl",
+        "uid": "d2f01846-78a9-4b09-8a72-c133ca424521",
+        "image": "nicolasbellina/taskflow-api:2.0.0",
+        "phase": "Running",
+        "terminating": false
+      },
+      {
+        "name": "api-58c9886585-47jgr",
+        "uid": "9006fca6-77b7-4db0-9be9-5a95c19bcce1",
+        "image": "nicolasbellina/taskflow-api:1.0.0",
+        "phase": "Running",
+        "terminating": false
+      },
+      {
+        "name": "api-58c9886585-kkt2r",
+        "uid": "a4fb740e-35cb-42e8-948e-b1ccd1015d09",
+        "image": "nicolasbellina/taskflow-api:1.0.0",
+        "phase": "Running",
+        "terminating": false
+      }
+    ]
+  },
+  {
+    "at": "2026-10-07T17:41:16.242501+02:00",
+    "phase": "upgrade-to-2",
+    "pods": [
+      {
+        "name": "api-5477cdff68-sgnzl",
+        "uid": "d2f01846-78a9-4b09-8a72-c133ca424521",
+        "image": "nicolasbellina/taskflow-api:2.0.0",
+        "phase": "Running",
+        "terminating": false
+      },
+      {
+        "name": "api-58c9886585-47jgr",
+        "uid": "9006fca6-77b7-4db0-9be9-5a95c19bcce1",
+        "image": "nicolasbellina/taskflow-api:1.0.0",
+        "phase": "Running",
+        "terminating": false
+      },
+      {
+        "name": "api-58c9886585-kkt2r",
+        "uid": "a4fb740e-35cb-42e8-948e-b1ccd1015d09",
+        "image": "nicolasbellina/taskflow-api:1.0.0",
+        "phase": "Running",
+        "terminating": false
+      }
+    ]
+  },
+  {
+    "at": "2026-10-07T17:41:16.565475+02:00",
+    "phase": "upgrade-to-2",
+    "pods": [
+      {
+        "name": "api-5477cdff68-sgnzl",
+        "uid": "d2f01846-78a9-4b09-8a72-c133ca424521",
+        "image": "nicolasbellina/taskflow-api:2.0.0",
+        "phase": "Running",
+        "terminating": false
+      },
+      {
+        "name": "api-58c9886585-47jgr",
+        "uid": "9006fca6-77b7-4db0-9be9-5a95c19bcce1",
+        "image": "nicolasbellina/taskflow-api:1.0.0",
+        "phase": "Running",
+        "terminating": false
+      },
+      {
+        "name": "api-58c9886585-kkt2r",
+        "uid": "a4fb740e-35cb-42e8-948e-b1ccd1015d09",
+        "image": "nicolasbellina/taskflow-api:1.0.0",
+        "phase": "Running",
+        "terminating": false
+      }
+    ]
+  },
+  {
+    "at": "2026-10-07T17:41:16.886323+02:00",
+    "phase": "upgrade-to-2",
+    "pods": [
+      {
+        "name": "api-5477cdff68-575nr",
+        "uid": "c3fe8163-c337-46fe-8b7e-b5094c9875d8",
+        "image": "nicolasbellina/taskflow-api:2.0.0",
+        "phase": "Pending",
+        "terminating": false
+      },
+      {
+        "name": "api-5477cdff68-sgnzl",
+        "uid": "d2f01846-78a9-4b09-8a72-c133ca424521",
+        "image": "nicolasbellina/taskflow-api:2.0.0",
+        "phase": "Running",
+        "terminating": false
+      },
+      {
+        "name": "api-58c9886585-47jgr",
+        "uid": "9006fca6-77b7-4db0-9be9-5a95c19bcce1",
+        "image": "nicolasbellina/taskflow-api:1.0.0",
+        "phase": "Running",
+        "terminating": true
+      },
+      {
+        "name": "api-58c9886585-kkt2r",
+        "uid": "a4fb740e-35cb-42e8-948e-b1ccd1015d09",
+        "image": "nicolasbellina/taskflow-api:1.0.0",
+        "phase": "Running",
+        "terminating": false
+      }
+    ]
+  },
+  {
+    "at": "2026-10-07T17:41:17.186543+02:00",
+    "phase": "upgrade-to-2",
+    "pods": [
+      {
+        "name": "api-5477cdff68-575nr",
+        "uid": "c3fe8163-c337-46fe-8b7e-b5094c9875d8",
+        "image": "nicolasbellina/taskflow-api:2.0.0",
+        "phase": "Pending",
+        "terminating": false
+      },
+      {
+        "name": "api-5477cdff68-sgnzl",
+        "uid": "d2f01846-78a9-4b09-8a72-c133ca424521",
+        "image": "nicolasbellina/taskflow-api:2.0.0",
+        "phase": "Running",
+        "terminating": false
+      },
+      {
+        "name": "api-58c9886585-47jgr",
+        "uid": "9006fca6-77b7-4db0-9be9-5a95c19bcce1",
+        "image": "nicolasbellina/taskflow-api:1.0.0",
+        "phase": "Succeeded",
+        "terminating": true
+      },
+      {
+        "name": "api-58c9886585-kkt2r",
+        "uid": "a4fb740e-35cb-42e8-948e-b1ccd1015d09",
+        "image": "nicolasbellina/taskflow-api:1.0.0",
+        "phase": "Running",
+        "terminating": false
+      }
+    ]
+  },
+  {
+    "at": "2026-10-07T17:41:17.485491+02:00",
+    "phase": "upgrade-to-2",
+    "pods": [
+      {
+        "name": "api-5477cdff68-575nr",
+        "uid": "c3fe8163-c337-46fe-8b7e-b5094c9875d8",
+        "image": "nicolasbellina/taskflow-api:2.0.0",
+        "phase": "Pending",
+        "terminating": false
+      },
+      {
+        "name": "api-5477cdff68-sgnzl",
+        "uid": "d2f01846-78a9-4b09-8a72-c133ca424521",
+        "image": "nicolasbellina/taskflow-api:2.0.0",
+        "phase": "Running",
+        "terminating": false
+      },
+      {
+        "name": "api-58c9886585-47jgr",
+        "uid": "9006fca6-77b7-4db0-9be9-5a95c19bcce1",
+        "image": "nicolasbellina/taskflow-api:1.0.0",
+        "phase": "Succeeded",
+        "terminating": true
+      },
+      {
+        "name": "api-58c9886585-kkt2r",
+        "uid": "a4fb740e-35cb-42e8-948e-b1ccd1015d09",
+        "image": "nicolasbellina/taskflow-api:1.0.0",
+        "phase": "Running",
+        "terminating": false
+      }
+    ]
+  },
+  {
+    "at": "2026-10-07T17:41:17.801390+02:00",
+    "phase": "upgrade-to-2",
+    "pods": [
+      {
+        "name": "api-5477cdff68-575nr",
+        "uid": "c3fe8163-c337-46fe-8b7e-b5094c9875d8",
+        "image": "nicolasbellina/taskflow-api:2.0.0",
+        "phase": "Running",
+        "terminating": false
+      },
+      {
+        "name": "api-5477cdff68-sgnzl",
+        "uid": "d2f01846-78a9-4b09-8a72-c133ca424521",
+        "image": "nicolasbellina/taskflow-api:2.0.0",
+        "phase": "Running",
+        "terminating": false
+      },
+      {
+        "name": "api-58c9886585-kkt2r",
+        "uid": "a4fb740e-35cb-42e8-948e-b1ccd1015d09",
+        "image": "nicolasbellina/taskflow-api:1.0.0",
+        "phase": "Running",
+        "terminating": false
+      }
+    ]
+  },
+  {
+    "at": "2026-10-07T17:41:18.110257+02:00",
+    "phase": "upgrade-to-2",
+    "pods": [
+      {
+        "name": "api-5477cdff68-575nr",
+        "uid": "c3fe8163-c337-46fe-8b7e-b5094c9875d8",
+        "image": "nicolasbellina/taskflow-api:2.0.0",
+        "phase": "Running",
+        "terminating": false
+      },
+      {
+        "name": "api-5477cdff68-sgnzl",
+        "uid": "d2f01846-78a9-4b09-8a72-c133ca424521",
+        "image": "nicolasbellina/taskflow-api:2.0.0",
+        "phase": "Running",
+        "terminating": false
+      },
+      {
+        "name": "api-58c9886585-kkt2r",
+        "uid": "a4fb740e-35cb-42e8-948e-b1ccd1015d09",
+        "image": "nicolasbellina/taskflow-api:1.0.0",
+        "phase": "Running",
+        "terminating": false
+      }
+    ]
+  },
+  {
+    "at": "2026-10-07T17:41:18.425571+02:00",
+    "phase": "upgrade-to-2",
+    "pods": [
+      {
+        "name": "api-5477cdff68-575nr",
+        "uid": "c3fe8163-c337-46fe-8b7e-b5094c9875d8",
+        "image": "nicolasbellina/taskflow-api:2.0.0",
+        "phase": "Running",
+        "terminating": false
+      },
+      {
+        "name": "api-5477cdff68-sgnzl",
+        "uid": "d2f01846-78a9-4b09-8a72-c133ca424521",
+        "image": "nicolasbellina/taskflow-api:2.0.0",
+        "phase": "Running",
+        "terminating": false
+      },
+      {
+        "name": "api-58c9886585-kkt2r",
+        "uid": "a4fb740e-35cb-42e8-948e-b1ccd1015d09",
+        "image": "nicolasbellina/taskflow-api:1.0.0",
+        "phase": "Running",
+        "terminating": false
+      }
+    ]
+  },
+  {
+    "at": "2026-10-07T17:41:18.752343+02:00",
+    "phase": "upgrade-to-2",
+    "pods": [
+      {
+        "name": "api-5477cdff68-575nr",
+        "uid": "c3fe8163-c337-46fe-8b7e-b5094c9875d8",
+        "image": "nicolasbellina/taskflow-api:2.0.0",
+        "phase": "Running",
+        "terminating": false
+      },
+      {
+        "name": "api-5477cdff68-sgnzl",
+        "uid": "d2f01846-78a9-4b09-8a72-c133ca424521",
+        "image": "nicolasbellina/taskflow-api:2.0.0",
+        "phase": "Running",
+        "terminating": false
+      },
+      {
+        "name": "api-58c9886585-kkt2r",
+        "uid": "a4fb740e-35cb-42e8-948e-b1ccd1015d09",
+        "image": "nicolasbellina/taskflow-api:1.0.0",
+        "phase": "Running",
+        "terminating": false
+      }
+    ]
+  },
+  {
+    "at": "2026-10-07T17:41:19.073474+02:00",
+    "phase": "upgrade-to-2",
+    "pods": [
+      {
+        "name": "api-5477cdff68-575nr",
+        "uid": "c3fe8163-c337-46fe-8b7e-b5094c9875d8",
+        "image": "nicolasbellina/taskflow-api:2.0.0",
+        "phase": "Running",
+        "terminating": false
+      },
+      {
+        "name": "api-5477cdff68-sgnzl",
+        "uid": "d2f01846-78a9-4b09-8a72-c133ca424521",
+        "image": "nicolasbellina/taskflow-api:2.0.0",
+        "phase": "Running",
+        "terminating": false
+      },
+      {
+        "name": "api-58c9886585-kkt2r",
+        "uid": "a4fb740e-35cb-42e8-948e-b1ccd1015d09",
+        "image": "nicolasbellina/taskflow-api:1.0.0",
+        "phase": "Running",
+        "terminating": false
+      }
+    ]
+  },
+  {
+    "at": "2026-10-07T17:41:19.385388+02:00",
+    "phase": "upgrade-to-2",
+    "pods": [
+      {
+        "name": "api-5477cdff68-575nr",
+        "uid": "c3fe8163-c337-46fe-8b7e-b5094c9875d8",
+        "image": "nicolasbellina/taskflow-api:2.0.0",
+        "phase": "Running",
+        "terminating": false
+      },
+      {
+        "name": "api-5477cdff68-sgnzl",
+        "uid": "d2f01846-78a9-4b09-8a72-c133ca424521",
+        "image": "nicolasbellina/taskflow-api:2.0.0",
+        "phase": "Running",
+        "terminating": false
+      },
+      {
+        "name": "api-58c9886585-kkt2r",
+        "uid": "a4fb740e-35cb-42e8-948e-b1ccd1015d09",
+        "image": "nicolasbellina/taskflow-api:1.0.0",
+        "phase": "Running",
+        "terminating": false
+      }
+    ]
+  },
+  {
+    "at": "2026-10-07T17:41:19.704575+02:00",
+    "phase": "upgrade-to-2",
+    "pods": [
+      {
+        "name": "api-5477cdff68-575nr",
+        "uid": "c3fe8163-c337-46fe-8b7e-b5094c9875d8",
+        "image": "nicolasbellina/taskflow-api:2.0.0",
+        "phase": "Running",
+        "terminating": false
+      },
+      {
+        "name": "api-5477cdff68-sgnzl",
+        "uid": "d2f01846-78a9-4b09-8a72-c133ca424521",
+        "image": "nicolasbellina/taskflow-api:2.0.0",
+        "phase": "Running",
+        "terminating": false
+      },
+      {
+        "name": "api-58c9886585-kkt2r",
+        "uid": "a4fb740e-35cb-42e8-948e-b1ccd1015d09",
+        "image": "nicolasbellina/taskflow-api:1.0.0",
+        "phase": "Running",
+        "terminating": false
+      }
+    ]
+  },
+  {
+    "at": "2026-10-07T17:41:20.007780+02:00",
+    "phase": "upgrade-to-2",
+    "pods": [
+      {
+        "name": "api-5477cdff68-575nr",
+        "uid": "c3fe8163-c337-46fe-8b7e-b5094c9875d8",
+        "image": "nicolasbellina/taskflow-api:2.0.0",
+        "phase": "Running",
+        "terminating": false
+      },
+      {
+        "name": "api-5477cdff68-sgnzl",
+        "uid": "d2f01846-78a9-4b09-8a72-c133ca424521",
+        "image": "nicolasbellina/taskflow-api:2.0.0",
+        "phase": "Running",
+        "terminating": false
+      },
+      {
+        "name": "api-58c9886585-kkt2r",
+        "uid": "a4fb740e-35cb-42e8-948e-b1ccd1015d09",
+        "image": "nicolasbellina/taskflow-api:1.0.0",
+        "phase": "Running",
+        "terminating": false
+      }
+    ]
+  },
+  {
+    "at": "2026-10-07T17:41:20.329913+02:00",
+    "phase": "upgrade-to-2",
+    "pods": [
+      {
+        "name": "api-5477cdff68-575nr",
+        "uid": "c3fe8163-c337-46fe-8b7e-b5094c9875d8",
+        "image": "nicolasbellina/taskflow-api:2.0.0",
+        "phase": "Running",
+        "terminating": false
+      },
+      {
+        "name": "api-5477cdff68-sgnzl",
+        "uid": "d2f01846-78a9-4b09-8a72-c133ca424521",
+        "image": "nicolasbellina/taskflow-api:2.0.0",
+        "phase": "Running",
+        "terminating": false
+      },
+      {
+        "name": "api-58c9886585-kkt2r",
+        "uid": "a4fb740e-35cb-42e8-948e-b1ccd1015d09",
+        "image": "nicolasbellina/taskflow-api:1.0.0",
+        "phase": "Running",
+        "terminating": false
+      }
+    ]
+  },
+  {
+    "at": "2026-10-07T17:41:20.653727+02:00",
+    "phase": "upgrade-to-2",
+    "pods": [
+      {
+        "name": "api-5477cdff68-575nr",
+        "uid": "c3fe8163-c337-46fe-8b7e-b5094c9875d8",
+        "image": "nicolasbellina/taskflow-api:2.0.0",
+        "phase": "Running",
+        "terminating": false
+      },
+      {
+        "name": "api-5477cdff68-sgnzl",
+        "uid": "d2f01846-78a9-4b09-8a72-c133ca424521",
+        "image": "nicolasbellina/taskflow-api:2.0.0",
+        "phase": "Running",
+        "terminating": false
+      },
+      {
+        "name": "api-58c9886585-kkt2r",
+        "uid": "a4fb740e-35cb-42e8-948e-b1ccd1015d09",
+        "image": "nicolasbellina/taskflow-api:1.0.0",
+        "phase": "Running",
+        "terminating": false
+      }
+    ]
+  },
+  {
+    "at": "2026-10-07T17:41:20.964520+02:00",
+    "phase": "upgrade-to-2",
+    "pods": [
+      {
+        "name": "api-5477cdff68-575nr",
+        "uid": "c3fe8163-c337-46fe-8b7e-b5094c9875d8",
+        "image": "nicolasbellina/taskflow-api:2.0.0",
+        "phase": "Running",
+        "terminating": false
+      },
+      {
+        "name": "api-5477cdff68-sgnzl",
+        "uid": "d2f01846-78a9-4b09-8a72-c133ca424521",
+        "image": "nicolasbellina/taskflow-api:2.0.0",
+        "phase": "Running",
+        "terminating": false
+      },
+      {
+        "name": "api-58c9886585-kkt2r",
+        "uid": "a4fb740e-35cb-42e8-948e-b1ccd1015d09",
+        "image": "nicolasbellina/taskflow-api:1.0.0",
+        "phase": "Running",
+        "terminating": false
+      }
+    ]
+  },
+  {
+    "at": "2026-10-07T17:41:21.281826+02:00",
+    "phase": "upgrade-to-2",
+    "pods": [
+      {
+        "name": "api-5477cdff68-575nr",
+        "uid": "c3fe8163-c337-46fe-8b7e-b5094c9875d8",
+        "image": "nicolasbellina/taskflow-api:2.0.0",
+        "phase": "Running",
+        "terminating": false
+      },
+      {
+        "name": "api-5477cdff68-sgnzl",
+        "uid": "d2f01846-78a9-4b09-8a72-c133ca424521",
+        "image": "nicolasbellina/taskflow-api:2.0.0",
+        "phase": "Running",
+        "terminating": false
+      },
+      {
+        "name": "api-58c9886585-kkt2r",
+        "uid": "a4fb740e-35cb-42e8-948e-b1ccd1015d09",
+        "image": "nicolasbellina/taskflow-api:1.0.0",
+        "phase": "Running",
+        "terminating": false
+      }
+    ]
+  },
+  {
+    "at": "2026-10-07T17:41:21.599408+02:00",
+    "phase": "upgrade-to-2",
+    "pods": [
+      {
+        "name": "api-5477cdff68-575nr",
+        "uid": "c3fe8163-c337-46fe-8b7e-b5094c9875d8",
+        "image": "nicolasbellina/taskflow-api:2.0.0",
+        "phase": "Running",
+        "terminating": false
+      },
+      {
+        "name": "api-5477cdff68-sgnzl",
+        "uid": "d2f01846-78a9-4b09-8a72-c133ca424521",
+        "image": "nicolasbellina/taskflow-api:2.0.0",
+        "phase": "Running",
+        "terminating": false
+      },
+      {
+        "name": "api-58c9886585-kkt2r",
+        "uid": "a4fb740e-35cb-42e8-948e-b1ccd1015d09",
+        "image": "nicolasbellina/taskflow-api:1.0.0",
+        "phase": "Running",
+        "terminating": false
+      }
+    ]
+  },
+  {
+    "at": "2026-10-07T17:41:21.921496+02:00",
+    "phase": "upgrade-to-2",
+    "pods": [
+      {
+        "name": "api-5477cdff68-575nr",
+        "uid": "c3fe8163-c337-46fe-8b7e-b5094c9875d8",
+        "image": "nicolasbellina/taskflow-api:2.0.0",
+        "phase": "Running",
+        "terminating": false
+      },
+      {
+        "name": "api-5477cdff68-sgnzl",
+        "uid": "d2f01846-78a9-4b09-8a72-c133ca424521",
+        "image": "nicolasbellina/taskflow-api:2.0.0",
+        "phase": "Running",
+        "terminating": false
+      },
+      {
+        "name": "api-58c9886585-kkt2r",
+        "uid": "a4fb740e-35cb-42e8-948e-b1ccd1015d09",
+        "image": "nicolasbellina/taskflow-api:1.0.0",
+        "phase": "Running",
+        "terminating": false
+      }
+    ]
+  },
+  {
+    "at": "2026-10-07T17:41:22.242021+02:00",
+    "phase": "upgrade-to-2",
+    "pods": [
+      {
+        "name": "api-5477cdff68-575nr",
+        "uid": "c3fe8163-c337-46fe-8b7e-b5094c9875d8",
+        "image": "nicolasbellina/taskflow-api:2.0.0",
+        "phase": "Running",
+        "terminating": false
+      },
+      {
+        "name": "api-5477cdff68-sgnzl",
+        "uid": "d2f01846-78a9-4b09-8a72-c133ca424521",
+        "image": "nicolasbellina/taskflow-api:2.0.0",
+        "phase": "Running",
+        "terminating": false
+      },
+      {
+        "name": "api-58c9886585-kkt2r",
+        "uid": "a4fb740e-35cb-42e8-948e-b1ccd1015d09",
+        "image": "nicolasbellina/taskflow-api:1.0.0",
+        "phase": "Running",
+        "terminating": false
+      }
+    ]
+  },
+  {
+    "at": "2026-10-07T17:41:22.565568+02:00",
+    "phase": "upgrade-to-2",
+    "pods": [
+      {
+        "name": "api-5477cdff68-575nr",
+        "uid": "c3fe8163-c337-46fe-8b7e-b5094c9875d8",
+        "image": "nicolasbellina/taskflow-api:2.0.0",
+        "phase": "Running",
+        "terminating": false
+      },
+      {
+        "name": "api-5477cdff68-sgnzl",
+        "uid": "d2f01846-78a9-4b09-8a72-c133ca424521",
+        "image": "nicolasbellina/taskflow-api:2.0.0",
+        "phase": "Running",
+        "terminating": false
+      },
+      {
+        "name": "api-58c9886585-kkt2r",
+        "uid": "a4fb740e-35cb-42e8-948e-b1ccd1015d09",
+        "image": "nicolasbellina/taskflow-api:1.0.0",
+        "phase": "Running",
+        "terminating": false
+      }
+    ]
+  },
+  {
+    "at": "2026-10-07T17:41:22.885335+02:00",
+    "phase": "upgrade-to-2",
+    "pods": [
+      {
+        "name": "api-5477cdff68-575nr",
+        "uid": "c3fe8163-c337-46fe-8b7e-b5094c9875d8",
+        "image": "nicolasbellina/taskflow-api:2.0.0",
+        "phase": "Running",
+        "terminating": false
+      },
+      {
+        "name": "api-5477cdff68-sgnzl",
+        "uid": "d2f01846-78a9-4b09-8a72-c133ca424521",
+        "image": "nicolasbellina/taskflow-api:2.0.0",
+        "phase": "Running",
+        "terminating": false
+      },
+      {
+        "name": "api-58c9886585-kkt2r",
+        "uid": "a4fb740e-35cb-42e8-948e-b1ccd1015d09",
+        "image": "nicolasbellina/taskflow-api:1.0.0",
+        "phase": "Running",
+        "terminating": true
+      }
+    ]
+  },
+  {
+    "at": "2026-10-07T17:41:23.185738+02:00",
+    "phase": "upgrade-to-2",
+    "pods": [
+      {
+        "name": "api-5477cdff68-575nr",
+        "uid": "c3fe8163-c337-46fe-8b7e-b5094c9875d8",
+        "image": "nicolasbellina/taskflow-api:2.0.0",
+        "phase": "Running",
+        "terminating": false
+      },
+      {
+        "name": "api-5477cdff68-sgnzl",
+        "uid": "d2f01846-78a9-4b09-8a72-c133ca424521",
+        "image": "nicolasbellina/taskflow-api:2.0.0",
+        "phase": "Running",
+        "terminating": false
+      },
+      {
+        "name": "api-58c9886585-kkt2r",
+        "uid": "a4fb740e-35cb-42e8-948e-b1ccd1015d09",
+        "image": "nicolasbellina/taskflow-api:1.0.0",
+        "phase": "Succeeded",
+        "terminating": true
+      }
+    ]
+  },
+  {
+    "at": "2026-10-07T17:41:23.506089+02:00",
+    "phase": "upgrade-to-2",
+    "pods": [
+      {
+        "name": "api-5477cdff68-575nr",
+        "uid": "c3fe8163-c337-46fe-8b7e-b5094c9875d8",
+        "image": "nicolasbellina/taskflow-api:2.0.0",
+        "phase": "Running",
+        "terminating": false
+      },
+      {
+        "name": "api-5477cdff68-sgnzl",
+        "uid": "d2f01846-78a9-4b09-8a72-c133ca424521",
+        "image": "nicolasbellina/taskflow-api:2.0.0",
+        "phase": "Running",
+        "terminating": false
+      },
+      {
+        "name": "api-58c9886585-kkt2r",
+        "uid": "a4fb740e-35cb-42e8-948e-b1ccd1015d09",
+        "image": "nicolasbellina/taskflow-api:1.0.0",
+        "phase": "Succeeded",
+        "terminating": true
+      }
+    ]
+  },
+  {
+    "at": "2026-10-07T17:41:23.828900+02:00",
+    "phase": "upgrade-to-2",
+    "pods": [
+      {
+        "name": "api-5477cdff68-575nr",
+        "uid": "c3fe8163-c337-46fe-8b7e-b5094c9875d8",
+        "image": "nicolasbellina/taskflow-api:2.0.0",
+        "phase": "Running",
+        "terminating": false
+      },
+      {
+        "name": "api-5477cdff68-sgnzl",
+        "uid": "d2f01846-78a9-4b09-8a72-c133ca424521",
+        "image": "nicolasbellina/taskflow-api:2.0.0",
+        "phase": "Running",
+        "terminating": false
+      }
+    ]
+  },
+  {
+    "at": "2026-10-07T17:41:24.138489+02:00",
+    "phase": "rollback-to-1",
+    "pods": [
+      {
+        "name": "api-5477cdff68-575nr",
+        "uid": "c3fe8163-c337-46fe-8b7e-b5094c9875d8",
+        "image": "nicolasbellina/taskflow-api:2.0.0",
+        "phase": "Running",
+        "terminating": false
+      },
+      {
+        "name": "api-5477cdff68-sgnzl",
+        "uid": "d2f01846-78a9-4b09-8a72-c133ca424521",
+        "image": "nicolasbellina/taskflow-api:2.0.0",
+        "phase": "Running",
+        "terminating": false
+      },
+      {
+        "name": "api-58c9886585-snbng",
+        "uid": "ae416e3a-3d11-463e-9f97-ec7a9771935e",
+        "image": "nicolasbellina/taskflow-api:1.0.0",
+        "phase": "Pending",
+        "terminating": false
+      }
+    ]
+  },
+  {
+    "at": "2026-10-07T17:41:24.439019+02:00",
+    "phase": "rollback-to-1",
+    "pods": [
+      {
+        "name": "api-5477cdff68-575nr",
+        "uid": "c3fe8163-c337-46fe-8b7e-b5094c9875d8",
+        "image": "nicolasbellina/taskflow-api:2.0.0",
+        "phase": "Running",
+        "terminating": false
+      },
+      {
+        "name": "api-5477cdff68-sgnzl",
+        "uid": "d2f01846-78a9-4b09-8a72-c133ca424521",
+        "image": "nicolasbellina/taskflow-api:2.0.0",
+        "phase": "Running",
+        "terminating": false
+      },
+      {
+        "name": "api-58c9886585-snbng",
+        "uid": "ae416e3a-3d11-463e-9f97-ec7a9771935e",
+        "image": "nicolasbellina/taskflow-api:1.0.0",
+        "phase": "Pending",
+        "terminating": false
+      }
+    ]
+  },
+  {
+    "at": "2026-10-07T17:41:24.740279+02:00",
+    "phase": "rollback-to-1",
+    "pods": [
+      {
+        "name": "api-5477cdff68-575nr",
+        "uid": "c3fe8163-c337-46fe-8b7e-b5094c9875d8",
+        "image": "nicolasbellina/taskflow-api:2.0.0",
+        "phase": "Running",
+        "terminating": false
+      },
+      {
+        "name": "api-5477cdff68-sgnzl",
+        "uid": "d2f01846-78a9-4b09-8a72-c133ca424521",
+        "image": "nicolasbellina/taskflow-api:2.0.0",
+        "phase": "Running",
+        "terminating": false
+      },
+      {
+        "name": "api-58c9886585-snbng",
+        "uid": "ae416e3a-3d11-463e-9f97-ec7a9771935e",
+        "image": "nicolasbellina/taskflow-api:1.0.0",
+        "phase": "Pending",
+        "terminating": false
+      }
+    ]
+  },
+  {
+    "at": "2026-10-07T17:41:25.058509+02:00",
+    "phase": "rollback-to-1",
+    "pods": [
+      {
+        "name": "api-5477cdff68-575nr",
+        "uid": "c3fe8163-c337-46fe-8b7e-b5094c9875d8",
+        "image": "nicolasbellina/taskflow-api:2.0.0",
+        "phase": "Running",
+        "terminating": false
+      },
+      {
+        "name": "api-5477cdff68-sgnzl",
+        "uid": "d2f01846-78a9-4b09-8a72-c133ca424521",
+        "image": "nicolasbellina/taskflow-api:2.0.0",
+        "phase": "Running",
+        "terminating": false
+      },
+      {
+        "name": "api-58c9886585-snbng",
+        "uid": "ae416e3a-3d11-463e-9f97-ec7a9771935e",
+        "image": "nicolasbellina/taskflow-api:1.0.0",
+        "phase": "Running",
+        "terminating": false
+      }
+    ]
+  },
+  {
+    "at": "2026-10-07T17:41:25.354679+02:00",
+    "phase": "rollback-to-1",
+    "pods": [
+      {
+        "name": "api-5477cdff68-575nr",
+        "uid": "c3fe8163-c337-46fe-8b7e-b5094c9875d8",
+        "image": "nicolasbellina/taskflow-api:2.0.0",
+        "phase": "Running",
+        "terminating": false
+      },
+      {
+        "name": "api-5477cdff68-sgnzl",
+        "uid": "d2f01846-78a9-4b09-8a72-c133ca424521",
+        "image": "nicolasbellina/taskflow-api:2.0.0",
+        "phase": "Running",
+        "terminating": false
+      },
+      {
+        "name": "api-58c9886585-snbng",
+        "uid": "ae416e3a-3d11-463e-9f97-ec7a9771935e",
+        "image": "nicolasbellina/taskflow-api:1.0.0",
+        "phase": "Running",
+        "terminating": false
+      }
+    ]
+  },
+  {
+    "at": "2026-10-07T17:41:25.672477+02:00",
+    "phase": "rollback-to-1",
+    "pods": [
+      {
+        "name": "api-5477cdff68-575nr",
+        "uid": "c3fe8163-c337-46fe-8b7e-b5094c9875d8",
+        "image": "nicolasbellina/taskflow-api:2.0.0",
+        "phase": "Running",
+        "terminating": false
+      },
+      {
+        "name": "api-5477cdff68-sgnzl",
+        "uid": "d2f01846-78a9-4b09-8a72-c133ca424521",
+        "image": "nicolasbellina/taskflow-api:2.0.0",
+        "phase": "Running",
+        "terminating": false
+      },
+      {
+        "name": "api-58c9886585-snbng",
+        "uid": "ae416e3a-3d11-463e-9f97-ec7a9771935e",
+        "image": "nicolasbellina/taskflow-api:1.0.0",
+        "phase": "Running",
+        "terminating": false
+      }
+    ]
+  },
+  {
+    "at": "2026-10-07T17:41:25.985559+02:00",
+    "phase": "rollback-to-1",
+    "pods": [
+      {
+        "name": "api-5477cdff68-575nr",
+        "uid": "c3fe8163-c337-46fe-8b7e-b5094c9875d8",
+        "image": "nicolasbellina/taskflow-api:2.0.0",
+        "phase": "Running",
+        "terminating": false
+      },
+      {
+        "name": "api-5477cdff68-sgnzl",
+        "uid": "d2f01846-78a9-4b09-8a72-c133ca424521",
+        "image": "nicolasbellina/taskflow-api:2.0.0",
+        "phase": "Running",
+        "terminating": false
+      },
+      {
+        "name": "api-58c9886585-snbng",
+        "uid": "ae416e3a-3d11-463e-9f97-ec7a9771935e",
+        "image": "nicolasbellina/taskflow-api:1.0.0",
+        "phase": "Running",
+        "terminating": false
+      }
+    ]
+  },
+  {
+    "at": "2026-10-07T17:41:26.306215+02:00",
+    "phase": "rollback-to-1",
+    "pods": [
+      {
+        "name": "api-5477cdff68-575nr",
+        "uid": "c3fe8163-c337-46fe-8b7e-b5094c9875d8",
+        "image": "nicolasbellina/taskflow-api:2.0.0",
+        "phase": "Running",
+        "terminating": false
+      },
+      {
+        "name": "api-5477cdff68-sgnzl",
+        "uid": "d2f01846-78a9-4b09-8a72-c133ca424521",
+        "image": "nicolasbellina/taskflow-api:2.0.0",
+        "phase": "Running",
+        "terminating": false
+      },
+      {
+        "name": "api-58c9886585-snbng",
+        "uid": "ae416e3a-3d11-463e-9f97-ec7a9771935e",
+        "image": "nicolasbellina/taskflow-api:1.0.0",
+        "phase": "Running",
+        "terminating": false
+      }
+    ]
+  },
+  {
+    "at": "2026-10-07T17:41:26.634993+02:00",
+    "phase": "rollback-to-1",
+    "pods": [
+      {
+        "name": "api-5477cdff68-575nr",
+        "uid": "c3fe8163-c337-46fe-8b7e-b5094c9875d8",
+        "image": "nicolasbellina/taskflow-api:2.0.0",
+        "phase": "Running",
+        "terminating": false
+      },
+      {
+        "name": "api-5477cdff68-sgnzl",
+        "uid": "d2f01846-78a9-4b09-8a72-c133ca424521",
+        "image": "nicolasbellina/taskflow-api:2.0.0",
+        "phase": "Running",
+        "terminating": false
+      },
+      {
+        "name": "api-58c9886585-snbng",
+        "uid": "ae416e3a-3d11-463e-9f97-ec7a9771935e",
+        "image": "nicolasbellina/taskflow-api:1.0.0",
+        "phase": "Running",
+        "terminating": false
+      }
+    ]
+  },
+  {
+    "at": "2026-10-07T17:41:26.935546+02:00",
+    "phase": "rollback-to-1",
+    "pods": [
+      {
+        "name": "api-5477cdff68-575nr",
+        "uid": "c3fe8163-c337-46fe-8b7e-b5094c9875d8",
+        "image": "nicolasbellina/taskflow-api:2.0.0",
+        "phase": "Running",
+        "terminating": false
+      },
+      {
+        "name": "api-5477cdff68-sgnzl",
+        "uid": "d2f01846-78a9-4b09-8a72-c133ca424521",
+        "image": "nicolasbellina/taskflow-api:2.0.0",
+        "phase": "Running",
+        "terminating": false
+      },
+      {
+        "name": "api-58c9886585-snbng",
+        "uid": "ae416e3a-3d11-463e-9f97-ec7a9771935e",
+        "image": "nicolasbellina/taskflow-api:1.0.0",
+        "phase": "Running",
+        "terminating": false
+      }
+    ]
+  },
+  {
+    "at": "2026-10-07T17:41:27.260878+02:00",
+    "phase": "rollback-to-1",
+    "pods": [
+      {
+        "name": "api-5477cdff68-575nr",
+        "uid": "c3fe8163-c337-46fe-8b7e-b5094c9875d8",
+        "image": "nicolasbellina/taskflow-api:2.0.0",
+        "phase": "Running",
+        "terminating": false
+      },
+      {
+        "name": "api-5477cdff68-sgnzl",
+        "uid": "d2f01846-78a9-4b09-8a72-c133ca424521",
+        "image": "nicolasbellina/taskflow-api:2.0.0",
+        "phase": "Running",
+        "terminating": false
+      },
+      {
+        "name": "api-58c9886585-snbng",
+        "uid": "ae416e3a-3d11-463e-9f97-ec7a9771935e",
+        "image": "nicolasbellina/taskflow-api:1.0.0",
+        "phase": "Running",
+        "terminating": false
+      }
+    ]
+  },
+  {
+    "at": "2026-10-07T17:41:27.585014+02:00",
+    "phase": "rollback-to-1",
+    "pods": [
+      {
+        "name": "api-5477cdff68-575nr",
+        "uid": "c3fe8163-c337-46fe-8b7e-b5094c9875d8",
+        "image": "nicolasbellina/taskflow-api:2.0.0",
+        "phase": "Running",
+        "terminating": false
+      },
+      {
+        "name": "api-5477cdff68-sgnzl",
+        "uid": "d2f01846-78a9-4b09-8a72-c133ca424521",
+        "image": "nicolasbellina/taskflow-api:2.0.0",
+        "phase": "Running",
+        "terminating": false
+      },
+      {
+        "name": "api-58c9886585-snbng",
+        "uid": "ae416e3a-3d11-463e-9f97-ec7a9771935e",
+        "image": "nicolasbellina/taskflow-api:1.0.0",
+        "phase": "Running",
+        "terminating": false
+      }
+    ]
+  },
+  {
+    "at": "2026-10-07T17:41:27.880356+02:00",
+    "phase": "rollback-to-1",
+    "pods": [
+      {
+        "name": "api-5477cdff68-575nr",
+        "uid": "c3fe8163-c337-46fe-8b7e-b5094c9875d8",
+        "image": "nicolasbellina/taskflow-api:2.0.0",
+        "phase": "Running",
+        "terminating": false
+      },
+      {
+        "name": "api-5477cdff68-sgnzl",
+        "uid": "d2f01846-78a9-4b09-8a72-c133ca424521",
+        "image": "nicolasbellina/taskflow-api:2.0.0",
+        "phase": "Running",
+        "terminating": false
+      },
+      {
+        "name": "api-58c9886585-snbng",
+        "uid": "ae416e3a-3d11-463e-9f97-ec7a9771935e",
+        "image": "nicolasbellina/taskflow-api:1.0.0",
+        "phase": "Running",
+        "terminating": false
+      }
+    ]
+  },
+  {
+    "at": "2026-10-07T17:41:28.199116+02:00",
+    "phase": "rollback-to-1",
+    "pods": [
+      {
+        "name": "api-5477cdff68-575nr",
+        "uid": "c3fe8163-c337-46fe-8b7e-b5094c9875d8",
+        "image": "nicolasbellina/taskflow-api:2.0.0",
+        "phase": "Running",
+        "terminating": false
+      },
+      {
+        "name": "api-5477cdff68-sgnzl",
+        "uid": "d2f01846-78a9-4b09-8a72-c133ca424521",
+        "image": "nicolasbellina/taskflow-api:2.0.0",
+        "phase": "Running",
+        "terminating": false
+      },
+      {
+        "name": "api-58c9886585-snbng",
+        "uid": "ae416e3a-3d11-463e-9f97-ec7a9771935e",
+        "image": "nicolasbellina/taskflow-api:1.0.0",
+        "phase": "Running",
+        "terminating": false
+      }
+    ]
+  },
+  {
+    "at": "2026-10-07T17:41:28.521052+02:00",
+    "phase": "rollback-to-1",
+    "pods": [
+      {
+        "name": "api-5477cdff68-575nr",
+        "uid": "c3fe8163-c337-46fe-8b7e-b5094c9875d8",
+        "image": "nicolasbellina/taskflow-api:2.0.0",
+        "phase": "Running",
+        "terminating": false
+      },
+      {
+        "name": "api-5477cdff68-sgnzl",
+        "uid": "d2f01846-78a9-4b09-8a72-c133ca424521",
+        "image": "nicolasbellina/taskflow-api:2.0.0",
+        "phase": "Running",
+        "terminating": false
+      },
+      {
+        "name": "api-58c9886585-snbng",
+        "uid": "ae416e3a-3d11-463e-9f97-ec7a9771935e",
+        "image": "nicolasbellina/taskflow-api:1.0.0",
+        "phase": "Running",
+        "terminating": false
+      }
+    ]
+  },
+  {
+    "at": "2026-10-07T17:41:28.842593+02:00",
+    "phase": "rollback-to-1",
+    "pods": [
+      {
+        "name": "api-5477cdff68-575nr",
+        "uid": "c3fe8163-c337-46fe-8b7e-b5094c9875d8",
+        "image": "nicolasbellina/taskflow-api:2.0.0",
+        "phase": "Running",
+        "terminating": false
+      },
+      {
+        "name": "api-5477cdff68-sgnzl",
+        "uid": "d2f01846-78a9-4b09-8a72-c133ca424521",
+        "image": "nicolasbellina/taskflow-api:2.0.0",
+        "phase": "Running",
+        "terminating": false
+      },
+      {
+        "name": "api-58c9886585-snbng",
+        "uid": "ae416e3a-3d11-463e-9f97-ec7a9771935e",
+        "image": "nicolasbellina/taskflow-api:1.0.0",
+        "phase": "Running",
+        "terminating": false
+      }
+    ]
+  },
+  {
+    "at": "2026-10-07T17:41:29.160566+02:00",
+    "phase": "rollback-to-1",
+    "pods": [
+      {
+        "name": "api-5477cdff68-575nr",
+        "uid": "c3fe8163-c337-46fe-8b7e-b5094c9875d8",
+        "image": "nicolasbellina/taskflow-api:2.0.0",
+        "phase": "Running",
+        "terminating": false
+      },
+      {
+        "name": "api-5477cdff68-sgnzl",
+        "uid": "d2f01846-78a9-4b09-8a72-c133ca424521",
+        "image": "nicolasbellina/taskflow-api:2.0.0",
+        "phase": "Running",
+        "terminating": false
+      },
+      {
+        "name": "api-58c9886585-snbng",
+        "uid": "ae416e3a-3d11-463e-9f97-ec7a9771935e",
+        "image": "nicolasbellina/taskflow-api:1.0.0",
+        "phase": "Running",
+        "terminating": false
+      }
+    ]
+  },
+  {
+    "at": "2026-10-07T17:41:29.476007+02:00",
+    "phase": "rollback-to-1",
+    "pods": [
+      {
+        "name": "api-5477cdff68-575nr",
+        "uid": "c3fe8163-c337-46fe-8b7e-b5094c9875d8",
+        "image": "nicolasbellina/taskflow-api:2.0.0",
+        "phase": "Running",
+        "terminating": false
+      },
+      {
+        "name": "api-5477cdff68-sgnzl",
+        "uid": "d2f01846-78a9-4b09-8a72-c133ca424521",
+        "image": "nicolasbellina/taskflow-api:2.0.0",
+        "phase": "Running",
+        "terminating": false
+      },
+      {
+        "name": "api-58c9886585-snbng",
+        "uid": "ae416e3a-3d11-463e-9f97-ec7a9771935e",
+        "image": "nicolasbellina/taskflow-api:1.0.0",
+        "phase": "Running",
+        "terminating": false
+      }
+    ]
+  },
+  {
+    "at": "2026-10-07T17:41:29.773132+02:00",
+    "phase": "rollback-to-1",
+    "pods": [
+      {
+        "name": "api-5477cdff68-575nr",
+        "uid": "c3fe8163-c337-46fe-8b7e-b5094c9875d8",
+        "image": "nicolasbellina/taskflow-api:2.0.0",
+        "phase": "Running",
+        "terminating": false
+      },
+      {
+        "name": "api-5477cdff68-sgnzl",
+        "uid": "d2f01846-78a9-4b09-8a72-c133ca424521",
+        "image": "nicolasbellina/taskflow-api:2.0.0",
+        "phase": "Running",
+        "terminating": false
+      },
+      {
+        "name": "api-58c9886585-snbng",
+        "uid": "ae416e3a-3d11-463e-9f97-ec7a9771935e",
+        "image": "nicolasbellina/taskflow-api:1.0.0",
+        "phase": "Running",
+        "terminating": false
+      }
+    ]
+  },
+  {
+    "at": "2026-10-07T17:41:30.091790+02:00",
+    "phase": "rollback-to-1",
+    "pods": [
+      {
+        "name": "api-5477cdff68-575nr",
+        "uid": "c3fe8163-c337-46fe-8b7e-b5094c9875d8",
+        "image": "nicolasbellina/taskflow-api:2.0.0",
+        "phase": "Succeeded",
+        "terminating": true
+      },
+      {
+        "name": "api-5477cdff68-sgnzl",
+        "uid": "d2f01846-78a9-4b09-8a72-c133ca424521",
+        "image": "nicolasbellina/taskflow-api:2.0.0",
+        "phase": "Running",
+        "terminating": false
+      },
+      {
+        "name": "api-58c9886585-9mql9",
+        "uid": "7cadeb26-1753-417f-929a-c8fad8d86b45",
+        "image": "nicolasbellina/taskflow-api:1.0.0",
+        "phase": "Pending",
+        "terminating": false
+      },
+      {
+        "name": "api-58c9886585-snbng",
+        "uid": "ae416e3a-3d11-463e-9f97-ec7a9771935e",
+        "image": "nicolasbellina/taskflow-api:1.0.0",
+        "phase": "Running",
+        "terminating": false
+      }
+    ]
+  },
+  {
+    "at": "2026-10-07T17:41:30.404513+02:00",
+    "phase": "rollback-to-1",
+    "pods": [
+      {
+        "name": "api-5477cdff68-575nr",
+        "uid": "c3fe8163-c337-46fe-8b7e-b5094c9875d8",
+        "image": "nicolasbellina/taskflow-api:2.0.0",
+        "phase": "Succeeded",
+        "terminating": true
+      },
+      {
+        "name": "api-5477cdff68-sgnzl",
+        "uid": "d2f01846-78a9-4b09-8a72-c133ca424521",
+        "image": "nicolasbellina/taskflow-api:2.0.0",
+        "phase": "Running",
+        "terminating": false
+      },
+      {
+        "name": "api-58c9886585-9mql9",
+        "uid": "7cadeb26-1753-417f-929a-c8fad8d86b45",
+        "image": "nicolasbellina/taskflow-api:1.0.0",
+        "phase": "Pending",
+        "terminating": false
+      },
+      {
+        "name": "api-58c9886585-snbng",
+        "uid": "ae416e3a-3d11-463e-9f97-ec7a9771935e",
+        "image": "nicolasbellina/taskflow-api:1.0.0",
+        "phase": "Running",
+        "terminating": false
+      }
+    ]
+  },
+  {
+    "at": "2026-10-07T17:41:30.715376+02:00",
+    "phase": "rollback-to-1",
+    "pods": [
+      {
+        "name": "api-5477cdff68-575nr",
+        "uid": "c3fe8163-c337-46fe-8b7e-b5094c9875d8",
+        "image": "nicolasbellina/taskflow-api:2.0.0",
+        "phase": "Succeeded",
+        "terminating": true
+      },
+      {
+        "name": "api-5477cdff68-sgnzl",
+        "uid": "d2f01846-78a9-4b09-8a72-c133ca424521",
+        "image": "nicolasbellina/taskflow-api:2.0.0",
+        "phase": "Running",
+        "terminating": false
+      },
+      {
+        "name": "api-58c9886585-9mql9",
+        "uid": "7cadeb26-1753-417f-929a-c8fad8d86b45",
+        "image": "nicolasbellina/taskflow-api:1.0.0",
+        "phase": "Pending",
+        "terminating": false
+      },
+      {
+        "name": "api-58c9886585-snbng",
+        "uid": "ae416e3a-3d11-463e-9f97-ec7a9771935e",
+        "image": "nicolasbellina/taskflow-api:1.0.0",
+        "phase": "Running",
+        "terminating": false
+      }
+    ]
+  },
+  {
+    "at": "2026-10-07T17:41:31.028559+02:00",
+    "phase": "rollback-to-1",
+    "pods": [
+      {
+        "name": "api-5477cdff68-sgnzl",
+        "uid": "d2f01846-78a9-4b09-8a72-c133ca424521",
+        "image": "nicolasbellina/taskflow-api:2.0.0",
+        "phase": "Running",
+        "terminating": false
+      },
+      {
+        "name": "api-58c9886585-9mql9",
+        "uid": "7cadeb26-1753-417f-929a-c8fad8d86b45",
+        "image": "nicolasbellina/taskflow-api:1.0.0",
+        "phase": "Running",
+        "terminating": false
+      },
+      {
+        "name": "api-58c9886585-snbng",
+        "uid": "ae416e3a-3d11-463e-9f97-ec7a9771935e",
+        "image": "nicolasbellina/taskflow-api:1.0.0",
+        "phase": "Running",
+        "terminating": false
+      }
+    ]
+  },
+  {
+    "at": "2026-10-07T17:41:31.346555+02:00",
+    "phase": "rollback-to-1",
+    "pods": [
+      {
+        "name": "api-5477cdff68-sgnzl",
+        "uid": "d2f01846-78a9-4b09-8a72-c133ca424521",
+        "image": "nicolasbellina/taskflow-api:2.0.0",
+        "phase": "Running",
+        "terminating": false
+      },
+      {
+        "name": "api-58c9886585-9mql9",
+        "uid": "7cadeb26-1753-417f-929a-c8fad8d86b45",
+        "image": "nicolasbellina/taskflow-api:1.0.0",
+        "phase": "Running",
+        "terminating": false
+      },
+      {
+        "name": "api-58c9886585-snbng",
+        "uid": "ae416e3a-3d11-463e-9f97-ec7a9771935e",
+        "image": "nicolasbellina/taskflow-api:1.0.0",
+        "phase": "Running",
+        "terminating": false
+      }
+    ]
+  },
+  {
+    "at": "2026-10-07T17:41:31.671290+02:00",
+    "phase": "rollback-to-1",
+    "pods": [
+      {
+        "name": "api-5477cdff68-sgnzl",
+        "uid": "d2f01846-78a9-4b09-8a72-c133ca424521",
+        "image": "nicolasbellina/taskflow-api:2.0.0",
+        "phase": "Running",
+        "terminating": false
+      },
+      {
+        "name": "api-58c9886585-9mql9",
+        "uid": "7cadeb26-1753-417f-929a-c8fad8d86b45",
+        "image": "nicolasbellina/taskflow-api:1.0.0",
+        "phase": "Running",
+        "terminating": false
+      },
+      {
+        "name": "api-58c9886585-snbng",
+        "uid": "ae416e3a-3d11-463e-9f97-ec7a9771935e",
+        "image": "nicolasbellina/taskflow-api:1.0.0",
+        "phase": "Running",
+        "terminating": false
+      }
+    ]
+  },
+  {
+    "at": "2026-10-07T17:41:31.983950+02:00",
+    "phase": "rollback-to-1",
+    "pods": [
+      {
+        "name": "api-5477cdff68-sgnzl",
+        "uid": "d2f01846-78a9-4b09-8a72-c133ca424521",
+        "image": "nicolasbellina/taskflow-api:2.0.0",
+        "phase": "Running",
+        "terminating": false
+      },
+      {
+        "name": "api-58c9886585-9mql9",
+        "uid": "7cadeb26-1753-417f-929a-c8fad8d86b45",
+        "image": "nicolasbellina/taskflow-api:1.0.0",
+        "phase": "Running",
+        "terminating": false
+      },
+      {
+        "name": "api-58c9886585-snbng",
+        "uid": "ae416e3a-3d11-463e-9f97-ec7a9771935e",
+        "image": "nicolasbellina/taskflow-api:1.0.0",
+        "phase": "Running",
+        "terminating": false
+      }
+    ]
+  },
+  {
+    "at": "2026-10-07T17:41:32.305878+02:00",
+    "phase": "rollback-to-1",
+    "pods": [
+      {
+        "name": "api-5477cdff68-sgnzl",
+        "uid": "d2f01846-78a9-4b09-8a72-c133ca424521",
+        "image": "nicolasbellina/taskflow-api:2.0.0",
+        "phase": "Running",
+        "terminating": false
+      },
+      {
+        "name": "api-58c9886585-9mql9",
+        "uid": "7cadeb26-1753-417f-929a-c8fad8d86b45",
+        "image": "nicolasbellina/taskflow-api:1.0.0",
+        "phase": "Running",
+        "terminating": false
+      },
+      {
+        "name": "api-58c9886585-snbng",
+        "uid": "ae416e3a-3d11-463e-9f97-ec7a9771935e",
+        "image": "nicolasbellina/taskflow-api:1.0.0",
+        "phase": "Running",
+        "terminating": false
+      }
+    ]
+  },
+  {
+    "at": "2026-10-07T17:41:32.677252+02:00",
+    "phase": "rollback-to-1",
+    "pods": [
+      {
+        "name": "api-5477cdff68-sgnzl",
+        "uid": "d2f01846-78a9-4b09-8a72-c133ca424521",
+        "image": "nicolasbellina/taskflow-api:2.0.0",
+        "phase": "Running",
+        "terminating": false
+      },
+      {
+        "name": "api-58c9886585-9mql9",
+        "uid": "7cadeb26-1753-417f-929a-c8fad8d86b45",
+        "image": "nicolasbellina/taskflow-api:1.0.0",
+        "phase": "Running",
+        "terminating": false
+      },
+      {
+        "name": "api-58c9886585-snbng",
+        "uid": "ae416e3a-3d11-463e-9f97-ec7a9771935e",
+        "image": "nicolasbellina/taskflow-api:1.0.0",
+        "phase": "Running",
+        "terminating": false
+      }
+    ]
+  },
+  {
+    "at": "2026-10-07T17:41:32.980459+02:00",
+    "phase": "rollback-to-1",
+    "pods": [
+      {
+        "name": "api-5477cdff68-sgnzl",
+        "uid": "d2f01846-78a9-4b09-8a72-c133ca424521",
+        "image": "nicolasbellina/taskflow-api:2.0.0",
+        "phase": "Running",
+        "terminating": false
+      },
+      {
+        "name": "api-58c9886585-9mql9",
+        "uid": "7cadeb26-1753-417f-929a-c8fad8d86b45",
+        "image": "nicolasbellina/taskflow-api:1.0.0",
+        "phase": "Running",
+        "terminating": false
+      },
+      {
+        "name": "api-58c9886585-snbng",
+        "uid": "ae416e3a-3d11-463e-9f97-ec7a9771935e",
+        "image": "nicolasbellina/taskflow-api:1.0.0",
+        "phase": "Running",
+        "terminating": false
+      }
+    ]
+  },
+  {
+    "at": "2026-10-07T17:41:33.303524+02:00",
+    "phase": "rollback-to-1",
+    "pods": [
+      {
+        "name": "api-5477cdff68-sgnzl",
+        "uid": "d2f01846-78a9-4b09-8a72-c133ca424521",
+        "image": "nicolasbellina/taskflow-api:2.0.0",
+        "phase": "Running",
+        "terminating": false
+      },
+      {
+        "name": "api-58c9886585-9mql9",
+        "uid": "7cadeb26-1753-417f-929a-c8fad8d86b45",
+        "image": "nicolasbellina/taskflow-api:1.0.0",
+        "phase": "Running",
+        "terminating": false
+      },
+      {
+        "name": "api-58c9886585-snbng",
+        "uid": "ae416e3a-3d11-463e-9f97-ec7a9771935e",
+        "image": "nicolasbellina/taskflow-api:1.0.0",
+        "phase": "Running",
+        "terminating": false
+      }
+    ]
+  },
+  {
+    "at": "2026-10-07T17:41:33.621714+02:00",
+    "phase": "rollback-to-1",
+    "pods": [
+      {
+        "name": "api-5477cdff68-sgnzl",
+        "uid": "d2f01846-78a9-4b09-8a72-c133ca424521",
+        "image": "nicolasbellina/taskflow-api:2.0.0",
+        "phase": "Running",
+        "terminating": false
+      },
+      {
+        "name": "api-58c9886585-9mql9",
+        "uid": "7cadeb26-1753-417f-929a-c8fad8d86b45",
+        "image": "nicolasbellina/taskflow-api:1.0.0",
+        "phase": "Running",
+        "terminating": false
+      },
+      {
+        "name": "api-58c9886585-snbng",
+        "uid": "ae416e3a-3d11-463e-9f97-ec7a9771935e",
+        "image": "nicolasbellina/taskflow-api:1.0.0",
+        "phase": "Running",
+        "terminating": false
+      }
+    ]
+  },
+  {
+    "at": "2026-10-07T17:41:33.940962+02:00",
+    "phase": "rollback-to-1",
+    "pods": [
+      {
+        "name": "api-5477cdff68-sgnzl",
+        "uid": "d2f01846-78a9-4b09-8a72-c133ca424521",
+        "image": "nicolasbellina/taskflow-api:2.0.0",
+        "phase": "Running",
+        "terminating": false
+      },
+      {
+        "name": "api-58c9886585-9mql9",
+        "uid": "7cadeb26-1753-417f-929a-c8fad8d86b45",
+        "image": "nicolasbellina/taskflow-api:1.0.0",
+        "phase": "Running",
+        "terminating": false
+      },
+      {
+        "name": "api-58c9886585-snbng",
+        "uid": "ae416e3a-3d11-463e-9f97-ec7a9771935e",
+        "image": "nicolasbellina/taskflow-api:1.0.0",
+        "phase": "Running",
+        "terminating": false
+      }
+    ]
+  },
+  {
+    "at": "2026-10-07T17:41:34.265609+02:00",
+    "phase": "rollback-to-1",
+    "pods": [
+      {
+        "name": "api-5477cdff68-sgnzl",
+        "uid": "d2f01846-78a9-4b09-8a72-c133ca424521",
+        "image": "nicolasbellina/taskflow-api:2.0.0",
+        "phase": "Running",
+        "terminating": false
+      },
+      {
+        "name": "api-58c9886585-9mql9",
+        "uid": "7cadeb26-1753-417f-929a-c8fad8d86b45",
+        "image": "nicolasbellina/taskflow-api:1.0.0",
+        "phase": "Running",
+        "terminating": false
+      },
+      {
+        "name": "api-58c9886585-snbng",
+        "uid": "ae416e3a-3d11-463e-9f97-ec7a9771935e",
+        "image": "nicolasbellina/taskflow-api:1.0.0",
+        "phase": "Running",
+        "terminating": false
+      }
+    ]
+  },
+  {
+    "at": "2026-10-07T17:41:34.585583+02:00",
+    "phase": "rollback-to-1",
+    "pods": [
+      {
+        "name": "api-5477cdff68-sgnzl",
+        "uid": "d2f01846-78a9-4b09-8a72-c133ca424521",
+        "image": "nicolasbellina/taskflow-api:2.0.0",
+        "phase": "Running",
+        "terminating": false
+      },
+      {
+        "name": "api-58c9886585-9mql9",
+        "uid": "7cadeb26-1753-417f-929a-c8fad8d86b45",
+        "image": "nicolasbellina/taskflow-api:1.0.0",
+        "phase": "Running",
+        "terminating": false
+      },
+      {
+        "name": "api-58c9886585-snbng",
+        "uid": "ae416e3a-3d11-463e-9f97-ec7a9771935e",
+        "image": "nicolasbellina/taskflow-api:1.0.0",
+        "phase": "Running",
+        "terminating": false
+      }
+    ]
+  },
+  {
+    "at": "2026-10-07T17:41:34.901873+02:00",
+    "phase": "rollback-to-1",
+    "pods": [
+      {
+        "name": "api-5477cdff68-sgnzl",
+        "uid": "d2f01846-78a9-4b09-8a72-c133ca424521",
+        "image": "nicolasbellina/taskflow-api:2.0.0",
+        "phase": "Running",
+        "terminating": false
+      },
+      {
+        "name": "api-58c9886585-9mql9",
+        "uid": "7cadeb26-1753-417f-929a-c8fad8d86b45",
+        "image": "nicolasbellina/taskflow-api:1.0.0",
+        "phase": "Running",
+        "terminating": false
+      },
+      {
+        "name": "api-58c9886585-snbng",
+        "uid": "ae416e3a-3d11-463e-9f97-ec7a9771935e",
+        "image": "nicolasbellina/taskflow-api:1.0.0",
+        "phase": "Running",
+        "terminating": false
+      }
+    ]
+  },
+  {
+    "at": "2026-10-07T17:41:35.228726+02:00",
+    "phase": "rollback-to-1",
+    "pods": [
+      {
+        "name": "api-5477cdff68-sgnzl",
+        "uid": "d2f01846-78a9-4b09-8a72-c133ca424521",
+        "image": "nicolasbellina/taskflow-api:2.0.0",
+        "phase": "Running",
+        "terminating": false
+      },
+      {
+        "name": "api-58c9886585-9mql9",
+        "uid": "7cadeb26-1753-417f-929a-c8fad8d86b45",
+        "image": "nicolasbellina/taskflow-api:1.0.0",
+        "phase": "Running",
+        "terminating": false
+      },
+      {
+        "name": "api-58c9886585-snbng",
+        "uid": "ae416e3a-3d11-463e-9f97-ec7a9771935e",
+        "image": "nicolasbellina/taskflow-api:1.0.0",
+        "phase": "Running",
+        "terminating": false
+      }
+    ]
+  },
+  {
+    "at": "2026-10-07T17:41:35.562955+02:00",
+    "phase": "rollback-to-1",
+    "pods": [
+      {
+        "name": "api-5477cdff68-sgnzl",
+        "uid": "d2f01846-78a9-4b09-8a72-c133ca424521",
+        "image": "nicolasbellina/taskflow-api:2.0.0",
+        "phase": "Running",
+        "terminating": false
+      },
+      {
+        "name": "api-58c9886585-9mql9",
+        "uid": "7cadeb26-1753-417f-929a-c8fad8d86b45",
+        "image": "nicolasbellina/taskflow-api:1.0.0",
+        "phase": "Running",
+        "terminating": false
+      },
+      {
+        "name": "api-58c9886585-snbng",
+        "uid": "ae416e3a-3d11-463e-9f97-ec7a9771935e",
+        "image": "nicolasbellina/taskflow-api:1.0.0",
+        "phase": "Running",
+        "terminating": false
+      }
+    ]
+  },
+  {
+    "at": "2026-10-07T17:41:35.875469+02:00",
+    "phase": "rollback-to-1",
+    "pods": [
+      {
+        "name": "api-5477cdff68-sgnzl",
+        "uid": "d2f01846-78a9-4b09-8a72-c133ca424521",
+        "image": "nicolasbellina/taskflow-api:2.0.0",
+        "phase": "Running",
+        "terminating": true
+      },
+      {
+        "name": "api-58c9886585-9mql9",
+        "uid": "7cadeb26-1753-417f-929a-c8fad8d86b45",
+        "image": "nicolasbellina/taskflow-api:1.0.0",
+        "phase": "Running",
+        "terminating": false
+      },
+      {
+        "name": "api-58c9886585-snbng",
+        "uid": "ae416e3a-3d11-463e-9f97-ec7a9771935e",
+        "image": "nicolasbellina/taskflow-api:1.0.0",
+        "phase": "Running",
+        "terminating": false
+      }
+    ]
+  },
+  {
+    "at": "2026-10-07T17:41:36.184821+02:00",
+    "phase": "rollback-to-1",
+    "pods": [
+      {
+        "name": "api-5477cdff68-sgnzl",
+        "uid": "d2f01846-78a9-4b09-8a72-c133ca424521",
+        "image": "nicolasbellina/taskflow-api:2.0.0",
+        "phase": "Succeeded",
+        "terminating": true
+      },
+      {
+        "name": "api-58c9886585-9mql9",
+        "uid": "7cadeb26-1753-417f-929a-c8fad8d86b45",
+        "image": "nicolasbellina/taskflow-api:1.0.0",
+        "phase": "Running",
+        "terminating": false
+      },
+      {
+        "name": "api-58c9886585-snbng",
+        "uid": "ae416e3a-3d11-463e-9f97-ec7a9771935e",
+        "image": "nicolasbellina/taskflow-api:1.0.0",
+        "phase": "Running",
+        "terminating": false
+      }
+    ]
+  },
+  {
+    "at": "2026-10-07T17:41:36.506193+02:00",
+    "phase": "rollback-to-1",
+    "pods": [
+      {
+        "name": "api-5477cdff68-sgnzl",
+        "uid": "d2f01846-78a9-4b09-8a72-c133ca424521",
+        "image": "nicolasbellina/taskflow-api:2.0.0",
+        "phase": "Succeeded",
+        "terminating": true
+      },
+      {
+        "name": "api-58c9886585-9mql9",
+        "uid": "7cadeb26-1753-417f-929a-c8fad8d86b45",
+        "image": "nicolasbellina/taskflow-api:1.0.0",
+        "phase": "Running",
+        "terminating": false
+      },
+      {
+        "name": "api-58c9886585-snbng",
+        "uid": "ae416e3a-3d11-463e-9f97-ec7a9771935e",
+        "image": "nicolasbellina/taskflow-api:1.0.0",
+        "phase": "Running",
+        "terminating": false
+      }
+    ]
+  },
+  {
+    "at": "2026-10-07T17:41:36.824770+02:00",
+    "phase": "rollback-to-1",
+    "pods": [
+      {
+        "name": "api-5477cdff68-sgnzl",
+        "uid": "d2f01846-78a9-4b09-8a72-c133ca424521",
+        "image": "nicolasbellina/taskflow-api:2.0.0",
+        "phase": "Succeeded",
+        "terminating": true
+      },
+      {
+        "name": "api-58c9886585-9mql9",
+        "uid": "7cadeb26-1753-417f-929a-c8fad8d86b45",
+        "image": "nicolasbellina/taskflow-api:1.0.0",
+        "phase": "Running",
+        "terminating": false
+      },
+      {
+        "name": "api-58c9886585-snbng",
+        "uid": "ae416e3a-3d11-463e-9f97-ec7a9771935e",
+        "image": "nicolasbellina/taskflow-api:1.0.0",
+        "phase": "Running",
+        "terminating": false
+      }
+    ]
+  },
+  {
+    "at": "2026-10-07T17:41:37.129093+02:00",
+    "phase": "rollback-to-1",
+    "pods": [
+      {
+        "name": "api-58c9886585-9mql9",
+        "uid": "7cadeb26-1753-417f-929a-c8fad8d86b45",
+        "image": "nicolasbellina/taskflow-api:1.0.0",
+        "phase": "Running",
+        "terminating": false
+      },
+      {
+        "name": "api-58c9886585-snbng",
+        "uid": "ae416e3a-3d11-463e-9f97-ec7a9771935e",
+        "image": "nicolasbellina/taskflow-api:1.0.0",
+        "phase": "Running",
+        "terminating": false
+      }
+    ]
+  }
+]

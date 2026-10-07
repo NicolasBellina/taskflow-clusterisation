@@ -1,0 +1,14 @@
+{
+  "at": "2026-10-07T17:52:33.729849+02:00",
+  "kubernetes_objects": 7,
+  "deployment_replicas": {
+    "db": 1,
+    "api": 2,
+    "front": 2
+  },
+  "selectors_match": true,
+  "environment_values_are_strings": true,
+  "course_exclusions_respected": true,
+  "sources_still_api_1_0_0": true,
+  "real_local_password_absent_from_delivery": true
+}

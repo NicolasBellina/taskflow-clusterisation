@@ -1,0 +1,7 @@
+namespace/taskflow created
+deployment.apps/api created
+service/api created
+deployment.apps/db created
+service/db created
+deployment.apps/front created
+service/front created

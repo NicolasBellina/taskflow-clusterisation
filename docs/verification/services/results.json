@@ -1,0 +1,201 @@
+{
+  "started_at": "2026-10-07T17:33:47.709050+02:00",
+  "context": "k3d-seance3",
+  "base_url": "http://127.0.0.1:32002",
+  "vm_k3s_lab_tested": false,
+  "initial_deployment": {
+    "single_directory_apply_succeeded": true,
+    "api_replicas": 2,
+    "front_replicas": 2,
+    "db_replicas": 1,
+    "db_image": "postgres:17-alpine",
+    "load_balancer_ip": "172.22.0.3",
+    "load_balancer_port": 32000,
+    "mac_published_port": 32002,
+    "db_service_ready": true,
+    "api_service_traffic_samples": 50,
+    "api_instances_observed": [
+      "api-56c54f747b-fsbqc",
+      "api-56c54f747b-ngjn8"
+    ],
+    "front_http": 200,
+    "api_info_version": "1.0.0",
+    "nginx_dns_fix": "Résolveur du Pod et FQDN api.taskflow.svc.cluster.local ; résolution du nom court seule renvoyait 502."
+  },
+  "last_verified_at": "2026-10-07T17:52:33.730641+02:00",
+  "environment_trap": {
+    "reproduced": true,
+    "pod_phase": "Failed",
+    "cause": "DB_PORT=tcp://<ClusterIP>:5432 injecté par les service links, refusé par readInt",
+    "fixes": [
+      "DB_PORT explicitement \"5432\"",
+      "enableServiceLinks: false"
+    ],
+    "main_deployment_uses_both": true
+  },
+  "browser_initial": {
+    "task_title": "Valider la séance 3 : Deployments et Services",
+    "task_id": 1,
+    "created_via_browser": true,
+    "marked_done_via_browser": true,
+    "done_survives_page_reload": true,
+    "footer_instances_observed": [
+      "api-56c54f747b-fsbqc",
+      "api-56c54f747b-ngjn8"
+    ]
+  },
+  "self_healing": {
+    "replacements": [
+      {
+        "component": "api",
+        "deleted_pod": "api-56c54f747b-fsbqc",
+        "deleted_uid": "3c0670a5-85c7-4d42-9314-a85b97b9564f",
+        "pods_after": [
+          {
+            "name": "api-56c54f747b-lwmmq",
+            "uid": "7ccf85a7-b672-4b20-8118-3765e0261e02"
+          },
+          {
+            "name": "api-56c54f747b-ngjn8",
+            "uid": "51f040bb-7f99-44bc-a88d-37322312b998"
+          }
+        ]
+      },
+      {
+        "component": "front",
+        "deleted_pod": "front-646d79c6f-bjvrn",
+        "deleted_uid": "b2763210-4d2a-43af-bb26-77d140e657a6",
+        "pods_after": [
+          {
+            "name": "front-646d79c6f-hddhc",
+            "uid": "eb0866d8-d136-4a86-92c1-bed5cc4cbc62"
+          },
+          {
+            "name": "front-646d79c6f-w6kq2",
+            "uid": "291b37a1-7874-46bd-b3ad-96a44d8d6abf"
+          }
+        ]
+      }
+    ],
+    "requests": 128,
+    "failed_requests": 0,
+    "statuses": [
+      200
+    ],
+    "note": "Observations mesurées, sans garantie de disponibilité en absence de sondes."
+  },
+  "database_recreation": {
+    "old_pod": "db-cd6884bfc-h47jk",
+    "new_pod": "db-cd6884bfc-hbdqz",
+    "uid_changed": true,
+    "old_ip": "10.42.0.8",
+    "new_ip": "10.42.0.20",
+    "service_cluster_ip_unchanged": "10.43.16.226",
+    "db_host_unchanged": "db",
+    "tasks_table_count_before_api_restart": 0,
+    "tasks_http_before_api_restart": 500,
+    "api_log_error": "relation \"tasks\" does not exist",
+    "readyz_without_tasks_table_http": 200,
+    "old_tasks_lost": true,
+    "recovery": "kubectl rollout restart deployment/api",
+    "recovery_tasks_http": 200,
+    "recovery_task_create_http": 201
+  },
+  "rolling_update": {
+    "versions_observed": [
+      "1.0.0",
+      "2.0.0"
+    ],
+    "running_versions_coexisted": true,
+    "requests": 397,
+    "failed_requests": 0,
+    "statuses": [
+      200
+    ],
+    "rollback_serves_version": "1.0.0",
+    "manifest_restored_to": "1.0.0",
+    "kubectl_diff_exit_code": 0,
+    "strategy": {
+      "maxUnavailable": 0,
+      "maxSurge": 1,
+      "minReadySeconds": 5
+    },
+    "readiness_probes": false
+  },
+  "invalid_image_rollout": {
+    "image": "nicolasbellina/taskflow-api:9.9.9",
+    "waiting_reason": "ImagePullBackOff",
+    "old_running_api_replicas": 2,
+    "requests": 30,
+    "failed_requests": 0,
+    "served_version": "1.0.0",
+    "maxUnavailable": 0,
+    "rollback_completed": true
+  },
+  "fresh_namespace_install": {
+    "single_directory_apply": true,
+    "namespace_uid_changed": true,
+    "nodes_unchanged": true,
+    "deleted_resource_counts": {
+      "Deployment": 3,
+      "EndpointSlice": 3,
+      "Pod": 5,
+      "ReplicaSet": 8,
+      "Service": 3
+    },
+    "namespace_delete_seconds": 10.476,
+    "delete_apply_until_http_seconds": 17.15,
+    "image_cache_already_present": true,
+    "api_version": "1.0.0",
+    "tasks_after_install": [],
+    "vm_k3s_lab_tested": false
+  },
+  "service_port_forward": {
+    "service": "api",
+    "local_port": 18080,
+    "statuses": {
+      "/healthz": 200,
+      "/readyz": 200,
+      "/api/tasks": 200
+    },
+    "one_api_pod_selected": true
+  },
+  "final_manifest_validation": {
+    "server_dry_run_passed": true,
+    "kubectl_diff_exit_code": 0,
+    "api_image": "nicolasbellina/taskflow-api:1.0.0"
+  },
+  "image_2_publication": {
+    "at": "2026-10-07T17:47:39.656815+02:00",
+    "repository": "nicolasbellina/taskflow-api",
+    "tag": "2.0.0",
+    "anonymous_pull_manifest_access": true,
+    "os": "linux",
+    "architecture": "arm64",
+    "media_type": "application/vnd.oci.image.manifest.v1+json",
+    "authentication_credentials_used": false
+  },
+  "browser_final": {
+    "title": "Séance 3 validée : Deployments, Services et retour arrière",
+    "task_id": 1,
+    "done_after_reload": true,
+    "footer_api": "api-56c54f747b-j7d2t",
+    "screenshot": "browser-final.jpg",
+    "url": "http://127.0.0.1:32002",
+    "tested_with_browser": true
+  },
+  "static_acceptance": {
+    "at": "2026-10-07T17:52:33.729849+02:00",
+    "kubernetes_objects": 7,
+    "deployment_replicas": {
+      "db": 1,
+      "api": 2,
+      "front": 2
+    },
+    "selectors_match": true,
+    "environment_values_are_strings": true,
+    "course_exclusions_respected": true,
+    "sources_still_api_1_0_0": true,
+    "real_local_password_absent_from_delivery": true
+  }
+}

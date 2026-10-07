@@ -1,12 +1,11 @@
 # Configuration de référence pour la VM k3s-lab (pas un objet Kubernetes).
 # Adapter l'IP et l'interface à la VM avant copie dans /etc/rancher/k3s/config.yaml.
-# Le test sur Mac utilise le cluster k3d-seance2 existant ; voir docs/notes-kubernetes.md.
+# Le TP Services utilise k3d-seance3 sur Mac ; voir docs/seance-3-services.md.
 node-name: k3s-lab
 node-ip: 192.168.56.10
 flannel-iface: enp0s8
 tls-san:
   - 192.168.56.10
 write-kubeconfig-mode: "0600"
-disable:
-  - servicelb
-  - traefik
+# ServiceLB et Traefik restent activés (valeurs par défaut de k3s).
+# Le front utilise le port 32000, distinct des ports Traefik 80/443.

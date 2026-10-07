@@ -1,0 +1,9 @@
+NAME                    READY   UP-TO-DATE   AVAILABLE   AGE
+deployment.apps/api     2/2     2            2           79s
+deployment.apps/db      1/1     1            1           79s
+deployment.apps/front   2/2     2            2           79s
+
+NAME            TYPE           CLUSTER-IP      EXTERNAL-IP   PORT(S)           AGE
+service/api     ClusterIP      10.43.144.42    <none>        3000/TCP          79s
+service/db      ClusterIP      10.43.40.157    <none>        5432/TCP          79s
+service/front   LoadBalancer   10.43.163.169   172.22.0.3    32000:32726/TCP   79s

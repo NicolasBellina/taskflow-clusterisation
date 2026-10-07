@@ -1,0 +1,9 @@
+NAME                    READY   UP-TO-DATE   AVAILABLE   AGE     CONTAINERS   IMAGES                                                                                       SELECTOR
+deployment.apps/api     2/2     2            2           2m23s   api          nicolasbellina/taskflow-api:1.0.0                                                            app.kubernetes.io/component=api,app.kubernetes.io/name=taskflow
+deployment.apps/db      1/1     1            1           2m23s   postgres     postgres:17-alpine@sha256:b0f9560a2de083e2cc7382e75f808c7381a32852a7ec49117deedb300e552b24   app.kubernetes.io/component=database,app.kubernetes.io/name=taskflow
+deployment.apps/front   2/2     2            2           2m23s   front        nicolasbellina/taskflow-front:1.0.0                                                          app.kubernetes.io/component=front,app.kubernetes.io/name=taskflow
+
+NAME            TYPE           CLUSTER-IP      EXTERNAL-IP   PORT(S)           AGE     SELECTOR
+service/api     ClusterIP      10.43.232.42    <none>        3000/TCP          2m23s   app.kubernetes.io/component=api,app.kubernetes.io/name=taskflow
+service/db      ClusterIP      10.43.16.226    <none>        5432/TCP          2m23s   app.kubernetes.io/component=database,app.kubernetes.io/name=taskflow
+service/front   LoadBalancer   10.43.215.188   172.22.0.3    32000:32727/TCP   2m23s   app.kubernetes.io/component=front,app.kubernetes.io/name=taskflow

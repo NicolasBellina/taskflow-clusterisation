@@ -1,38 +1,66 @@
-# TaskFlow — séance 2 : premiers Pods Kubernetes
+# Séance 2 — déployer et comprendre les premiers Pods Kubernetes
 
-Énoncé : `séance 2 - fil rouge.pdf`, dont le titre interne est « Séance 4 — Projet fil rouge : premiers Pods TaskFlow sur Kubernetes ». Réalisation le 7 octobre 2026.
+Ce fichier est le **mode opératoire et le compte rendu technique** de la séance 2. Il suit exactement les **étapes 1 à 6** du PDF fourni, dont le titre interne est « Séance 4 — Projet fil rouge : premiers Pods TaskFlow sur Kubernetes ». Les questions et justifications sont regroupées dans le [README](../README.md). Le [point de contrôle](point-controle-kubernetes.md) contient seulement les trois sorties demandées pour le rendu.
 
-## Périmètre et environnement
+**Ce récit est désormais historique.** Les blocs de commandes des étapes 1 à 6 conservent les chemins utilisés sur l'ancien commit `e92ace3` ; ils se reproduisent dans un checkout séparé de ce commit, pas dans l'arborescence actuelle. La séance 3 remplace les Pods autonomes par des Deployments et Services dans `k8s/app/`. Pour le déploiement actuel, suivre [seance-3-services.md](seance-3-services.md).
 
-Deux Pods autonomes (`db` et `api`) dans le namespace explicite `taskflow`. Pas de Service, Deployment, Secret, PVC ou front : ce sont les limites volontairement étudiées aujourd'hui. Les sources applicatives et Compose de la séance 1 sont conservés.
+Les [anciens manifestes et le helper](verification/kubernetes/manifests/) sont archivés comme preuves de la séance 2. Le helper archivé conserve son ancienne logique de chemins relative au dépôt : ne pas l'exécuter directement depuis l'archive. Il n'est plus nécessaire lorsque l'API utilise le Service `db`.
 
-Les essais ont été exécutés sur **k3d-seance2**, cluster k3s local existant sous Docker Desktop, nœud ARM64 `k3d-seance2-server-0`, version `v1.32.5+k3s1`. C'est une adaptation au Mac ; **la VM `k3s-lab` n'a pas été créée ni testée**. `k8s/k3s-config.yaml` fournit sa configuration de référence à adapter (IP privée et interface). Sur cette VM, copier le fichier dans `/etc/rancher/k3s/config.yaml` avant l'installation de k3s, récupérer le kubeconfig et configurer le contexte `k3s-lab`. Ce fichier de configuration n'est pas un manifeste à envoyer à l'API Kubernetes.
+## Ce qui a été réalisé et ce qui reste à vérifier
 
-L'image `nicolasbellina/taskflow-api:1.0.0` publiée en séance 1 est ARM64. Le laboratoire a vérifié son téléchargement depuis le registre. Pour une VM AMD64, publier une image compatible et adapter le manifeste avant de poursuivre. PostgreSQL utilise exactement l'image et le digest de Compose (`postgres:18-alpine`).
+Les preuves d'exécution conservées datent du **7 octobre 2026**, avec une vérification finale à **14 h 05, heure de Paris**. Elles concernent `k3d-seance2`, un cluster k3s dans Docker Desktop, sur le nœud ARM64 `k3d-seance2-server-0`, version `v1.32.5+k3s1`.
 
-## 1. Namespace et configuration
+**La VM `k3s-lab` prévue dans l'énoncé n'a pas été installée ni testée.** Les manipulations sur les Pods sont démontrées sur k3d ; elles ne prouvent pas la réalisation du prérequis VM. Le fichier [k3s-config.yaml](../k8s/k3s-config.yaml) est une configuration de référence à adapter à l'IP privée et à l'interface de cette VM, puis à copier dans `/etc/rancher/k3s/config.yaml` avant l'installation. Ce fichier n'est pas un objet Kubernetes applicable avec `kubectl`.
 
-Tous les Pods déclarent `metadata.namespace: taskflow`. Cela évite qu'un tiers les crée dans le namespace par défaut de son contexte. Les labels `app.kubernetes.io/name: taskflow` et `app.kubernetes.io/component: database|api` identifient l'application et les composants pour de futurs sélecteurs.
+| Étape du PDF | Réalisation obligatoire | Preuve conservée |
+|---|---|---|
+| 1 — Namespace | Namespace `taskflow`, Pods avec namespace explicite | [namespace.yaml](verification/kubernetes/manifests/namespace.yaml), [objet API stocké](verification/kubernetes/api-before-kill.json) |
+| 2 — PostgreSQL | Image de Compose, configuration et labels, logs de disponibilité, IP relevée | [db.yaml](verification/kubernetes/manifests/db.yaml), [logs PostgreSQL](verification/kubernetes/db-initial.log), [Pods initiaux](verification/kubernetes/pods-before.txt) |
+| 3 — API | Image publiée `1.0.0`, configuration, labels, IP temporaire de la base | [api.yaml](verification/kubernetes/manifests/api.yaml), [logs API finale](verification/kubernetes/api-final.log) |
+| 4 — HTTP | `/healthz`, création et relecture d'une tâche, identification du Pod | [en-têtes initiaux](verification/kubernetes/healthz-initial.headers), [tâche créée](verification/kubernetes/task-created.json), [liste initiale](verification/kubernetes/tasks-before.json) |
+| 5 — Limites | Recréation de db, suppression de l'API, arrêt du processus API | [synthèse des expériences](verification/kubernetes/results.json), preuves détaillées ci-dessous |
+| 6 — Rendu | Application remise en service, livrables enregistrés et poussés, contrôle préparé | [Pods finaux](verification/kubernetes/pods-final.txt), [santé finale](verification/kubernetes/healthz-final.txt), [contrôle](point-controle-kubernetes.md) |
 
-Le `.env` de Compose n'est pas chargé par Kubernetes. `POSTGRES_PASSWORD` doit être déclaré dans le Pod PostgreSQL ; `DB_PASSWORD` doit avoir la même valeur côté API. La chaîne **`taskflow-lab-only-not-a-real-secret` est un mot de passe fictif et public**, réservé à cette base de TP. Aucun mot de passe de la stack Compose n'a été copié. L'externalisation sera traitée dans une séance ultérieure.
+Les preuves sont des **instantanés historiques** : les IP, l'âge des Pods et leur état peuvent avoir changé. Le [rapport d'audit des deux séances](verification/audit-seances.json), du **7 octobre 2026 à 17 h 14, heure de Paris**, confirme de nouveau le nœud `Ready`, les deux Pods `Running`, `DB_HOST` correspondant à l'IP de db, `/healthz` et `/readyz` à 200, puis la création, la relecture et la suppression d'une tâche temporaire. Le `--dry-run=server` des trois manifestes a également réussi. Les trois expériences de l'étape 5 ne sont pas répétées lors de cet audit : leurs preuves historiques restent conservées.
 
-Aucun volume n'est monté : les données résident dans la couche inscriptible du conteneur, sans persistance garantie. La suppression du Pod détruit la base de cet exercice ; un redémarrage de son conteneur peut aussi perdre ces données.
+Les manifestes archivés de cette séance ne contiennent ni Service, ni Deployment, ni Secret, ni PVC ; le front est hors du périmètre obligatoire de cette séance.
 
-## 2. Déploiement reproductible
+## Avant l'étape 1 — sélectionner un cluster accessible
 
-Depuis la racine `taskflow/`, démarrer Docker Desktop. Pour le laboratoire existant :
+Toutes les commandes ci-dessous se lancent depuis la racine du dépôt. Il faut `kubectl`, Python 3, un cluster accessible et son kubeconfig. Sur la machine utilisée pour les preuves historiques, Docker Desktop hébergeait le cluster `k3d-seance2`. Sur la VM du PDF, le contexte attendu est `k3s-lab`.
+
+Configurer le kubeconfig de son installation, puis contrôler les contextes disponibles :
 
 ```sh
-export KUBECONFIG="$(cd ../seance-2 && pwd)/.local/kubeconfig"
+export KUBECONFIG="/chemin/vers/le/kubeconfig"
+kubectl config get-contexts
 export KUBE_CONTEXT=k3d-seance2
-# Si le cluster est arrêté : ../seance-2/.tools/k3d cluster start seance2
+# Pour la VM du PDF, utiliser à la place : export KUBE_CONTEXT=k3s-lab
 kubectl --context "$KUBE_CONTEXT" get nodes
 ```
 
-Sur la VM : utiliser son kubeconfig et `KUBE_CONTEXT=k3s-lab`. Ne pas modifier le contexte global pour exécuter ce TP.
+Le chemin kubeconfig ci-dessus est un exemple à remplacer. Le kubeconfig n'est pas fourni dans ce dépôt. L'ancien chemin local `../seance-2/.local/kubeconfig` ne constitue pas un prérequis reproductible : il est absent lors de cette relecture. Les commandes utilisent un contexte explicite pour cibler le cluster voulu sans modifier le contexte global.
+
+L'image API publiée `nicolasbellina/taskflow-api:1.0.0` est Linux ARM64. Pour un cluster ou une VM AMD64, construire/publier une image compatible et modifier le manifeste avant le déploiement.
+
+## Étape 1 — créer le namespace
+
+Fichier historique : [namespace.yaml archivé](verification/kubernetes/manifests/namespace.yaml), anciennement `k8s/namespace.yaml`. Le namespace rassemble les ressources de l'application. Les deux manifestes de Pods déclarent également `metadata.namespace: taskflow`, ce qui rend leur destination explicite pour une autre personne qui les applique.
 
 ```sh
 kubectl --context "$KUBE_CONTEXT" apply -f k8s/namespace.yaml
+kubectl --context "$KUBE_CONTEXT" get namespace taskflow
+```
+
+Résultat attendu : le namespace existe. Les labels `app.kubernetes.io/name: taskflow` et `app.kubernetes.io/component: database|api` identifient l'application et ses composants pour les sélecteurs des séances suivantes.
+
+## Étape 2 — démarrer PostgreSQL et relever son IP
+
+Fichier historique : [db.yaml archivé](verification/kubernetes/manifests/db.yaml), anciennement `k8s/pods/db.yaml`. Il reprend l'image `postgres:18-alpine` et son digest de Compose, le port `5432`, `POSTGRES_DB=taskflow` et `POSTGRES_USER=taskflow`.
+
+Le `.env` de Compose n'est pas chargé par Kubernetes. `POSTGRES_PASSWORD` est donc déclaré provisoirement dans le manifeste. Sa valeur `taskflow-lab-only-not-a-real-secret` est **fictive et publique**, réservée au TP. L'API utilise la même valeur pour `DB_PASSWORD`. Aucun mot de passe réel de la stack Compose n'est recopié.
+
+```sh
 kubectl --context "$KUBE_CONTEXT" apply -f k8s/pods/db.yaml
 kubectl --context "$KUBE_CONTEXT" -n taskflow wait --for=condition=Ready pod/db --timeout=180s
 kubectl --context "$KUBE_CONTEXT" -n taskflow logs db
@@ -40,9 +68,15 @@ kubectl --context "$KUBE_CONTEXT" -n taskflow exec db -- pg_isready -U taskflow 
 kubectl --context "$KUBE_CONTEXT" -n taskflow get pod db -o wide
 ```
 
-Attendre le message PostgreSQL `database system is ready to accept connections` et une réponse positive de `pg_isready`. Sans sonde, `Ready` seul ne prouve pas que PostgreSQL a fini son initialisation.
+Résultat attendu : les logs indiquent `database system is ready to accept connections` et `pg_isready` indique que le serveur accepte les connexions. Sans sonde Kubernetes, `Ready` seul ne démontre pas que PostgreSQL a fini son initialisation. L'IP initiale conservée dans les preuves est `10.42.0.89` ; il faut relever celle du cluster utilisé au moment du déploiement.
 
-Il n'existe pas encore de Service `db`, donc pas d'enregistrement DNS de Service pour ce nom. `DB_HOST` doit temporairement être **l'IP du Pod db**. Le script suivant relève cette IP et met à jour le manifeste ; il ne déploie et ne supprime rien :
+Le volume nommé de Compose n'est pas transposé. Les données n'ont donc aucune persistance garantie au-delà du conteneur ; la suppression du Pod db efface la base du TP. Ces données sont indépendantes du volume PostgreSQL utilisé par Compose.
+
+## Étape 3 — configurer et démarrer l'API
+
+Fichier historique : [api.yaml archivé](verification/kubernetes/manifests/api.yaml), anciennement `k8s/pods/api.yaml`. Il utilise l'image API publiée `1.0.0`, écoute sur `0.0.0.0:3000` et déclare les variables `DB_HOST`, `DB_PORT`, `DB_NAME`, `DB_USER`, `DB_PASSWORD` attendues par l'application.
+
+Il n'existe pas encore de Service `db`. Le nom du service Compose ne donne donc pas d'adresse DNS de Service dans ce cluster. `DB_HOST` contient provisoirement l'IP du Pod db. Le [script set-db-pod-ip.py](verification/kubernetes/manifests/set-db-pod-ip.py) la relève avec `kubectl` et modifie seulement la ligne marquée `DB_POD_IP` dans le manifeste API ; il ne déploie et ne supprime aucun objet.
 
 ```sh
 python3 scripts/set-db-pod-ip.py --context "$KUBE_CONTEXT"
@@ -51,9 +85,9 @@ kubectl --context "$KUBE_CONTEXT" -n taskflow wait --for=condition=Ready pod/api
 kubectl --context "$KUBE_CONTEXT" -n taskflow logs api
 ```
 
-Le manifeste versionné conserve l'IP de fin de séance pour documenter l'expérience. **Toujours la recalculer pour un autre cluster ou après recréation de db.** Les variables d'un Pod existant ne sont pas modifiables ainsi : si l'API existe déjà et que l'IP a changé, supprimer le Pod API puis réappliquer son manifeste.
+Résultat attendu : l'API confirme la connexion PostgreSQL et l'écoute HTTP. La valeur versionnée `10.42.0.93` est l'IP de la fin de l'expérience historique. **Recalculer `DB_HOST` pour un autre cluster ou après toute recréation de db.** Si le Pod API existe déjà avec une ancienne IP, supprimer puis réappliquer ce Pod : ses variables d'environnement ne peuvent pas être modifiées en place.
 
-Diagnostic d'un échec :
+En cas de `CrashLoopBackOff` :
 
 ```sh
 kubectl --context "$KUBE_CONTEXT" -n taskflow describe pod api
@@ -61,11 +95,11 @@ kubectl --context "$KUBE_CONTEXT" -n taskflow logs api
 kubectl --context "$KUBE_CONTEXT" -n taskflow logs api --previous
 ```
 
-L'API retente sa connexion puis quitte si la base est indisponible au démarrage. La durée dépend des délais de connexion et des intervalles : ce n'est pas toujours exactement dix secondes. `--previous` nécessite une exécution précédente du conteneur.
+`--previous` suppose qu'une exécution précédente du conteneur existe. Au démarrage, le code effectue une première tentative et cinq nouvelles tentatives par défaut, avec des pauses de deux secondes et des délais de connexion possibles. Si elles échouent, le processus sort avec le code 1. Le délai total n'est donc pas toujours exactement dix secondes.
 
-## 3. Vérifications HTTP
+## Étape 4 — accéder à l'API et vérifier une tâche
 
-Dans un terminal :
+Dans un premier terminal, laisser le port-forward actif :
 
 ```sh
 kubectl --context "$KUBE_CONTEXT" -n taskflow port-forward pod/api 18080:3000 --address 127.0.0.1
@@ -81,78 +115,123 @@ curl -i -X POST http://127.0.0.1:18080/api/tasks \
 curl -i http://127.0.0.1:18080/api/tasks
 ```
 
-Résultat initial mesuré : HTTP 200 sur `/healthz`, version `1.0.0`, `hostname: api`, en-tête `X-Served-By: api`, correspondant au nom du Pod. La tâche créée a été retrouvée dans la liste. Voir [les preuves initiales](verification/kubernetes/tasks-before.json).
+Résultats attendus : HTTP 200 sur `/healthz`, HTTP 201 pour la création, puis HTTP 200 et la tâche dans la liste. `/readyz` complète le contrôle en testant l'accès à la base. L'en-tête `X-Served-By: api` et `hostname: api` correspondent au nom du Pod API dans les [preuves initiales](verification/kubernetes/healthz-initial.headers).
 
-**Relancer le port-forward après chaque suppression/recréation du Pod API** : le processus est attaché à une instance du Pod, pas à tous les futurs Pods de même nom. Arrêter l'ancien processus avec Ctrl+C avant de reprendre le même port.
+Un port-forward est lié à une instance du Pod. **Après chaque suppression/recréation du Pod API, arrêter l'ancien port-forward avec Ctrl+C et le relancer.**
 
-## 4. Trois expériences sur les limites
+## Étape 5 — observer les trois limites des Pods autonomes
 
-Ces suppressions concernent uniquement les Pods jetables de ce TP ; elles effacent les tâches de la base Kubernetes. Elles ne touchent pas au volume PostgreSQL de Compose.
+Ces expériences suppriment les Pods jetables du TP et les données PostgreSQL Kubernetes. Elles ne suppriment pas le volume de la stack Compose.
 
-### A. Suppression puis recréation de PostgreSQL
+### 5A — supprimer et recréer db
+
+Conserver une tâche témoin et le port-forward de l'API de l'étape 4, puis :
 
 ```sh
 kubectl --context "$KUBE_CONTEXT" -n taskflow delete pod db
 kubectl --context "$KUBE_CONTEXT" apply -f k8s/pods/db.yaml
 kubectl --context "$KUBE_CONTEXT" -n taskflow wait --for=condition=Ready pod/db --timeout=180s
+kubectl --context "$KUBE_CONTEXT" -n taskflow logs db
 kubectl --context "$KUBE_CONTEXT" -n taskflow get pods -o wide
-# Avec le port-forward de l'API encore actif :
 curl -i http://127.0.0.1:18080/healthz
 curl -i http://127.0.0.1:18080/readyz
 curl -i http://127.0.0.1:18080/api/tasks
 ```
 
-Mesures : IP de db passée de `10.42.0.89` à `10.42.0.93`. L'API restait `Running` : `/healthz` renvoyait 200, `/readyz` 503 et `/api/tasks` 500. Elle continuait à joindre l'ancienne IP. La base recréée ne contenait même plus la table `tasks` (comptage SQL : 0). Après correction de `DB_HOST` et recréation de l'API, le schéma a été réinitialisé et la liste était `[]` : la tâche témoin était perdue.
+Constats historiques :
 
-Une IP peut éventuellement être réattribuée à l'identique : sa stabilité n'est jamais garantie. Il faut un **Service** pour une adresse/DNS stable, et un **PersistentVolumeClaim** avec un stockage adapté pour conserver les données. Ces mécanismes ne sont pas ajoutés aujourd'hui.
+| Observation | Résultat mesuré | Preuve |
+|---|---|---|
+| Adresse de db | `10.42.0.89` avant, `10.42.0.93` après | [avant](verification/kubernetes/pods-before.txt), [après](verification/kubernetes/pods-after-db-recreation.txt) |
+| API avec ancienne adresse | Pod encore `Running`, `/healthz` 200, `/readyz` 503, `/api/tasks` 500 | [vivacité](verification/kubernetes/healthz-db-unavailable.txt), [disponibilité](verification/kubernetes/readyz-db-unavailable.txt), [requêtes](verification/kubernetes/tasks-db-unavailable.txt) |
+| Données après reconnexion de l'API | Liste vide `[]`, tâche témoin perdue | [liste après recréation](verification/kubernetes/tasks-after-db-recreation.json) |
 
-Remise en service :
+L'API démarre son serveur après avoir initialisé la base ; une perte de la base en cours d'exécution ne l'arrête pas ici. Elle conserve l'ancienne adresse, d'où la différence entre la vivacité du processus et la disponibilité de l'application.
+
+Pour la remettre en service :
 
 ```sh
 python3 scripts/set-db-pod-ip.py --context "$KUBE_CONTEXT"
 kubectl --context "$KUBE_CONTEXT" -n taskflow delete pod api
 kubectl --context "$KUBE_CONTEXT" apply -f k8s/pods/api.yaml
+kubectl --context "$KUBE_CONTEXT" -n taskflow wait --for=condition=Ready pod/api --timeout=180s
+kubectl --context "$KUBE_CONTEXT" -n taskflow logs api
 ```
 
-### B. Suppression du Pod API
+Relancer ensuite le port-forward et relire `/api/tasks`. Une IP peut être réattribuée à l'identique dans un autre essai, mais elle n'est pas une adresse stable garantie. Un **Service** apporte une découverte stable de la base ; un **PVC et un stockage adapté** apportent la persistance. Le fichier [table-count-after-db-recreation.txt](verification/kubernetes/table-count-after-db-recreation.txt) contient aussi `0`, mais la requête SQL d'origine n'est pas archivée : la preuve directe de perte de la tâche est la liste vide après reconnexion.
+
+### 5B — supprimer le Pod API
 
 ```sh
 kubectl --context "$KUBE_CONTEXT" -n taskflow delete pod api
 kubectl --context "$KUBE_CONTEXT" -n taskflow get pods
-# Observer, puis recréer manuellement :
+# Refaire l'observation quelques secondes plus tard, puis recréer l'API :
 kubectl --context "$KUBE_CONTEXT" apply -f k8s/pods/api.yaml
 kubectl --context "$KUBE_CONTEXT" -n taskflow wait --for=condition=Ready pod/api --timeout=180s
+kubectl --context "$KUBE_CONTEXT" -n taskflow logs api
 ```
 
-Mesure : cinq lectures réparties sur une observation de dix secondes ont confirmé l’absence de l’API après suppression (voir `api-not-recreated.json`). Le Pod autonome n'a pas de contrôleur propriétaire. Une fois supprimé, aucun objet ne maintient un nombre de réplicas souhaité : il ne se recrée pas. Un **Deployment**, via son ReplicaSet, rétablirait ce nombre de Pods. `restartPolicy: Always` ne recrée pas un objet Pod supprimé.
+Constat historique : aucune API dans les cinq relevés à 0, 2, 4, 6 et 8 secondes du [fichier d'observation](verification/kubernetes/api-not-recreated.json). La synthèse décrit une fenêtre d'observation de dix secondes.
 
-### C. Arrêt du processus PID 1 de l'API
+Le Pod est autonome : aucun `ownerReferences` ne désigne un contrôleur dans [l'objet avant suppression](verification/kubernetes/api-before-delete.json). Le kubelet applique `restartPolicy: Always` à un conteneur du Pod existant ; il ne recrée pas un objet Pod supprimé. Il manque un **Deployment**, dont le ReplicaSet maintient le nombre de Pods souhaité par réconciliation.
 
-L'énoncé place cette expérience après la suppression de l'API : il faut donc d'abord la recréer, puis attendre dans ses logs que le serveur écoute.
+### 5C — arrêter PID 1 dans le conteneur API
+
+L'API supprimée en 5B doit d'abord être recréée et ses logs doivent confirmer l'écoute HTTP. Relever son UID et son compteur avant/après :
 
 ```sh
-kubectl --context "$KUBE_CONTEXT" -n taskflow get pod api -o wide
+kubectl --context "$KUBE_CONTEXT" -n taskflow get pod api \
+  -o 'jsonpath={.metadata.uid}{"\n"}{.status.containerStatuses[0].restartCount}{"\n"}'
 kubectl --context "$KUBE_CONTEXT" -n taskflow exec api -- /bin/sh -c 'kill 1'
 kubectl --context "$KUBE_CONTEXT" -n taskflow get pod api -w
-# Après redémarrage, arrêter la surveillance avec Ctrl+C :
+# Après le redémarrage, arrêter la surveillance avec Ctrl+C :
+kubectl --context "$KUBE_CONTEXT" -n taskflow get pod api \
+  -o 'jsonpath={.metadata.uid}{"\n"}{.status.containerStatuses[0].restartCount}{"\n"}'
 kubectl --context "$KUBE_CONTEXT" -n taskflow logs api --previous
 ```
 
-Mesure : même UID de Pod avant/après, compteur `RESTARTS` passé de 0 à 1 ; les logs de l’exécution précédente confirment SIGTERM et l’arrêt propre.
+Constat historique : UID `a6381f94-03d3-4cdd-a7cf-44ef06ab0f85` identique [avant](verification/kubernetes/api-before-kill.json) et [après](verification/kubernetes/api-after-kill.json), nom `api` conservé, `RESTARTS` passé de 0 à 1. Les [logs de l'exécution précédente](verification/kubernetes/api-kill-previous.log) montrent la réception de SIGTERM et l'arrêt propre.
 
-`kill 1` envoie SIGTERM ; Node le reçoit et effectue son arrêt propre. Le kubelet redémarre le **conteneur** conformément à `restartPolicy: Always`. Le nom et l'UID du **Pod** restent identiques, tandis que `RESTARTS` augmente. Cela ressemble à `restart: unless-stopped` de Compose pour un processus qui termine ; dans les deux cas, redémarrer un conteneur ne remplace pas un contrôleur qui recrée un objet supprimé. La nuance Docker est qu'un arrêt manuel du conteneur est respecté par `unless-stopped`.
+`kill 1` envoie SIGTERM au processus Node lancé en PID 1. Le kubelet redémarre ensuite **le conteneur dans le même Pod** selon `restartPolicy: Always`. C'est comparable au redémarrage après sortie du processus avec `restart: unless-stopped` dans Compose. Cette politique Docker respecte toutefois un arrêt manuel du conteneur. Dans les deux environnements, cette politique ne suffit pas à recréer un objet supprimé.
 
-## 5. Questions complémentaires
+## Étape 6 — terminer avec une application fonctionnelle et préparer le rendu
 
-- **Front** : il n'est pas demandé pour le point de contrôle. L'image actuelle attend `api:3000` et impose le DNS Docker `127.0.0.11` dans `front/nginx.conf`. Ce résolveur n'est pas celui des Pods Kubernetes ; le nom de Service `api` n'existe pas encore non plus. Il faudrait adapter Nginx et fournir une découverte stable (Service API) lors d'une séance ultérieure. Ajouter simplement un Pod front ne suffit pas.
-- **Application globale** : `kubectl apply -R -f k8s/` tenterait de traiter `k3s-config.yaml`, qui n'a pas `apiVersion`/`kind`. Même sans ce fichier, `apply` n'attend pas la disponibilité de la base ni l'injection de son IP. Conserver la configuration d'installation à part des ressources applicables et appliquer namespace → db → attente → IP → api. Ici le chemin de configuration imposé par l'énoncé est conservé ; on utilise des chemins explicites. Une fois les dépendances prêtes, `kubectl apply -f k8s/namespace.yaml -f k8s/pods/` sélectionne seulement les objets Kubernetes.
-- **Objet stocké** : `kubectl get pod api -n taskflow -o yaml` ajoute notamment UID, resourceVersion, creationTimestamp, annotation last-applied, champs par défaut (`dnsPolicy`, `schedulerName`, `serviceAccountName`…), affectation `nodeName`, volume projeté du compte de service, puis `status` (IP, conditions, identifiant du conteneur, compteurs). L'absence d'`ownerReferences` confirme que ce Pod n'est pas géré par un ReplicaSet. Les instantanés JSON du dossier de vérification permettent la comparaison.
+Après les expériences : vérifier les logs de db, recalculer son IP, puis recréer l'API si sa configuration a changé. Reprendre le port-forward de l'étape 4 et confirmer `/healthz`, `/readyz`, ainsi que la création et la relecture d'une nouvelle tâche.
 
-## 6. Livrables et références
+L'état final **historique** est documenté par les [Pods finaux](verification/kubernetes/pods-final.txt), le [HTTP 200 final](verification/kubernetes/healthz-final.txt), la [disponibilité de la base](verification/kubernetes/readyz-final.json) et la [nouvelle tâche relue](verification/kubernetes/tasks-final.json). La [validation par l'API server](verification/kubernetes/server-validation.txt) conserve un `--dry-run=server` réussi pour le namespace et les Pods ; aucune nouvelle validation serveur n'est présumée à partir de ce fichier.
 
-- `k8s/k3s-config.yaml`, `k8s/namespace.yaml`, `k8s/pods/db.yaml`, `k8s/pods/api.yaml`.
-- `scripts/set-db-pod-ip.py` : mise à jour de l'IP temporaire, avec contexte explicite.
-- Ce compte rendu et [le point de contrôle prêt à copier](point-controle-kubernetes.md).
-- [Preuves de vérification](verification/kubernetes/) : sorties brutes et synthèse `results.json`.
+Les livrables demandés (`k8s/k3s-config.yaml`, `k8s/namespace.yaml`, `k8s/pods/`, `docs/notes-kubernetes.md`) étaient suivis par Git et présents dans le commit `7bb7d08`. Le contrôle du dépôt distant lors de l'audit confirmait `origin/main` au même commit `e92ace3` que le HEAD local, contenant ces livrables historiques. Lors de cet audit, les retouches documentaires restaient locales ; consulter le [point de contrôle de la séance 3](point-controle-services.md) pour l'état du rendu suivant. Les anciens manifestes sont maintenant archivés et retirés de l'arborescence Kubernetes active.
 
-Références : [cycle de vie des Pods](https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle/), [configuration de k3s](https://docs.k3s.io/installation/configuration).
+Le [point de contrôle prêt à copier](point-controle-kubernetes.md) contient les trois sorties requises : nœuds, Pods, curl `/healthz`. **Aucun envoi au fil de cours n'est attesté par le dépôt.**
+
+## Bonus du PDF — analyses disponibles, exécutions non attestées
+
+Les trois propositions « Pour aller plus loin » étaient facultatives. Elles sont analysées ci-dessous pour l'état historique de la séance 2 ; aucun déploiement de Pod front ni essai global récursif n'était alors attesté. Le front et l'application en un répertoire relèvent maintenant de la séance 3.
+
+| Proposition | Conclusion fondée sur les fichiers et preuves |
+|---|---|
+| Ajouter un Pod front | [nginx.conf](../front/nginx.conf) cherche `api:3000` avec le résolveur Docker `127.0.0.11`. Ce résolveur et l'absence de Service `api` empêchent d'utiliser cette configuration telle quelle dans Kubernetes. Adapter Nginx et fournir une découverte stable de l'API est nécessaire. |
+| Appliquer tout `k8s/` d'une commande | `kubectl apply -R -f k8s/` inclurait `k3s-config.yaml`, qui n'a ni `apiVersion` ni `kind`. Même en sélectionnant seulement les ressources, `apply` n'attend pas la base et n'injecte pas son IP. La procédure explicite namespace → db → disponibilité/IP → api reste nécessaire ici. Séparer les configurations d'installation des manifestes faciliterait une application globale ; le chemin imposé par le PDF est conservé. |
+| Comparer le manifeste et l'objet stocké | Les [instantanés JSON du Pod API](verification/kubernetes/api-before-kill.json) montrent les champs ajoutés : UID, resourceVersion, date de création, annotation last-applied, valeurs par défaut de spec (`dnsPolicy`, `schedulerName`, `serviceAccountName`…), affectation `nodeName`, volume projeté du compte de service et `status` (IP, conditions, identifiant du conteneur, compteurs). `ownerReferences` est absent. |
+
+Pour reproduire la dernière comparaison, après déploiement :
+
+```sh
+kubectl --context "$KUBE_CONTEXT" -n taskflow get pod api -o yaml
+```
+
+## Ce que la séance 3 change — synthèse des Deployments et Services
+
+Les [six étapes de la séance 3](seance-3-services.md) décrivent la nouvelle application complète : un Deployment et un Service par composant, un réplica PostgreSQL 17, deux API et deux fronts. Les ressources actives se trouvent dans `k8s/app/`, avec `00-namespace.yaml` pour le déploiement sur un namespace absent. Le front est exposé par LoadBalancer ; API et base utilisent des Services ClusterIP.
+
+| Constat historique de la séance 2 | Réponse apportée par la séance 3 | Ce que cela ne garantit pas |
+| --- | --- | --- |
+| Un Pod API supprimé n'est pas recréé. | Le ReplicaSet du Deployment maintient deux Pods API et remplace un Pod supprimé. | Le nouveau processus peut échouer ; l'absence de sonde ne détecte pas tous les défauts métier. |
+| L'IP de db change et l'API conserve l'ancienne IP. | `DB_HOST=db` utilise le nom stable du Service ; ses endpoints suivent le nouveau Pod. | Les tâches ne sont pas conservées sans volume, et le schéma peut manquer après remplacement de db. |
+| `kill 1` redémarre le conteneur dans le même Pod. | Le kubelet continue à appliquer `restartPolicy: Always` ; le Deployment ajoute le remplacement d'un Pod supprimé. | Un processus vivant mais bloqué peut rester dans le trafic sans sonde adaptée. |
+
+Le piège d'environnement est également documenté : avec les service links actifs, un Service `db` existant peut injecter `DB_PORT=tcp://<ClusterIP>:5432`. Cette valeur n'est pas un entier utilisable par l'API. Le Deployment déclare donc `DB_PORT: "5432"` et `enableServiceLinks: false`. Le Pod historique déclarait déjà le port explicitement ; la reproduction du piège se fait dans un Pod temporaire distinct.
+
+Le front conserve l'image `1.0.0`, mais son manifeste remplace le résolveur Docker par celui du Pod et utilise `api.taskflow.svc.cluster.local` : le résolveur dynamique intégré à Nginx n'applique pas la recherche de noms courts du Pod. La configuration dynamique peut démarrer sans le Service API, puis retourne 502 tant que sa résolution ou ses endpoints ne fonctionnent pas ; elle n'a pas le même comportement de démarrage que le proxy statique évoqué par le sujet.
+
+Les limites demandées restent visibles : mot de passe fictif en clair, aucune sonde Kubernetes, aucune limite de ressources et base sans stockage persistant. Après recréation de db, le nom DNS permet la reconnexion mais la table `tasks` est absente ; les API doivent redémarrer pour initialiser le schéma vide. `/readyz` vérifie seulement `SELECT 1` et ne suffit pas à prouver que les tâches sont lisibles. La [procédure détaillée](seance-3-services.md) et le [rapport de la séance 3](verification/services/results.json) distinguent les résultats attendus des observations réellement collectées.

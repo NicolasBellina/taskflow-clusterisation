@@ -1,0 +1,160 @@
+{
+  "apiVersion": "v1",
+  "items": [
+    {
+      "apiVersion": "v1",
+      "kind": "Service",
+      "metadata": {
+        "annotations": {
+          "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"v1\",\"kind\":\"Service\",\"metadata\":{\"annotations\":{},\"labels\":{\"app.kubernetes.io/component\":\"api\",\"app.kubernetes.io/name\":\"taskflow\"},\"name\":\"api\",\"namespace\":\"taskflow\"},\"spec\":{\"ports\":[{\"name\":\"http\",\"port\":3000,\"targetPort\":\"http\"}],\"selector\":{\"app.kubernetes.io/component\":\"api\",\"app.kubernetes.io/name\":\"taskflow\"},\"type\":\"ClusterIP\"}}\n"
+        },
+        "creationTimestamp": "2026-10-07T15:31:18Z",
+        "labels": {
+          "app.kubernetes.io/component": "api",
+          "app.kubernetes.io/name": "taskflow"
+        },
+        "name": "api",
+        "namespace": "taskflow",
+        "resourceVersion": "496",
+        "uid": "833fe53c-65a5-4e81-835a-36e20c58beae"
+      },
+      "spec": {
+        "clusterIP": "10.43.232.42",
+        "clusterIPs": [
+          "10.43.232.42"
+        ],
+        "internalTrafficPolicy": "Cluster",
+        "ipFamilies": [
+          "IPv4"
+        ],
+        "ipFamilyPolicy": "SingleStack",
+        "ports": [
+          {
+            "name": "http",
+            "port": 3000,
+            "protocol": "TCP",
+            "targetPort": "http"
+          }
+        ],
+        "selector": {
+          "app.kubernetes.io/component": "api",
+          "app.kubernetes.io/name": "taskflow"
+        },
+        "sessionAffinity": "None",
+        "type": "ClusterIP"
+      },
+      "status": {
+        "loadBalancer": {}
+      }
+    },
+    {
+      "apiVersion": "v1",
+      "kind": "Service",
+      "metadata": {
+        "annotations": {
+          "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"v1\",\"kind\":\"Service\",\"metadata\":{\"annotations\":{},\"labels\":{\"app.kubernetes.io/component\":\"database\",\"app.kubernetes.io/name\":\"taskflow\"},\"name\":\"db\",\"namespace\":\"taskflow\"},\"spec\":{\"ports\":[{\"name\":\"postgres\",\"port\":5432,\"targetPort\":\"postgres\"}],\"selector\":{\"app.kubernetes.io/component\":\"database\",\"app.kubernetes.io/name\":\"taskflow\"},\"type\":\"ClusterIP\"}}\n"
+        },
+        "creationTimestamp": "2026-10-07T15:31:18Z",
+        "labels": {
+          "app.kubernetes.io/component": "database",
+          "app.kubernetes.io/name": "taskflow"
+        },
+        "name": "db",
+        "namespace": "taskflow",
+        "resourceVersion": "520",
+        "uid": "bdd8b66b-1843-4e80-be0f-fc592ed8300b"
+      },
+      "spec": {
+        "clusterIP": "10.43.16.226",
+        "clusterIPs": [
+          "10.43.16.226"
+        ],
+        "internalTrafficPolicy": "Cluster",
+        "ipFamilies": [
+          "IPv4"
+        ],
+        "ipFamilyPolicy": "SingleStack",
+        "ports": [
+          {
+            "name": "postgres",
+            "port": 5432,
+            "protocol": "TCP",
+            "targetPort": "postgres"
+          }
+        ],
+        "selector": {
+          "app.kubernetes.io/component": "database",
+          "app.kubernetes.io/name": "taskflow"
+        },
+        "sessionAffinity": "None",
+        "type": "ClusterIP"
+      },
+      "status": {
+        "loadBalancer": {}
+      }
+    },
+    {
+      "apiVersion": "v1",
+      "kind": "Service",
+      "metadata": {
+        "annotations": {
+          "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"v1\",\"kind\":\"Service\",\"metadata\":{\"annotations\":{},\"labels\":{\"app.kubernetes.io/component\":\"front\",\"app.kubernetes.io/name\":\"taskflow\"},\"name\":\"front\",\"namespace\":\"taskflow\"},\"spec\":{\"ports\":[{\"name\":\"http\",\"port\":32000,\"targetPort\":\"http\"}],\"selector\":{\"app.kubernetes.io/component\":\"front\",\"app.kubernetes.io/name\":\"taskflow\"},\"type\":\"LoadBalancer\"}}\n"
+        },
+        "creationTimestamp": "2026-10-07T15:31:18Z",
+        "finalizers": [
+          "service.kubernetes.io/load-balancer-cleanup"
+        ],
+        "labels": {
+          "app.kubernetes.io/component": "front",
+          "app.kubernetes.io/name": "taskflow"
+        },
+        "name": "front",
+        "namespace": "taskflow",
+        "resourceVersion": "573",
+        "uid": "9d83dba3-cc2a-4715-91d8-eeac893d6ef8"
+      },
+      "spec": {
+        "allocateLoadBalancerNodePorts": true,
+        "clusterIP": "10.43.215.188",
+        "clusterIPs": [
+          "10.43.215.188"
+        ],
+        "externalTrafficPolicy": "Cluster",
+        "internalTrafficPolicy": "Cluster",
+        "ipFamilies": [
+          "IPv4"
+        ],
+        "ipFamilyPolicy": "SingleStack",
+        "ports": [
+          {
+            "name": "http",
+            "nodePort": 32727,
+            "port": 32000,
+            "protocol": "TCP",
+            "targetPort": "http"
+          }
+        ],
+        "selector": {
+          "app.kubernetes.io/component": "front",
+          "app.kubernetes.io/name": "taskflow"
+        },
+        "sessionAffinity": "None",
+        "type": "LoadBalancer"
+      },
+      "status": {
+        "loadBalancer": {
+          "ingress": [
+            {
+              "ip": "172.22.0.3",
+              "ipMode": "VIP"
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "kind": "List",
+  "metadata": {
+    "resourceVersion": ""
+  }
+}

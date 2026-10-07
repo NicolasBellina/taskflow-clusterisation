@@ -1,0 +1,14 @@
+{
+  "at": "2026-10-07T17:48:23.956575+02:00",
+  "status": 200,
+  "headers": {
+    "Server": "nginx/1.30.5",
+    "Date": "Wed, 07 Oct 2026 15:48:23 GMT",
+    "Content-Type": "application/json; charset=utf-8",
+    "Content-Length": "172",
+    "Connection": "close",
+    "X-Served-By": "api-56c54f747b-j7d2t",
+    "ETag": "W/\"ac-R0L422Z0vZ2ygXMXxBM7tlHl5p0\""
+  },
+  "body": "[{\"id\":1,\"title\":\"Séance 3 validée : Deployments, Services et retour arrière\",\"done\":true,\"createdAt\":\"2026-10-07T15:48:02.291Z\",\"updatedAt\":\"2026-10-07T15:48:07.510Z\"}]"
+}

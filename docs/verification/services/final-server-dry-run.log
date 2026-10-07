@@ -1,0 +1,7 @@
+namespace/taskflow unchanged (server dry run)
+deployment.apps/api unchanged (server dry run)
+service/api unchanged (server dry run)
+deployment.apps/db unchanged (server dry run)
+service/db unchanged (server dry run)
+deployment.apps/front unchanged (server dry run)
+service/front unchanged (server dry run)
